@@ -9,5 +9,5 @@ RUN docker-php-ext-enable pdo pdo_mysql
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN a2enmod rewrite
 RUN chmod -R 777 /etc/hosts
-RUN sh -c "echo '127.0.0.1   photogram.ovh sous.domaine.photogram.ovh' >> /etc/hosts"
+RUN sh -c "echo '127.0.0.1   afterwork.ovh sous.afterwork.photogram.ovh' >> /etc/hosts"
 COPY ./Docker/000-default.conf /etc/apache2/sites-available/
