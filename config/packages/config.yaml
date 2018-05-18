@@ -1,0 +1,11 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: App\Entity\User
+    use_listener:           true
+    use_username_form_type: true
+    model_manager_name:     null
+    from_email:
+        address:        sridar.aroumougame@gmail.com
+        sender_name:    Admin
+
