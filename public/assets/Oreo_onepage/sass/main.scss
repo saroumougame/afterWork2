@@ -1,0 +1,16 @@
+// import google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+// bootstrap
+@import 'bootstrap';  // bootstrap plugin
+
+// Material kit
+@import 'material-kit';  // Material kit
+
+// Vendor
+
+//Pages
+@import "pages/index"; // global page settings
+@import "pages/responsive"; // page chat settings
+@import "pages/animate"; // mail and inbox settings
+

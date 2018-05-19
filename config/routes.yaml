@@ -5,9 +5,9 @@ index:
     path: /
     defaults: { _controller: 'App\Controller\ProfilController::indexAction' }
 
-user_test:
-    path: /user/test
-    defaults: { _controller: 'App\Controller\ProfilController::userAction' }
+user_connexion:
+    path: /connexion
+    defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
 
 admin_test:
     path: /admin/test

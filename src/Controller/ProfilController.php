@@ -26,12 +26,12 @@ class ProfilController extends Controller
         ));
     }
 
-    public function userAction()
+    public function connexionAction()
     {
         $articles = 'user';
-        dump($articles);
 
-        return $this->render('Profile/index.html.twig', array(
+
+        return $this->render('FOSUserBundle/security/login.html.twig', array(
             'articles' => $articles,
         ));
     }
