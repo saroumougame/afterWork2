@@ -1,6 +1,19 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\ProfilController::indexAction' }
+
+user_test:
+    path: /user/test
+    defaults: { _controller: 'App\Controller\ProfilController::userAction' }
+
+admin_test:
+    path: /admin/test
+    defaults: { _controller: 'App\Controller\ProfilController::adminAction' }
+
+#app_bundle:
+    # loads routes from the YAML or XML files found in some bundle directory
+#    resource: '@AppBundle/Resources/config/routing/public/'
+ #   type:     directory

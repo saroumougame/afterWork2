@@ -25,3 +25,8 @@ Symfony command
 Mise à jour de la Database
 php bin/console doctrine:migrations:diff
 php bin/console doctrine:migrations:migrate
+
+
+ce rajouter le role admin
+
+bin/console fos:user:promote <votrenomutilisateur> ROLE_ADMIN

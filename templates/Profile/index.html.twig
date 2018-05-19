@@ -1,0 +1,16 @@
+{{ articles }}
+
+
+{{ app.user.username }}
+
+{%  if app.user %}
+
+tu est user
+
+{% endif %}
+
+{% if app.user.hasRole('ROLE_ADMIN') %}
+
+tu est admin
+
+{% endif %}
