@@ -17,8 +17,10 @@ class ProfilController extends Controller
 {
 
 
-    public function indexAction()
+    public function addGroupeAction()
     {
+
+
         $articles = 'toto';
 
         return $this->render('Profile/index.html.twig', array(
@@ -26,23 +28,6 @@ class ProfilController extends Controller
         ));
     }
 
-    public function connexionAction()
-    {
-        $articles = 'user';
 
-
-        return $this->render('FOSUserBundle/security/login.html.twig', array(
-            'articles' => $articles,
-        ));
-    }
-
-    public function adminAction()
-    {
-        $articles = 'admin';
-
-        return $this->render('Profile/index.html.twig', array(
-            'articles' => $articles,
-        ));
-    }
 
 }

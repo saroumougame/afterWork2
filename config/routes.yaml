@@ -9,11 +9,23 @@ user_connexion:
     path: /connexion
     defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
 
-admin_test:
-    path: /admin/test
-    defaults: { _controller: 'App\Controller\ProfilController::adminAction' }
+
+profil_add_groupe:
+    path: profil/
+    defaults: { _controller: 'App\Controller\ProfilController::addGroupeAction' }
+
+groupe_show:
+    path: groupe/show
+    defaults: { _controller: 'App\Controller\GroupeController::showAction' }
+
+groupe_add:
+    path: groupe/add
+    defaults: { _controller: 'App\Controller\GroupeController::addAction' }
+
+
+
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
-#    resource: '@AppBundle/Resources/config/routing/public/'
- #   type:     directory
+    #resource: '@AppBundle/Resources/config/routing/'
+    #type:     directory

@@ -14,6 +14,14 @@ use FOS\UserBundle\Model\User as FOSUser;
  */
 class User extends FOSUser
 {
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->relationsUserGroupe = new ArrayCollection();
+
+    }
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -21,11 +29,35 @@ class User extends FOSUser
      */
     protected $id;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id_user_groupe", type="integer", nullable=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\TjUserGroupe", mappedBy="User", orphanRemoval=true)
+     */
+    protected $relationsUserGroupe;
 
-    public function __construct()
+
+    public function getIdUserGroupe(): ?int
     {
-        parent::__construct();
+        return $this->id;
     }
+
+    public function setIdUserGroupe(string $idUserGroupe): self
+    {
+        $this->idUserGroupe = $idUserGroupe;
+
+        return $this;
+    }
+
+
+
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
 
 
 
