@@ -1,13 +1,17 @@
 # afterWork2
 
 Installation
+
 docker-compose build
+
 docker-compose up -d
 
 docker exec -it symfonyApp bash
+
 composer update
 
 bin/console doctrine:database:create --if-not-exists
+
 bin/console doctrine:schema:update --force
 
 Local Environment
