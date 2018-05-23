@@ -42,10 +42,10 @@ class UserGroupe
 
 
     /**
-     * @ORM\Column(name="groupe", type="integer", nullable=false)
-     * @ORM\ManyToOne(targetEntity="App\Entity\Groupe", inversedBy="relationsUserGroupe")
-     * @ORM\JoinColumn(nullable=false)
-     */
+ * @ORM\Column(name="groupe", type="integer", nullable=false)
+ * @ORM\ManyToOne(targetEntity="App\Entity\Groupe", inversedBy="relationsUserGroupe")
+ * @ORM\JoinColumn(nullable=false)
+ */
     private $groupe;
 
 

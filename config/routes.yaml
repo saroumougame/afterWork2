@@ -3,7 +3,7 @@ fos_user:
 
 index:
     path: /
-    defaults: { _controller: 'App\Controller\ProfilController::indexAction' }
+    defaults: { _controller: 'App\Controller\LandingController::indexAction' }
 
 user_connexion:
     path: /connexion
@@ -21,6 +21,10 @@ groupe_show:
 groupe_add:
     path: groupe/add
     defaults: { _controller: 'App\Controller\GroupeController::addAction' }
+
+message_add:
+    path: message/add
+    defaults: { _controller: 'App\Controller\MessageController::addAction' }
 
 
 

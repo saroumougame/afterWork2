@@ -14,6 +14,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Message
 {
 
+    public function __construct()
+    {
+        $this->groupe = new ArrayCollection();
+    }
 
     /**
      * @ORM\Id
@@ -34,6 +38,28 @@ class Message
      * @ORM\Column(type="string", name="username")
      */
     private $username;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Groupe", mappedBy="message")
+     */
+    private $groupe;
+
+    /**
+     * @return mixed
+     */
+    public function getGroupe()
+    {
+        return $this->groupe;
+    }
+
+    /**
+     * @param mixed $groupe
+     */
+    public function setGroupe($groupe)
+    {
+        $this->groupe = $groupe;
+    }
 
 
 

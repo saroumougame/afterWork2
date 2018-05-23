@@ -37,9 +37,41 @@ class Groupe
      * @var ArrayCollection
      *
      * @ORM\Column(name="user_groupe", nullable=true)
-     * @ORM\OneToMany(targetEntity="App\Entity\TjUserGroupe", mappedBy="groupe", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="groupe", orphanRemoval=true)
      */
     private $relationsUserGroupe;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Message", inversedBy="groupe")
+     * @ORM\JoinColumn(name="message_id", referencedColumnName="id")
+     */
+    private $message;
+
+    /**
+     * @param mixed $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRelationsUserGroupe(): ArrayCollection
+    {
+        return $this->relationsUserGroupe;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
 
 
 
@@ -104,5 +136,21 @@ class Groupe
         }
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
 
 }
