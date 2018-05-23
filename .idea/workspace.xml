@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Landing/index.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/groupe.frm" afterPath="$PROJECT_DIR$/Database/afterwork/groupe.frm" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/groupe.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/groupe.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/message.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/message.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_buffer_pool" afterPath="$PROJECT_DIR$/Database/ib_buffer_pool" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_logfile0" afterPath="$PROJECT_DIR$/Database/ib_logfile0" />
-      <change beforePath="$PROJECT_DIR$/Database/ibdata1" afterPath="$PROJECT_DIR$/Database/ibdata1" />
-      <change beforePath="$PROJECT_DIR$/Database/ibtmp1" afterPath="$PROJECT_DIR$/Database/ibtmp1" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilController.php" afterPath="$PROJECT_DIR$/src/Controller/LandingController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Groupe.php" afterPath="$PROJECT_DIR$/src/Entity/Groupe.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" afterPath="$PROJECT_DIR$/src/Entity/Message.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserGroupe.php" afterPath="$PROJECT_DIR$/src/Entity/UserGroupe.php" />
-      <change beforePath="$PROJECT_DIR$/templates/Groupe/addgroupe.html.twig" afterPath="$PROJECT_DIR$/templates/Groupe/addgroupe.html.twig" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -378,12 +361,12 @@
       <updated>1526585975263</updated>
       <workItem from="1526585976366" duration="46629000" />
       <workItem from="1527001371728" duration="5639000" />
-      <workItem from="1527073570365" duration="1467000" />
+      <workItem from="1527073570365" duration="1677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53735000" />
+    <option name="totallyTimeSpent" value="53945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
