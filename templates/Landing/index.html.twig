@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{ asset('assets/Stack/css/flickity.css') }}"/>
 
         <link rel="stylesheet" href="{{ asset('assets/Stack/css/custom.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Stack/css/theme.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Stack/css/index.css') }}"/>
 
     {% endblock %}
@@ -126,7 +127,7 @@
 <div class="main-container">
     <section class="text-center height-80 imagebg" data-overlay="4">
         <div class="background-image-holder">
-            <img alt="background" src="img/after-bar.jpg" />
+            <img alt="background" src="{{ asset('assets/Stack/img/after-bar.jpg') }}" />
         </div>
         <div class="container pos-vertical-center">
 
@@ -202,7 +203,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature">
-                        <img alt="Image" src="img/events/bierre-detente.jpg" class="border--round" />
+                        <img alt="Image" src="{{ asset('assets/Stack/img/events/bierre-detente.jpg') }}" class="border--round" />
                         <h4>Soirée détente - Bierre et Mylka</h4>
                         <button type="button" class="btn btn-info SavoirPlus">En savoir plus</button>
                         <p>
@@ -214,7 +215,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="feature">
-                        <img alt="Image" src="img/events/club.jpg" class="border--round" />
+                        <img alt="Image" src="{{ asset('assets/Stack/img/events/club.jpg') }}" class="border--round" />
                         <h4>After work party Mycrosoft Rex club</h4>
                         <button type="button" class="btn btn-info SavoirPlus">En savoir plus</button>
                         <p>
@@ -224,7 +225,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="feature">
-                        <img alt="Image" src="img/events/rooftop.jpg" class="border--round" />
+                        <img alt="Image" src="{{ asset('assets/Stack/img/events/rooftop.jpg')}}" class="border--round" />
                         <h4>Networking - classic, Secret company</h4>
                         <button type="button" class="btn btn-info SavoirPlus">En savoir plus</button>
                         <p>

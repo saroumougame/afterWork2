@@ -1,0 +1,26 @@
+
+
+
+.dropdown__trigger {
+	color: black;
+}
+.SavoirPlus {
+	padding: 0 5px !important;
+}
+#arrow-left-right {
+position: relative;
+top: 124px;
+z-index: 99;
+display: flex;
+justify-content: space-between;
+width: 117%;
+left: -100px;
+}
+.fleche {
+	font-size: 4em;
+	cursor: pointer;
+}
+
+.colorTextDynamiqueMenu {
+	color: #ede428 !important
+}

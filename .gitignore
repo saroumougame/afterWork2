@@ -5,3 +5,15 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+Database/auto\.cnf
+
+Database/ib_buffer_pool
+
+Database/ib_logfile0
+
+Database/ibdata1
+
+composer\.lock
+
+Database/ibtmp1
