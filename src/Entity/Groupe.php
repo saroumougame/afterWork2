@@ -19,10 +19,9 @@ class Groupe
     }
 
 
-
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="idGroupe")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $idGroupe;
@@ -42,9 +41,9 @@ class Groupe
     private $relationsUserGroupe;
 
 
+
     /**
-     * @ORM\ManyToOne(targetEntity="Message", inversedBy="groupe")
-     * @ORM\JoinColumn(name="message_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Message", mappedBy="groupe")
      */
     private $message;
 

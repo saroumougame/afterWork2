@@ -21,7 +21,7 @@ class Message
 
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="id")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
@@ -41,7 +41,8 @@ class Message
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Groupe", mappedBy="message")
+     * @ORM\ManyToOne(targetEntity="Groupe", inversedBy="message")
+     * @ORM\JoinColumn(name="groupe_id", referencedColumnName="idGroupe")
      */
     private $groupe;
 
