@@ -1,1 +1,26 @@
 /*! Place your custom styles here */
+
+section {
+padding-top: 5.42857143em !important;
+padding-bottom: 5.42857143em !important;
+}
+.noPaddingTop {
+	padding-top: 0 !important;
+}
+
+#nav_title {
+	padding: 0;
+	margin: 0;
+	font-family: 'helvetica';
+	font-weight: bold;
+}
+
+#menu1 {
+
+	background-color: #fff;
+}
+
+.menu-horizontal > li:not(:hover) > a, .menu-horizontal > li:not(:hover) > span, .menu-horizontal > li:not(:hover) > .modal-instance > .modal-trigger {
+    opacity: 1 !important;
+    color: black;
+}
