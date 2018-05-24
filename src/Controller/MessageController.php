@@ -17,11 +17,15 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MessageController extends Controller
 {
-    public function addAction()
+    public function addAction(Groupe $groupe)
     {
-        $groupe = new Groupe();
-        $groupe->setNom('groupe toto');
-        $groupe->setRelationsUserGroupe(NULL);
+
+        dump($groupe);
+
+
+//        $groupe = new Groupe();
+//        $groupe->setNom('groupe toto');
+//        $groupe->setRelationsUserGroupe(NULL);
 
         $message = new Message();
         $message->setMessage('JE SUIS');
@@ -30,7 +34,7 @@ class MessageController extends Controller
         $message->setUsername('sridar');
 
         // relates this product to the category
-        $groupe->setMessage($message);
+        $message->setGroupe($groupe);
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($groupe);

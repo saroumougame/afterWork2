@@ -53,11 +53,10 @@ dump($groupe);
         $formGroupe = $this->getForm($groupe);
 
 
-
         $formGroupe->handleRequest($request);
 
         if ($formGroupe->isSubmitted()) {
-            if ($formGroupe->isValid()) {
+          //  if ($formGroupe->isValid()) {
                 $groupe = $formGroupe->getData();
                 dump($groupe->getNom());
                 $groupe->setNom($groupe->getNom());
@@ -66,9 +65,9 @@ dump($groupe);
                 $entityManager->persist($groupe);
                 $entityManager->flush();
                 return $this->redirect($this->generateUrl('groupe_add'));
-            } else {
-                return false;
-            }
+//            } else {
+//                return false;
+//            }
         }
 
         return $this->render ( 'Groupe/addGroupe.html.twig', array (
