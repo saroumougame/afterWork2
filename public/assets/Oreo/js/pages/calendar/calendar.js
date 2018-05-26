@@ -5,9 +5,33 @@
             center: 'title',
             right: 'next'
         },
-        defaultDate: '2018-01-12',
-        editable: true,
-        droppable: true, // this allows things to be dropped onto the calendar
+        // defaultDate: '2018-01-12',
+        editable: false, // true
+        droppable: false, // this allows things to be dropped onto the calendar
+        closeText: "Fermer",
+        prevText: "Précédent",
+        nextText: "Suivant",
+        currentText: "Aujourd'hui",
+        monthNames: [ "janvier", "février", "mars", "avril", "mai", "juin",
+            "juillet", "août", "septembre", "octobre", "novembre", "décembre" ],
+        monthNamesShort: [ "janv.", "févr.", "mars", "avr.", "mai", "juin",
+            "juil.", "août", "sept.", "oct.", "nov.", "déc." ],
+        dayNames: [ "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi" ],
+        dayNamesShort: [ "dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam." ],
+        dayNamesMin: [ "D","L","M","M","J","V","S" ],
+        weekHeader: "Sem.",
+        dateFormat: "dd/mm/yy",
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: "",
+        buttonText: {
+            year: "Année",
+            month: "Mois",
+            week: "Semaine",
+            day: "Jour",
+            list: "Mon planning"
+        },
         drop: function() {
             // is the "remove after drop" checkbox checked?
             if ($('#drop-remove').is(':checked')) {
@@ -16,72 +40,16 @@
             }
         },
         eventLimit: true, // allow "more" link when too many events
-        events: [
+        eventSources: [
             {
-                title: 'All Day Event',
-                start: '2018-11-01',
-                className: 'b-l b-2x b-greensea'
-            },
-            {
-                title: 'Long Event',
-                start: '2018-01-07',
-                end: '2018-01-10',
-                className: 'bg-cyan'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2018-01-09T16:00:00',
-                className: 'b-l b-2x b-lightred'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2018-12-16T16:00:00',
-                className: 'b-l b-2x b-success'
-            },
-            {
-                title: 'Conference',
-                start: '2018-01-11',
-                end: '2018-01-13',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Meeting',
-                start: '2018-01-12T10:30:00',
-                end: '2018-01-12 T12:30:00',
-                className: 'b-l b-2x b-amethyst'
-            },
-            {
-                title: 'Lunch',
-                start: '2018-01-12T12:00:00',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Meeting',
-                start: '2018-01-12T14:30:00',
-                className: 'b-l b-2x b-drank'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2018-01-12T17:30:00',
-                className: 'b-l b-2x b-lightred'
-            },
-            {
-                title: 'Dinner',
-                start: '2018-12-12T20:00:00',
-                className: 'b-l b-2x b-amethyst'
-            },
-            {
-                title: 'Birthday Party',
-                start: '2018-01-13T07:00:00',
-                className: 'b-l b-2x b-primary'
-            },
-            {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2018-01-28',
-                className: 'b-l b-2x b-greensea'
+                url: Routing.generate('gas_calendar_loader'),
+                type: 'POST',
+                // A way to add custom filters to your event listeners
+                data: {
+                },
+                error: function() {
+                    //alert('There was an error while fetching Google Calendar!');
+                }
             }
         ]
     });
@@ -169,37 +137,37 @@
     });
 
     // Submitting new event form
-    $('#add-event').submit(function(e){
-        e.preventDefault();
-        var form = $(this);
-
-        var newEvent = $('<div class="event-control p-10 mb-10">'+$('#event-title').val() +'<a class="pull-right text-muted event-remove"><i class="fa fa-trash-o"></i></a></div>');
-
-        $('#external-events .event-control:last').after(newEvent);
-
-        $('#external-events .event-control').each(function() {
-
-            // store data so the calendar knows to render an event upon drop
-            $(this).data('event', {
-                title: $.trim($(this).text()), // use the element's text as the event title
-                stick: true // maintain when user navigates (see docs on the renderEvent method)
-            });
-
-            // make the event draggable using jQuery UI
-            $(this).draggable({
-                zIndex: 999,
-                revert: true,      // will cause the event to go back to its
-                revertDuration: 0  //  original position after the drag
-            });
-
-        });
-
-        $('#external-events .event-control .event-remove').on('click', function(){
-            $(this).parent().remove();
-        });
-
-        form[0].reset();
-
-        $('#cal-new-event').modal('hide');
-
-    });
+    // $('#add-event').submit(function(e){
+    //     e.preventDefault();
+    //     var form = $(this);
+    //
+    //     var newEvent = $('<div class="event-control p-10 mb-10">'+$('#event-title').val() +'<a class="pull-right text-muted event-remove"><i class="fa fa-trash-o"></i></a></div>');
+    //
+    //     $('#external-events .event-control:last').after(newEvent);
+    //
+    //     $('#external-events .event-control').each(function() {
+    //
+    //         // store data so the calendar knows to render an event upon drop
+    //         $(this).data('event', {
+    //             title: $.trim($(this).text()), // use the element's text as the event title
+    //             stick: true // maintain when user navigates (see docs on the renderEvent method)
+    //         });
+    //
+    //         // make the event draggable using jQuery UI
+    //         $(this).draggable({
+    //             zIndex: 999,
+    //             revert: true,      // will cause the event to go back to its
+    //             revertDuration: 0  //  original position after the drag
+    //         });
+    //
+    //     });
+    //
+    //     $('#external-events .event-control .event-remove').on('click', function(){
+    //         $(this).parent().remove();
+    //     });
+    //
+    //     form[0].reset();
+    //
+    //     $('#cal-new-event').modal('hide');
+    //
+    // });
