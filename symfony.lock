@@ -242,6 +242,9 @@
     "symfony/polyfill-apcu": {
         "version": "v1.8.0"
     },
+    "symfony/polyfill-ctype": {
+        "version": "v1.8.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.8.0"
     },
@@ -283,6 +286,9 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/serializer": {
+        "version": "v3.4.11"
     },
     "symfony/stopwatch": {
         "version": "v3.4.9"

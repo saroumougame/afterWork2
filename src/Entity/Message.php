@@ -31,7 +31,7 @@ class Message
      */
     private $message;
     /**
-     * @ORM\Column(type="string", name="date")
+     * @ORM\Column(type="string", name="datetime")
      */
     private $date;
     /**

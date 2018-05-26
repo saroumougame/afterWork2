@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block content %}
+    <section class="content blog-page">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Fils d'Actualité
+                        <small>nom groupe</small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>
+                        <li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- Textarea -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Message</strong></h2>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            {{ form_start(formMessage) }}
+                                            {{ form_errors(formMessage) }}
+
+                                            {{ form_row(formMessage.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Ajoute ton message'} }) }}
+                                            
+                                            {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                                            {{ form_end(formMessage) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Textarea -->
+            {#<div class="row">#}
+                {#<div class="col-lg-8 col-md-12">#}
+                    {#{{ form(formMessage) }}#}
+
+                {#</div>#}
+
+                {#{% for message in allMessage %}#}
+                {#<li>{{ message.message }}</li>#}
+                    {#<li>{{ message.date }}</li>#}
+                    {#<li>{{ message.username }}</li>#}
+                {#{% endfor %}#}
+            {#</div>#}
+        </div>
+    </section>
+{% endblock %}
+

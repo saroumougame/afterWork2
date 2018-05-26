@@ -26,6 +26,10 @@ message_add:
     path: message/add/{groupe}
     defaults: { _controller: 'App\Controller\MessageController::addAction' }
 
+message_insert:
+    path: message/insert/{groupe}
+    defaults: { _controller: 'App\Controller\MessageController::insertAction' }
+
 
 
 
