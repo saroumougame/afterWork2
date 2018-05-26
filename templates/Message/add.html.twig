@@ -36,7 +36,7 @@
                                             {{ form_errors(formMessage) }}
 
                                             {{ form_row(formMessage.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Ajoute ton message'} }) }}
-                                            
+
                                             {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
                                             {{ form_end(formMessage) }}
 
@@ -49,12 +49,32 @@
                 </div>
             </div>
             <!-- #END# Textarea -->
-            {#<div class="row">#}
-                {#<div class="col-lg-8 col-md-12">#}
-                    {#{{ form(formMessage) }}#}
+<!-- INBOX MESSAGE -->
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Commentaire</strong></h2>
+                    </div>
+                    <div class="body">
+                        <ul class="inbox-widget list-unstyled clearfix">
+                            {% for message in allMessage %}
 
-                {#</div>#}
+                            <li class="inbox-inner"> <a href="javascript:void(0)">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-info">
+                                            <p class="author">{{ message.username }}</p>
+                                            <p class="inbox-message">{{ message.message }}</p>
+                                            <p class="inbox-date">{{ message.date }}</p>
+                                        </div>
+                                    </div>
+                              </li>
 
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END INBOX MESSAGE -->
                 {#{% for message in allMessage %}#}
                 {#<li>{{ message.message }}</li>#}
                     {#<li>{{ message.date }}</li>#}

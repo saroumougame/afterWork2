@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Form/MessageType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Repository/MessageRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Message/add.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/AfterWork.iml" afterPath="$PROJECT_DIR$/.idea/AfterWork.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/message.frm" afterPath="$PROJECT_DIR$/Database/afterwork/message.frm" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/message.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/message.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/user.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/user.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_buffer_pool" afterPath="$PROJECT_DIR$/Database/ib_buffer_pool" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_logfile0" afterPath="$PROJECT_DIR$/Database/ib_logfile0" />
-      <change beforePath="$PROJECT_DIR$/Database/ibdata1" afterPath="$PROJECT_DIR$/Database/ibdata1" />
-      <change beforePath="$PROJECT_DIR$/Database/ibtmp1" afterPath="$PROJECT_DIR$/Database/ibtmp1" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MessageController.php" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" afterPath="$PROJECT_DIR$/src/Entity/Message.php" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
+      <change beforePath="$PROJECT_DIR$/templates/Message/add.html.twig" afterPath="$PROJECT_DIR$/templates/Message/add.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +44,8 @@
       <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Message/add.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="469">
+              <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -388,12 +368,12 @@
       <workItem from="1527001371728" duration="5639000" />
       <workItem from="1527073570365" duration="1794000" />
       <workItem from="1527165331913" duration="8705000" />
-      <workItem from="1527318381689" duration="3555000" />
+      <workItem from="1527318381689" duration="4251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66322000" />
+    <option name="totallyTimeSpent" value="67018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -816,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Message/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="469">
+          <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
           <folding />
         </state>
       </provider>
