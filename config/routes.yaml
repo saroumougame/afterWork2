@@ -31,7 +31,9 @@ message_insert:
     defaults: { _controller: 'App\Controller\MessageController::insertAction' }
 
 
-
+event_show:
+    path: event/show
+    defaults: { _controller: 'App\Controller\EventController::indexAction' }
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
