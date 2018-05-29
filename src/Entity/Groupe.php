@@ -82,7 +82,7 @@ class Groupe
     public function getNom() { return $this->nom; }
 
 
-    /** @return ArrayCollection Une liste de relation fonctionDotation.  */
+    /** @return ArrayCollection Une liste de relation fonctionuser.  */
     public function getRelationsUserGoupe() { return $this->relationsUserGroupe; }
 
 
@@ -110,8 +110,9 @@ class Groupe
     //FUNCTIONS
 
     /**
-     * Ajoute à la fonction une relation dotation-fonction
-     * @param DotationFonction $relation La relation fonction-dotation à ajouter à l'agent
+     * Ajoute à la groupe une relation user-groupe
+     * @param
+     * usergroupe $relation La relation groupe-user à ajouter à l'agent
      */
     public function addRelationUserGroupe(UserGroupe $relation) {
         // Si l'objet fait déjà partie de la collection on ne l'ajoute pas
@@ -122,16 +123,16 @@ class Groupe
     }
 
     /**
-     * Retire une relation dotation-fonction .
-     * @param DotationFonction $relation La relation fonction-dotation a retirer de l'agent.
+     * Retire une relation user-groupe .
+     * @param usergroupe $relation La relation groupe-user a retirer de l'agent.
      */
-    public function removeDotationFonction(DotationFonction $relation) {
-        $this->relationsDotationFonction->removeElement($relation);
+    public function removeUserGroupe(UserGroupe $relation) {
+        $this->relationsUserGroupe->removeElement($relation);
     }
 
-    public function remouveAllDotationFonction(){
-        foreach ($this->getRelationsDotationFonction() as $d){
-            $this->removeDotationFonction($d);
+    public function remouveAllUserGroupe(){
+        foreach ($this->getRelationsUserGroupe() as $d){
+            $this->removeUserGroupe($d);
         }
     }
 

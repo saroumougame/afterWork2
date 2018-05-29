@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aea31056298e6a8908d847597c9241b7",
+    "content-hash": "d4a3eb7570bf9d19f05dce5a88913f85",
     "packages": [
+        {
+            "name": "adesigns/calendar-bundle",
+            "version": "1.1.1",
+            "target-dir": "ADesigns/CalendarBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adesigns/calendar-bundle.git",
+                "reference": "24aacadbbc37a685f54ee2ee53f79b2c6b6879bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adesigns/calendar-bundle/zipball/24aacadbbc37a685f54ee2ee53f79b2c6b6879bb",
+                "reference": "24aacadbbc37a685f54ee2ee53f79b2c6b6879bb",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": ">=1.0",
+                "friendsofsymfony/jsrouting-bundle": "~1.1",
+                "symfony/framework-bundle": "~2.1|~3.0",
+                "symfony/twig-bundle": "~2.1|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/debug": "~2.3|~3.0",
+                "symfony/finder": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "^2.7|~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "ADesigns\\CalendarBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Yudin",
+                    "email": "mikeyudin@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This bundle allows you to integrate the jQuery FullCalendar plugin into your Symfony2 application.",
+            "homepage": "http://github.com/adesigns/calendar-bundle",
+            "keywords": [
+                "calendar",
+                "fullcalendar",
+                "jquery calendar"
+            ],
+            "time": "2016-02-14T23:25:22+00:00"
+        },
         {
             "name": "clue/stream-filter",
             "version": "v1.4.0",
@@ -901,6 +955,65 @@
                 "validator"
             ],
             "time": "2018-04-10T10:11:19+00:00"
+        },
+        {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "49c1069132dcef371fb526351569deabeb6f0d8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/49c1069132dcef371fb526351569deabeb6f0d8e",
+                "reference": "49c1069132dcef371fb526351569deabeb6f0d8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.3|3.*",
+                "symfony/framework-bundle": "~2.3|3.*",
+                "symfony/serializer": "~2.3|3.*",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~2.4|3.*",
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\JsRoutingBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                },
+                {
+                    "name": "William DURAND",
+                    "email": "william.durand1@gmail.com"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing",
+                "javascript",
+                "routing"
+            ],
+            "time": "2017-08-25T15:21:42+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -5342,6 +5455,34 @@
             "time": "2018-04-30T16:54:07+00:00"
         },
         {
+            "name": "symfony/webpack-encore-pack",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/webpack-encore-pack.git",
+                "reference": "f9f4e91659e5f55de370d6aebe77e64bce35e4d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-pack/zipball/f9f4e91659e5f55de370d6aebe77e64bce35e4d3",
+                "reference": "f9f4e91659e5f55de370d6aebe77e64bce35e4d3",
+                "shasum": ""
+            },
+            "type": "symfony-pack",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/webpack-encore",
+                    "url": "https://github.com/symfony/webpack-encore"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Symfony Encore",
+            "time": "2017-12-21T02:20:09+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v3.4.9",
             "source": {
@@ -5520,6 +5661,46 @@
                 "templating"
             ],
             "time": "2018-04-02T09:24:19+00:00"
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/JsonpCallbackValidator.git",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/JsonpCallbackValidator/zipball/1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "JSONP callback validator.",
+            "time": "2014-01-20T22:35:06+00:00"
         }
     ],
     "packages-dev": [

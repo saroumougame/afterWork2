@@ -64,7 +64,8 @@
                                         <div class="inbox-item-info">
                                             <p class="author">{{ message.username }}</p>
                                             <p class="inbox-message">{{ message.message }}</p>
-                                            <p class="inbox-date">{{ message.date }}</p>
+                                            <p class="inbox-date">{{ message.date|date("m/d/Y") }}
+                                            </p>
                                         </div>
                                     </div>
                               </li>

@@ -1,4 +1,7 @@
 {
+    "adesigns/calendar-bundle": {
+        "version": "1.1.1"
+    },
     "clue/stream-filter": {
         "version": "v1.4.0"
     },
@@ -49,6 +52,9 @@
     },
     "egulias/email-validator": {
         "version": "2.1.4"
+    },
+    "friendsofsymfony/jsrouting-bundle": {
+        "version": "1.6.3"
     },
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
@@ -341,6 +347,15 @@
             "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
         }
     },
+    "symfony/webpack-encore-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "0e8ef1deeaef761e1defbec0be694237660ab13a"
+        }
+    },
     "symfony/yaml": {
         "version": "v3.4.9"
     },
@@ -355,5 +370,8 @@
     },
     "twig/twig": {
         "version": "v2.4.8"
+    },
+    "willdurand/jsonp-callback-validator": {
+        "version": "v1.1.0"
     }
 }

@@ -17,3 +17,10 @@ Database/ibdata1
 composer\.lock
 
 Database/ibtmp1
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-pack ###

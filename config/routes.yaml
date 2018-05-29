@@ -1,6 +1,12 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+adesigns_calendar:
+    resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+
 index:
     path: /
     defaults: { _controller: 'App\Controller\LandingController::indexAction' }
@@ -34,6 +40,16 @@ message_insert:
 event_show:
     path: event/show
     defaults: { _controller: 'App\Controller\EventController::indexAction' }
+
+event_calendar_loader:
+    path: event/loadcalendar
+    defaults: { _controller: 'App\Controller\CalendarEventController::loadCalendarAction' }
+    options:
+        expose: true
+
+event_add:
+    path: event/add/{groupe}
+    defaults: { _controller: 'App\Controller\EventController::addAction' }
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory

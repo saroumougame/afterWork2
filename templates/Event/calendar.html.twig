@@ -35,8 +35,8 @@
             <div class="row">
                 <div class="col-md-12 col-lg-4 col-xl-4">
                     <div class="body">
-                        <button type="button" class="btn btn-round btn-info waves-effect" data-toggle="modal" data-target="#addevent">Add Events</button>
-                        <button class="btn btn-default hidden-lg-up m-t-0 float-right" data-toggle="collapse" data-target="#open-events" aria-expanded="false" aria-controls="collapseExample"><i class="zmdi zmdi-chevron-down"></i></button>
+                        <a  href="{{ path('event_add', {'groupe': idgroupe}) }}" > <button class="btn btn-round btn-info" >Ajouter un évenement</button></a>
+                        {#<button class="btn btn-default hidden-lg-up m-t-0 float-right" data-toggle="collapse" data-target="#open-events" aria-expanded="false" aria-controls="collapseExample"><i class="zmdi zmdi-chevron-down"></i></button>#}
                         <div class="collapse-xs collapse-sm collapse" id="open-events">
                             <hr>
                             <div class="event-name b-primary row">
@@ -112,6 +112,8 @@
 
 {% block js %}
 
+
+
     <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/Oreo/bundles/fullcalendarscripts.bundle.js') }}"></script>
@@ -119,4 +121,3 @@
     <script src="{{ asset('assets/Oreo/js/pages/calendar/calendar.js') }}"></script>
 
 {% endblock %}
-

@@ -24,5 +24,12 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
+    app.service.calendar_listener:
+        class: App\Listener\CalendarEventListener
+        arguments: ["@doctrine.orm.entity_manager", "@service_container"]
+        tags:
+            - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents}
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

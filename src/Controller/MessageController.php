@@ -44,7 +44,7 @@ class MessageController extends Controller
         $message = new Message();
 
 
-
+        $allMessage =$this->showMessage($groupe->getIdGroupe());
           $formMessage = $this->getForm($message,$groupe);
 
 
@@ -57,8 +57,8 @@ class MessageController extends Controller
             $message = $formMessage->getData();
             $message->setMessage($message->getMessage());
             $date = new \DateTime('now');
-            $dateresult = $date->format('Y-m-d H:i:s');
-            $message->setDate($dateresult);
+           // $dateresult = $date->format('Y-m-d H:i:s');
+            $message->setDate($date);
             $message->setUsername($this->getUser()->getUsername());
             // relates this product to the category
             $message->setGroupe($groupe);
@@ -75,6 +75,7 @@ class MessageController extends Controller
 
         return $this->render ( 'Message/add.html.twig', array (
             'formMessage' => $formMessage->createView(),
+            'allMessage' => $allMessage
         ));
     }
 

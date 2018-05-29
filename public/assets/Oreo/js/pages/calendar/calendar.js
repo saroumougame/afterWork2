@@ -7,7 +7,7 @@
         },
         // defaultDate: '2018-01-12',
         editable: false, // true
-        droppable: false, // this allows things to be dropped onto the calendar
+        droppable: false, // this allows things to be dropped onto the calendar  event_calendar_loader
         closeText: "Fermer",
         prevText: "Précédent",
         nextText: "Suivant",
@@ -40,18 +40,24 @@
             }
         },
         eventLimit: true, // allow "more" link when too many events
+        // events: [{"title":"toto","start":"2018-05-27T13:26:52+00:00","url":"http:\/\/www.google.com","backgroundColor":"#FF0000","borderColor":"#FF0000","textColor":"#FFFFFF","className":"my-custom-class","end":"2018-06-28T00:00:00+00:00","allDay":true}]
         eventSources: [
             {
-                url: Routing.generate('gas_calendar_loader'),
+                url: 'loadcalendar',
                 type: 'POST',
                 // A way to add custom filters to your event listeners
                 data: {
                 },
+                success: function(){
+                   // alert('good');
+                },
                 error: function() {
-                    //alert('There was an error while fetching Google Calendar!');
+                    alert('ereurrrrr !');
                 }
             }
         ]
+
+
     });
 
     // Hide default header
