@@ -13,13 +13,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Groupe;
 use App\Entity\Message;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use App\Entity\Event;
+use DateTime;
 
 
 class EventController extends Controller
@@ -38,11 +39,8 @@ class EventController extends Controller
     {
         $event = new Event();
 
-
         $formEvent = $this->getForm($event,$groupe);
-
         $formEvent->handleRequest($request);
-
 
         if ($formEvent->isSubmitted()) {
 
@@ -75,10 +73,21 @@ class EventController extends Controller
 
         $form->add("titre", TextType::class, array('label' => false))
             ->add("message", TextType::class, array('label' => false))
-            ->add("datedebut", DateType::class, array('label' => false))
-            ->add("datefin", DateType::class, array('label' => false))
             ->add("adress", TextType::class, array('label' => false))
+            ->add('datedebut', DateTimeType::class, array(
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'label' => false))
+
+            ->add("datefin", DateTimeType::class, array(
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'label' => false))
             ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
+
+
         return $form->getForm();
     }
 
