@@ -1,7 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sridar
- * Date: 30/05/2018
- * Time: 18:31
- */
+
+
+namespace App\Repository;
+
+use App\Entity\Groupe;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
+use Doctrine\ORM\QueryBuilder;
+
+
+class UserGroupeRepository extends EntityRepository
+{
+
+    public function liste(){
+
+
+    }
+
+}

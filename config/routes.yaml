@@ -51,6 +51,13 @@ event_add:
     path: event/add/{groupe}
     defaults: { _controller: 'App\Controller\EventController::addAction' }
 
+
+user_invite:
+    path: user/invite/{groupe}
+    defaults: { _controller: 'App\Controller\MessageController::userInviteAction' }
+
+
+
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
     #resource: '@AppBundle/Resources/config/routing/'

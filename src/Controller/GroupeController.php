@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\UserGroupe;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +25,7 @@ class GroupeController extends Controller
 {
 
 
-    public function showAction()
+    public function showAction(Request $request)
     {
 
         $param = array('user' => $this->getUser());
@@ -37,11 +38,12 @@ class GroupeController extends Controller
 
             ->getGroupeByUser($param);
 
-dump($groupe);
-
+        $newgroupe = new Groupe();
+        $formgroupe = $this->getForm($newgroupe);
 
         return $this->render('Groupe/mygroupe.html.twig', array(
             'groupe' => $groupe,
+            'formAddGroupe' => $formgroupe->createView(),
         ));
     }
 
@@ -56,23 +58,20 @@ dump($groupe);
         $formGroupe->handleRequest($request);
 
         if ($formGroupe->isSubmitted()) {
-          //  if ($formGroupe->isValid()) {
+
                 $groupe = $formGroupe->getData();
-                dump($groupe->getNom());
                 $groupe->setNom($groupe->getNom());
-                $groupe->setRelationsUserGroupe(NULL);
+                $usergroupe = new UserGroupe($this->getUser(), $groupe);
                 $entityManager = $this->getDoctrine()->getManager();
+                 $entityManager->persist($usergroupe);
                 $entityManager->persist($groupe);
                 $entityManager->flush();
-                return $this->redirect($this->generateUrl('groupe_add'));
-//            } else {
-//                return false;
-//            }
+
+                return $this->redirect($this->generateUrl('message_add', array('groupe'=>$groupe->getIdgroupe())));
+
         }
 
-        return $this->render ( 'Groupe/addGroupe.html.twig', array (
-            'formGroupe' => $formGroupe->createView()
-        ));
+        return $formGroupe;
 
     }
 
@@ -87,6 +86,41 @@ dump($groupe);
             ->add('submit', SubmitType::class, array('label' => 'Update'));
         return $form->getForm();
     }
+
+
+
+            private function inGroupeAction(Groupe $groupe, Request $request){
+
+                $username = 'admin';
+
+
+                $formInvitation = $this->getFormInvitation($groupe);
+
+
+                $formInvitation->handleRequest($request);
+
+                if ($formInvitation->isSubmitted()) {
+
+
+                    $entityManager = $this->getDoctrine()->getManager();
+
+                    $user = $entityManager->getRepository(User::class)
+                        ->getUserByUsername(array('username'=> $username));
+
+                    $usergroupe = new UserGroupe($user, $groupe);
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $entityManager->persist($usergroupe);
+                    $entityManager->persist($groupe);
+                    $entityManager->flush();
+
+                }
+
+        }
+
+
+
+
+
 
 
 

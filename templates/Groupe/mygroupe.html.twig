@@ -21,6 +21,8 @@
         </div>
         <div class="container-fluid">
             <div class="row">
+                {{ form(formAddGroupe) }}
+
                 <div class="col-lg-8 col-md-12">
                     {% for groupes in groupe %}
                         <li>{{ groupes.nom }}</li>

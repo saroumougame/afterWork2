@@ -34,18 +34,16 @@ class UserGroupe
 
 
     /**
-     * @ORM\Column(name="user", type="integer", nullable=false)
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="relationsUserGroupe")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
     private $user;
 
 
     /**
- * @ORM\Column(name="groupe", type="integer", nullable=false)
- * @ORM\ManyToOne(targetEntity="App\Entity\Groupe", inversedBy="relationsUserGroupe")
- * @ORM\JoinColumn(nullable=false)
- */
+     * @ORM\ManyToOne(targetEntity="App\Entity\Groupe", inversedBy="relationsUserGroupe")
+     * @ORM\JoinColumn(name="groupe", referencedColumnName="idGroupe")
+     */
     private $groupe;
 
 
@@ -60,9 +58,9 @@ class UserGroupe
     //Setters
 
     /** @param Dotation $user L'agent de la relation agent-syndicat. */
-    public function setDotation($user) { $this->user = $user; }
+    public function setUser($user) { $this->user = $user; }
     /** @param Fonction $fonction Le syndicat dans la relation agent-syndicat. */
-    public function setFonction($groupe) { $this->groupe = $groupe; }
+    public function setGroupe($groupe) { $this->groupe = $groupe; }
 
 
 }

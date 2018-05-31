@@ -35,7 +35,6 @@ class Groupe
     /**
      * @var ArrayCollection
      *
-     * @ORM\Column(name="user_groupe", nullable=true)
      * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="groupe", orphanRemoval=true)
      */
     private $relationsUserGroupe;

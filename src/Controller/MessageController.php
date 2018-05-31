@@ -12,6 +12,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Groupe;
 use App\Entity\Message;
+use App\Entity\User;
+use App\Entity\UserGroupe;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,7 +34,11 @@ class MessageController extends Controller
 
         $formMessage = $this->getForm($message,$groupe);
 
+        $formInvitationUser = $this->getFormInvitation($groupe);
+
+        dump($formMessage);
         return $this->render ( 'Message/add.html.twig', array (
+            'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage
         ));
@@ -116,6 +122,59 @@ class MessageController extends Controller
     }
 
 
+    private function getFormInvitation(groupe $groupe){
+        $defaultData = array('user' => 'User a inviter');
+        $form = $this->createFormBuilder($defaultData, array(
+            'action' =>$this->generateUrl('user_invite',array('groupe'=>$groupe->getIdGroupe())),
+            'method' => 'POST',
+
+        ));
+
+
+        $form
+            ->add('username', TextType::class)
+            ->add('submit', SubmitType::class)
+            ;
+        return $form->getForm();
+    }
+
+
+    public function userInviteAction(Groupe $groupe, Request $request)
+    {
+
+        $formInvitationUser = $this->getFormInvitation($groupe);
+
+        $formInvitationUser->handleRequest($request);
+
+        if ($formInvitationUser->isSubmitted()) {
+
+            $username = $formInvitationUser->getData();
+
+
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+
+            $user = $entityManager->getRepository(User::class)
+
+                ->findOneBy(array('username'=> $username['username']));
+
+
+            $usergroupe = new UserGroupe($user, $groupe);
+
+            $entityManager->persist($usergroupe);
+            $entityManager->flush();
+
+
+
+
+          //  return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
+        }
+
+
+
+       return 'lol';
+    }
 
 
 }
