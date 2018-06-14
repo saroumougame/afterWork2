@@ -48,20 +48,21 @@ class NotifController extends Controller
     public function accepterAction(UserGroupe $userGroupe){
 
 
+
+
+
         $userGroupe->setStatue(1);
 
               $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($userGroupe);
                 $entityManager->flush($userGroupe);
 
-        dump($userGroupe);
+
+        return $this->redirect($this->generateUrl('user_invite_notif'));
 
 
 
-        return $this->render ( 'Invitation/inviteGroupe.html.twig', array (
-            '' => 
-            'inviteGroupe' => $relationgroupe,
-        ));
+
 
 
 
