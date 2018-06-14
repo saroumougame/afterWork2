@@ -6,7 +6,7 @@ docker-compose build
 
 docker-compose up -d
 
-docker exec -it symfonyApp bash
+docker exec -it symfonyApp bash 
 
 composer update
 
@@ -24,8 +24,6 @@ http://localhost:8090
 Login : root Password : root
 
 
-
-
 Symfony command
 Mise à jour de la Database
 php bin/console doctrine:migrations:diff
@@ -35,3 +33,11 @@ php bin/console doctrine:migrations:migrate
 ce rajouter le role admin
 
 bin/console fos:user:promote <votrenomutilisateur> ROLE_ADMIN
+
+
+
+Lien serveur de Prod
+
+http://after-tech.fr/
+
+
