@@ -4,23 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/config/routes.yaml" description="groupe_add:&#10;    path: groupe/add&#10;    defaults: { _..." line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/NotifController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/tj_user_groupe.frm" afterPath="$PROJECT_DIR$/Database/afterwork/tj_user_groupe.frm" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/tj_user_groupe.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/tj_user_groupe.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/afterwork/user.ibd" afterPath="$PROJECT_DIR$/Database/afterwork/user.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_buffer_pool" afterPath="$PROJECT_DIR$/Database/ib_buffer_pool" />
-      <change beforePath="$PROJECT_DIR$/Database/ib_logfile0" afterPath="$PROJECT_DIR$/Database/ib_logfile0" />
-      <change beforePath="$PROJECT_DIR$/Database/ibdata1" afterPath="$PROJECT_DIR$/Database/ibdata1" />
-      <change beforePath="$PROJECT_DIR$/Database/ibtmp1" afterPath="$PROJECT_DIR$/Database/ibtmp1" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_index_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" afterPath="$PROJECT_DIR$/Database/mysql/innodb_table_stats.ibd" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MessageController.php" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserGroupe.php" afterPath="$PROJECT_DIR$/src/Entity/UserGroupe.php" />
-    </list>
+    <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
