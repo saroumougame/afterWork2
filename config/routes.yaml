@@ -64,6 +64,10 @@ user_invite_accepte:
     path: user/inviteaccepte/{id}
     defaults: { _controller: 'App\Controller\NotifController::accepterAction' }
 
+user_invite_refuser:
+    path: user/inviterefuser/{id}
+    defaults: { _controller: 'App\Controller\NotifController::refuserAction' }
+
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
