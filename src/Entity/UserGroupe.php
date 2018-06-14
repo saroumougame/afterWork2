@@ -46,6 +46,65 @@ class UserGroupe
      */
     private $groupe;
 
+    /**
+     * @ORM\Column(type="integer", name="statue")
+     */
+    private $statue;
+
+    /**
+     * @ORM\Column(type="integer", name="inviteur")
+     */
+    private $inviteur;
+
+    /**
+     * @return mixed
+     */
+    public function getStatue()
+    {
+        return $this->statue;
+    }
+
+    /**
+     * @param mixed $statue
+     */
+    public function setStatue($statue)
+    {
+        $this->statue = $statue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInviteur()
+    {
+        return $this->inviteur;
+    }
+
+    /**
+     * @param mixed $inviteur
+     */
+    public function setInviteur($inviteur)
+    {
+        $this->inviteur = $inviteur;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+
 
 
     //Getters

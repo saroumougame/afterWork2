@@ -56,6 +56,13 @@ user_invite:
     path: user/invite/{groupe}
     defaults: { _controller: 'App\Controller\MessageController::userInviteAction' }
 
+user_invite_notif:
+    path: user/invitenotif
+    defaults: { _controller: 'App\Controller\NotifController::showAction' }
+
+user_invite_accepte:
+    path: user/inviteaccepte/{id}
+    defaults: { _controller: 'App\Controller\NotifController::accepterAction' }
 
 
 #app_bundle:

@@ -34,9 +34,9 @@ class MessageController extends Controller
 
         $formMessage = $this->getForm($message,$groupe);
 
-        $formInvitationUser = $this->getFormInvitation($groupe);
+        $formInvitationUser = $this->getFormInvitation($groupe, $formMessage ,$allMessage);
 
-        dump($formMessage);
+
         return $this->render ( 'Message/add.html.twig', array (
             'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
@@ -150,8 +150,6 @@ class MessageController extends Controller
 
             $username = $formInvitationUser->getData();
 
-
-
             $entityManager = $this->getDoctrine()->getManager();
 
 
@@ -159,21 +157,22 @@ class MessageController extends Controller
 
                 ->findOneBy(array('username'=> $username['username']));
 
+if(!isset($user)){
 
-            $usergroupe = new UserGroupe($user, $groupe);
+    $usergroupe = new UserGroupe($user, $groupe);
 
-            $entityManager->persist($usergroupe);
-            $entityManager->flush();
+    $entityManager->persist($usergroupe);
+    $entityManager->flush();
+
+}
 
 
 
-
-          //  return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
+            return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
         }
 
 
-
-       return 'lol';
+        return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
     }
 
 
