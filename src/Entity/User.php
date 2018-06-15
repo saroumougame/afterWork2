@@ -8,10 +8,10 @@ use FOS\UserBundle\Model\User as FOSUser;
 
 /**
  * User
- *
+*
  * @ORM\Table(name="user")
- * @ORM\Entity
- */
+* @ORM\Entity
+*/
 class User extends FOSUser
 {
 
@@ -35,6 +35,31 @@ class User extends FOSUser
      * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="User", orphanRemoval=true)
      */
     protected $relationsUserGroupe;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="user")
+     * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
+     */
+    private $entreprise;
+
+    /**
+     * @return mixed
+     */
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+
+    /**
+     * @param mixed $entreprise
+     */
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+    }
+
+
 
 
     public function getIdUserGroupe(): ?int

@@ -24,3 +24,5 @@ Database/ibtmp1
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-pack ###
+.idea/workspace.xml
+.idea/workspace.xml
