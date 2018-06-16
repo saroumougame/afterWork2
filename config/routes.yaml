@@ -64,7 +64,13 @@ user_invite_accepte:
     path: user/inviteaccepte/{id}
     defaults: { _controller: 'App\Controller\NotifController::accepterAction' }
 
+entreprise_add:
+    path: entreprise/add
+    defaults: { _controller: 'App\Controller\EntrepriseController::addAction' }
 
+entreprise_show:
+    path: entreprise/show/{id}
+    defaults: { _controller: 'App\Controller\EntrepriseController::showAction' }
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
     #resource: '@AppBundle/Resources/config/routing/'
