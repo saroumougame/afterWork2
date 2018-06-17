@@ -75,6 +75,7 @@ class GroupeController extends Controller
 
     }
 
+
     private function getForm(groupe $groupe){
         $form = $this->createFormBuilder($groupe, array(
             'action' =>$this->generateUrl('groupe_add'),
@@ -82,8 +83,20 @@ class GroupeController extends Controller
 
         ));
 
-        $form->add("nom", TextType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Update'));
+        $form->add("nom", TextType::class, 
+            array(
+                'attr' => array(
+                    'class' => 'form-control'
+                )
+            )
+        )
+            ->add('submit', SubmitType::class,
+               array(
+                'label' => 'Valider', 
+                'attr' => array(
+                    'class' => 'btn btn-default btn-round waves-effect p-3 mt-3'))
+                    
+        );
         return $form->getForm();
     }
 
