@@ -48,6 +48,12 @@ class Entreprise{
     private $user;
 
 
+
+
+
+
+
+
     /**
      * @return mixed
      */

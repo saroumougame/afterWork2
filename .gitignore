@@ -4,6 +4,7 @@
 /public/bundles/
 /var/
 /vendor/
+/Database/
 ###< symfony/framework-bundle ###
 
 Database/auto\.cnf
