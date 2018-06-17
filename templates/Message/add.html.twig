@@ -46,7 +46,7 @@
             </div>
             <!-- #END# Textarea -->
 <!-- INBOX MESSAGE -->
-            <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12 p-0">
                 <div class="card">
                     <div class="header">
                         <h2><strong>Commentaire</strong></h2>
@@ -56,6 +56,7 @@
                             {% for message in allMessage %}
 
                             <li class="inbox-inner"> <a href="javascript:void(0)">
+                                <div class="inbox-img"> <img src="{{ asset('assets/Oreo/images/xs/avatar2.jpg') }}" class="rounded" alt=""> </div>
                                     <div class="inbox-item">
                                         <div class="inbox-item-info">
                                             <p class="author">{{ message.username }}</p>
