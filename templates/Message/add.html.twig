@@ -31,17 +31,12 @@
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                       {{ form(formInviteUser) }}
-                                        <div class="form-line">
-                                            {{ form_start(formMessage) }}
-                                            {{ form_errors(formMessage) }}
+                                        <!-- wtf is this... -->
+                                 <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#userInviteModal">Ajouter un utilisateur</button>
+                                       
+                                 <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#messageModal">Ajouter un message</button>
 
-                                            {{ form_row(formMessage.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Ajoute ton message'} }) }}
-
-                                            {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
-                                            {{ form_end(formMessage) }}
-
-                                        </div>
+   
                                     </div>
                                 </div>
                             </div>
@@ -85,5 +80,48 @@
             {#</div>#}
         </div>
     </section>
+
+
+   <div class="modal fade" id="userInviteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="defaultModalLabel">Ajouter un utilisateur</h4>
+            </div>
+            <div class="modal-body"> 
+                    {{ form(formInviteUser) }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <div class="modal fade" id="messageModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="defaultModalLabel">Ajouter un utilisateur</h4>
+            </div>
+            <div class="modal-body"> 
+                                      <div class="form-line">
+
+                                            {{ form_start(formMessage) }}
+                                            {{ form_errors(formMessage) }}
+
+                                            {{ form_row(formMessage.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Ajoute ton message'} }) }}
+
+                                            {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                                            {{ form_end(formMessage) }}
+
+                                        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
