@@ -7,7 +7,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Mes Groupe
+                    <h2>Mes Groupes
                         <small>La team</small>
                     </h2>
                 </div>
@@ -20,16 +20,57 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                {{ form(formAddGroupe) }}
+                 <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#defaultModal">Ajouter un groupe</button>
+            <div class="row mt-5">
+                
+                
 
                 <div class="col-lg-8 col-md-12">
-                    {% for groupes in groupe %}
-                        <li>{{ groupes.nom }}</li>
-                    {% endfor %}
+
+                        <div class="body table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for groupes in groupe %}
+                                 <tr>
+                                    <td>{{ groupes.nom }}</td>
+                                 </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                 
+
+           
 
                 </div>
             </div>
+
+
         </div>
     </section>
+
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="defaultModalLabel">Ajouter un groupe</h4>
+            </div>
+            <div class="modal-body"> 
+                    {{ form(formAddGroupe) }} 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- {{ form(formAddGroupe) }} -->
 {% endblock %}
+
