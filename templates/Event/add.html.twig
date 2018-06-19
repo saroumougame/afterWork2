@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/fullcalendar/fullcalendar.min.css') }}"/>
+
+        <link href="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" rel="stylesheet" />
     {% endblock %}
 
 
@@ -80,7 +82,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        {{ form_row(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}
+                                        {{ form_row(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +92,7 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        {{ form_row(formEvent.datefin, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}
+                                        {{ form_row(formEvent.datefin, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}
                                     </div>
                                 </div>
                             </div>
@@ -121,5 +123,9 @@
     <script src="{{ asset('assets/Oreo/bundles/fullcalendarscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/Oreo/js/pages/calendar/calendar.js') }}"></script>
+    
+    <script src="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/forms/basic-form-elements.js') }}"></script>
+
 
 {% endblock %}
