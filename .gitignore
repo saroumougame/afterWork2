@@ -18,6 +18,8 @@ composer\.lock
 
 Database/ibtmp1
 
+Database/*
+
 ###> symfony/webpack-encore-pack ###
 /node_modules/
 /public/build/
