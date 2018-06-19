@@ -47,11 +47,7 @@ class Entreprise{
      */
     private $user;
 
-
-
-
-
-
+    
 
 
     /**
