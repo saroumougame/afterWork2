@@ -71,6 +71,15 @@ entreprise_add:
 entreprise_show:
     path: entreprise/show/{id}
     defaults: { _controller: 'App\Controller\EntrepriseController::showAction' }
+
+entreprise_actu_show:
+    path: entreprise/actu/show/{id}
+    defaults: { _controller: 'App\Controller\EntrepriseController::showActuAction' }
+
+
+
+
+
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
     #resource: '@AppBundle/Resources/config/routing/'

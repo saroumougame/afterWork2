@@ -35,12 +35,20 @@ class ActuEntreprise
      */
     private $date;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=20, nullable=false)
+     */
+    private $titre;
+
     
     /**
      * @ORM\ManyToOne(targetEntity="ActuEntreprise", inversedBy="id")
      * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
      */
-    private $Entreprise;
+    private $entreprise;
+
 
 
 
@@ -87,6 +95,22 @@ class ActuEntreprise
     public function setEntreprise($Entreprise)
     {
         $this->Entreprise = $Entreprise;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitre(): string
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param string $titre
+     */
+    public function setTitre(string $titre)
+    {
+        $this->titre = $titre;
     }
 
 

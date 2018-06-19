@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\ActuEntreprise;
 use App\Entity\Entreprise;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Form\EntrepriseType;
@@ -18,11 +19,10 @@ class EntrepriseController extends Controller
 {
 
 
-
-    public function addAction(Request $request){
+    public function addAction(Request $request)
+    {
 
         $entreprise = new Entreprise();
-
 
 
         $form = $this->getForm($entreprise);
@@ -30,7 +30,7 @@ class EntrepriseController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted()) {
 
 
             $dataEntreprise = $form->getData();
@@ -46,15 +46,14 @@ class EntrepriseController extends Controller
             $em->persist($entreprise);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('message_add', array('groupe'=> '1')));
+            return $this->redirect($this->generateUrl('message_add', array('groupe' => '1')));
 
         }
 
 
-        return $this->render ( 'Entreprise/add.html.twig', array (
+        return $this->render('Entreprise/add.html.twig', array(
             'formEntreprise' => $form->createView(),
         ));
-
 
 
     }
@@ -65,15 +64,16 @@ class EntrepriseController extends Controller
      * @param Entreprise $entreprise
      * @return \Symfony\Component\Form\Form
      */
-    private function getForm(Entreprise $entreprise){
-        return  $this->createForm(EntrepriseType::class, $entreprise);
+    private function getForm(Entreprise $entreprise)
+    {
+        return $this->createForm(EntrepriseType::class, $entreprise);
     }
 
 
+    public function showAction(Entreprise $entreprise)
+    {
 
-    public function showAction(Entreprise $entreprise){
-
-        return $this->render ( 'Entreprise/show.html.twig', array (
+        return $this->render('Entreprise/show.html.twig', array(
             'entreprise' => $entreprise,
         ));
 
@@ -81,10 +81,43 @@ class EntrepriseController extends Controller
     }
 
 
+    public function showActuAction(Entreprise $entreprise)
+    {
 
 
+        $entityManager = $this->getDoctrine()->getManager();
 
 
+        $actu = $entityManager->getRepository(ActuEntreprise::class)
+            ->findBy(array('Entreprise' => $entreprise));
+
+        dump($actu);
+
+
+        return $this->render('Entreprise/Actu/show.html.twig', array(
+            'actu' => $actu,
+        ));
+
+
+    }
+
+
+    public function addActuAction(Entreprise $entreprise)
+    {
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+
+        $actu = $entityManager->getRepository(ActuEntreprise::class)
+            ->findBy(array('Entreprise' => $entreprise));
+
+
+        return $this->render('Entreprise/Actu/show.html.twig', array(
+            'actu' => $actu,
+        ));
+
+    }
 
 
 }
