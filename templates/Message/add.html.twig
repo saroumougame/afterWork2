@@ -31,12 +31,23 @@
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <!-- wtf is this... -->
+                                        <!--  is this... -->
                                  <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#userInviteModal">Ajouter un utilisateur</button>
                                        
                                  <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#messageModal">Ajouter un message</button>
 
-   
+                                        <a  href="{{ path('event_show') }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
+
+
+                                        <!--  CKEDITOR -->
+                                        {{ form_start(formMessage) }}
+                                        {{ form_errors(formMessage) }}
+
+                                        {{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}
+
+                                        {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                                        {{ form_end(formMessage) }}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -98,30 +109,22 @@
     </div>
 </div>
 
-   <div class="modal fade" id="messageModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="title" id="defaultModalLabel">Ajouter un utilisateur</h4>
-            </div>
-            <div class="modal-body"> 
-                                      <div class="form-line">
 
-                                            {{ form_start(formMessage) }}
-                                            {{ form_errors(formMessage) }}
+{% endblock %}
 
-                                            {{ form_row(formMessage.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Ajoute ton message'} }) }}
 
-                                            {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
-                                            {{ form_end(formMessage) }}
+{% block js %}
+    <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/morrisscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/jvectormap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
 
-                                        </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
-            </div>
-        </div>
-    </div>
-</div>
+    <script src="{{ asset('assets/Oreo/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/forms/editors.js') }}"></script>
+
+
 {% endblock %}
 

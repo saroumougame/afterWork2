@@ -233,7 +233,7 @@
                         <div class="user-info">
                             <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>Michael</h4>
+                                <h4>{{ app.user.username }}</h4>
                                 <small>UI UX Designer</small>
                             </div>
                             <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
@@ -242,7 +242,14 @@
                         </div>
                     </li>
                     {% block nav %}
-
+                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Groupe</span></a>
+                            <ul class="ml-menu">
+                                <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
+                                <li><a href="{{ path('groupe_show') }}">Mon Profil</a></li>
+                                <li><a href="{{ path('groupe_show') }}">Les Entreprises</a></li>
+                                <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
+                            </ul>
+                        </li>
                     {% endblock %}
                 </ul>
             </div>

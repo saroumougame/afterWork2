@@ -45,7 +45,7 @@
                             <ul class="list-group">
 
                                 {% for inviteGroupes in inviteGroupe %}
-                                    <li class="list-group-item" >{{ inviteGroupes.Groupe.nom}} <a  href="{{ path('user_invite_accepte', {'id': inviteGroupes.id}) }}" > <button class="btn btn-primary right-align">Accepter </button> </a>  <button class="btn btn-primary"> {{ inviteGroupes.id}} Refuser</button> </li>
+                                    <li class="list-group-item" >{{ inviteGroupes.Groupe.nom}} <a  href="{{ path('user_invite_accepte', {'id': inviteGroupes.id}) }}" > <button class="btn btn-primary right-align">Accepter </button> </a>  <a  href="{{ path('user_invite_refuser', {'id': inviteGroupes.id}) }}" > <button class="btn btn-primary right-align">Refuser </button> </a> </li>
 
                                 {% endfor %}
 

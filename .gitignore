@@ -6,6 +6,7 @@
 /vendor/
 /Database/
 /Database/*
+/web/*
 ###< symfony/framework-bundle ###
 
 Database/auto\.cnf

@@ -30,14 +30,14 @@ class MessageController extends Controller
 
         $message = new Message();
 
-        $allMessage =$this->showMessage($groupe->getIdGroupe());
+        $allMessage = $this->showMessage($groupe->getIdGroupe());
 
-        $formMessage = $this->getForm($message,$groupe);
+        $formMessage = $this->getForm($message, $groupe);
 
-        $formInvitationUser = $this->getFormInvitation($groupe, $formMessage ,$allMessage);
+        $formInvitationUser = $this->getFormInvitation($groupe, $formMessage, $allMessage);
 
 
-        return $this->render ( 'Message/add.html.twig', array (
+        return $this->render('Message/add.html.twig', array(
             'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage
@@ -50,12 +50,11 @@ class MessageController extends Controller
         $message = new Message();
 
 
-        $allMessage =$this->showMessage($groupe->getIdGroupe());
-          $formMessage = $this->getForm($message,$groupe);
+        $allMessage = $this->showMessage($groupe->getIdGroupe());
+        $formMessage = $this->getForm($message, $groupe);
 
 
         $formMessage->handleRequest($request);
-
 
 
         if ($formMessage->isSubmitted()) {
@@ -63,7 +62,7 @@ class MessageController extends Controller
             $message = $formMessage->getData();
             $message->setMessage($message->getMessage());
             $date = new \DateTime('now');
-           // $dateresult = $date->format('Y-m-d H:i:s');
+            // $dateresult = $date->format('Y-m-d H:i:s');
             $message->setDate($date);
             $message->setUsername($this->getUser()->getUsername());
             // relates this product to the category
@@ -79,30 +78,29 @@ class MessageController extends Controller
         }
 
 
-        return $this->render ( 'Message/add.html.twig', array (
+        return $this->render('Message/add.html.twig', array(
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage
         ));
     }
 
 
-
-    private function getForm(Message $message,Groupe $groupe){
+    private function getForm(Message $message, Groupe $groupe)
+    {
         $form = $this->createFormBuilder($message, array(
-            'action' =>$this->generateUrl('message_insert', array('groupe' => $groupe->getIdGroupe())),
+            'action' => $this->generateUrl('message_insert', array('groupe' => $groupe->getIdGroupe())),
             'method' => 'POST',
 
         ));
 
-        $form->add("message", TextareaType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
+        $form->add("message", TextareaType::class);
+        $form->add('submit', SubmitType::class, array('label' => 'Envoyer'));
         return $form->getForm();
     }
 
 
-    private function showMessage($idGroupe){
-
-
+    private function showMessage($idGroupe)
+    {
 
 
         $entityManager = $this->getDoctrine()->getManager();
@@ -112,20 +110,20 @@ class MessageController extends Controller
             ['groupe' => $idGroupe]
         );
 
-       // $serializer = $this->get('serializer');
-      //  $response = $serializer->serialize($Message,'json');
+        // $serializer = $this->get('serializer');
+        //  $response = $serializer->serialize($Message,'json');
 
         return $Message;
-
 
 
     }
 
 
-    private function getFormInvitation(groupe $groupe){
+    private function getFormInvitation(groupe $groupe)
+    {
         $defaultData = array('user' => 'User a inviter');
         $form = $this->createFormBuilder($defaultData, array(
-            'action' =>$this->generateUrl('user_invite',array('groupe'=>$groupe->getIdGroupe())),
+            'action' => $this->generateUrl('user_invite', array('groupe' => $groupe->getIdGroupe())),
             'method' => 'POST',
 
         ));
@@ -133,8 +131,7 @@ class MessageController extends Controller
 
         $form
             ->add('username', TextType::class)
-            ->add('submit', SubmitType::class)
-            ;
+            ->add('submit', SubmitType::class);
         return $form->getForm();
     }
 
@@ -154,18 +151,16 @@ class MessageController extends Controller
 
 
             $user = $entityManager->getRepository(User::class)
+                ->findOneBy(array('username' => $username['username']));
 
-                ->findOneBy(array('username'=> $username['username']));
+            if (!isset($user)) {
 
-if(!isset($user)){
+                $usergroupe = new UserGroupe($user, $groupe);
 
-    $usergroupe = new UserGroupe($user, $groupe);
+                $entityManager->persist($usergroupe);
+                $entityManager->flush();
 
-    $entityManager->persist($usergroupe);
-    $entityManager->flush();
-
-}
-
+            }
 
 
             return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
@@ -173,6 +168,24 @@ if(!isset($user)){
 
 
         return $this->redirectToRoute('message_add', array('groupe' => $groupe->getIdGroupe()));
+    }
+
+
+    public function quitterAction(Groupe $groupe)
+    {
+
+        $user = $this->getUser();
+        $entityManager = $this->getDoctrine()->getManager();
+        $usergroupe =  $entityManager->getRepository(UserGroupe::class)->findOneBy(array('user' => $user, 'groupe' => $groupe));
+
+
+        $entityManager->remove($usergroupe);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('groupe_show');
+
+
+
     }
 
 

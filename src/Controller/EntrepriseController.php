@@ -89,10 +89,7 @@ class EntrepriseController extends Controller
 
 
         $actu = $entityManager->getRepository(ActuEntreprise::class)
-            ->findBy(array('Entreprise' => $entreprise));
-
-        dump($actu);
-
+            ->findBy(array('entreprise' => $entreprise));
 
         return $this->render('Entreprise/Actu/show.html.twig', array(
             'actu' => $actu,
@@ -110,7 +107,7 @@ class EntrepriseController extends Controller
 
 
         $actu = $entityManager->getRepository(ActuEntreprise::class)
-            ->findBy(array('Entreprise' => $entreprise));
+            ->findBy(array('entreprise' => $entreprise));
 
 
         return $this->render('Entreprise/Actu/show.html.twig', array(
