@@ -43,9 +43,40 @@
                         </div>
                         <div class="body">
                             <ul class="list-group">
+                                {{ form_start(formEntreprise) }}
+                                {{ form_errors(formEntreprise) }}
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                        <label >Titre</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8">
+                                        <div class="form-group">
+                                            {{ form_row(formEntreprise.nom, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Nom de votre entreprise'} })}}
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                                {{ form(formEntreprise) }}
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                        <label >Description</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8">
+                                        <div class="form-group">
+                                            {{ form_row(formEntreprise.description, { 'attr': {'class': 'ckeditor'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-sm-8 offset-sm-2">
+                                        {{ form_row(formEntreprise.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                                    </div>
+                                </div>
+
+                                {{ form_end(formEntreprise) }}
+
+
 
                             </ul>
                         </div>
@@ -56,4 +87,21 @@
         </div>
         </div>
     </section>
+{% endblock %}
+
+
+
+{% block js %}
+    <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/morrisscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/jvectormap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
+
+    <script src="{{ asset('assets/Oreo/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/forms/editors.js') }}"></script>
+
+
 {% endblock %}
