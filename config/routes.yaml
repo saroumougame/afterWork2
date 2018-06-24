@@ -18,7 +18,7 @@ user_connexion:
 
 profil_add_groupe:
     path: profil/
-    defaults: { _controller: 'App\Controller\ProfilController::addGroupeAction' }
+    defaults: { _controller: 'App\Controller\ProfilController::showAction' }
 
 groupe_show:
     path: groupe/show

@@ -12,6 +12,8 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap-select/css/bootstrap-select.css') }}"/>
+        
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
@@ -233,7 +235,7 @@
                         <div class="user-info">
                             <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>{{ app.user.username }}</h4>
+                                <h4>{# app.user.username #}</h4>
                                 <small>UI UX Designer</small>
                             </div>
                             <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
@@ -340,6 +342,10 @@ loltoto
 <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
 <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
 <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
+<script src="{{ asset('assets/Oreo/plugins/momentjs/moment.js') }}"></script>
+<script src="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script> 
+<script src="{{ asset('assets/Oreo/js/pages/forms/basic-form-elements.js') }}"></script>
+
 
 {% endblock %}
 
