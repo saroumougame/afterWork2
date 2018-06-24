@@ -1,5 +1,9 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+
+
+{# https://symfony.com/doc/current/bundles/FOSUserBundle/overriding_templates.html #}
+{# https://progblog.io/Symfony-3-1-and-FOSUserBundle-Overriding-the-Default-Templates/ #}
 {% block fos_user_content %}
     {{ include('@FOSUser/Security/login_content.html.twig') }}
 {% endblock fos_user_content %}
