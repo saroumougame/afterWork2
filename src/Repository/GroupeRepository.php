@@ -27,6 +27,7 @@ public function liste(){
             ->join('g.relationsUserGroupe', 'ug') // , col 60 near 'ug': Error: Class App\Entity\Groupe has no association named relationsUserGroupe
             ->join('ug.user', 'user')
             ->where('ug.user = :user')
+            ->andWhere('ug.statue = 1')
         ->setParameter('user', $param ['user']);
 
 

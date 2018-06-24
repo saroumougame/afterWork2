@@ -32,6 +32,10 @@ message_add:
     path: message/add/{groupe}
     defaults: { _controller: 'App\Controller\MessageController::addAction' }
 
+quitter_groupe:
+    path: groupe/quitter/{groupe}
+    defaults: { _controller: 'App\Controller\MessageController::quitterAction' }
+
 message_insert:
     path: message/insert/{groupe}
     defaults: { _controller: 'App\Controller\MessageController::insertAction' }
@@ -63,6 +67,25 @@ user_invite_notif:
 user_invite_accepte:
     path: user/inviteaccepte/{id}
     defaults: { _controller: 'App\Controller\NotifController::accepterAction' }
+
+user_invite_refuser:
+    path: user/inviterefuser/{id}
+    defaults: { _controller: 'App\Controller\NotifController::refuserAction' }
+
+entreprise_add:
+    path: entreprise/add
+    defaults: { _controller: 'App\Controller\EntrepriseController::addAction' }
+
+entreprise_show:
+    path: entreprise/show/{id}
+    defaults: { _controller: 'App\Controller\EntrepriseController::showAction' }
+
+entreprise_actu_show:
+    path: entreprise/actu/show/{id}
+    defaults: { _controller: 'App\Controller\EntrepriseController::showActuAction' }
+
+
+
 
 
 #app_bundle:

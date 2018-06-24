@@ -60,5 +60,27 @@ class User extends FOSUser
 
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="user")
+     * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
+     */
+    private $entreprise;
+
+    /**
+     * @return mixed
+     */
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+
+    /**
+     * @param mixed $entreprise
+     */
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+    }
+
 
 }
