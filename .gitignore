@@ -5,6 +5,8 @@
 /var/
 /vendor/
 /Database/
+/Database/*
+/web/*
 ###< symfony/framework-bundle ###
 
 Database/auto\.cnf
@@ -25,3 +27,5 @@ Database/ibtmp1
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-pack ###
+Database/afterwork/groupe.ibd
+Database/afterwork/groupe.ibd

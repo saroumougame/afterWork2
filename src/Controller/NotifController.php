@@ -48,9 +48,6 @@ class NotifController extends Controller
     public function accepterAction(UserGroupe $userGroupe){
 
 
-
-
-
         $userGroupe->setStatue(1);
 
               $entityManager = $this->getDoctrine()->getManager();
@@ -62,12 +59,20 @@ class NotifController extends Controller
 
 
 
-
-
-
-
-
 }
+
+
+    public function refuserAction(UserGroupe $userGroupe){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($userGroupe);
+        $entityManager->flush($userGroupe);
+
+        return $this->redirect($this->generateUrl('user_invite_notif'));
+
+
+
+    }
 
 
 

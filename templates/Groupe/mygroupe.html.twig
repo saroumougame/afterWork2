@@ -1,35 +1,133 @@
 {% extends 'base.html.twig' %}
 
-
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/css/ecommerce.css') }}"/>
+    {% endblock %}
 
 {% block content %}
-    <section class="content blog-page">
+    <section class="content ecommerce-page">
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Mes Groupe
-                        <small>La team</small>
+                    <h2>Mes Groupes
+                        <small>Ajouter un groupe</small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>
-                        <li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                        <li class="breadcrumb-item"><a href="ec-dashboard.html">eCommerce</a></li>
+                        <li class="breadcrumb-item active">Product</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                {{ form(formAddGroupe) }}
+            <div class="row clearfix">
 
-                <div class="col-lg-8 col-md-12">
-                    {% for groupes in groupe %}
-                        <li>{{ groupes.nom }}</li>
-                    {% endfor %}
-
+                {% for groupes in groupe %}
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="card product_item">
+                        <div class="body">
+                            <div class="cp_img">
+                                <img src="{{ asset('assets/Oreo/images/ecommerce/1.png') }}" alt="Product" class="img-fluid" />
+                                <div class="hover">
+                                    <a href="{{ path('message_add', {'groupe': groupes.idGroupe}) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                    <a href="{{ path('quitter_groupe', {'groupe': groupes.idGroupe}) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-delete"></i></a>
+                                </div>
+                            </div>
+                            <div class="product_details">
+                                <h5><a href="ec-product-detail.html">{{ groupes.nom }}</a></h5>
+                                <ul class="product_price list-unstyled">
+                                    {#<li class="old_price">$16.00</li>#}
+                                    {#<li class="new_price">$13.00</li>#}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
+            </div>
             </div>
         </div>
     </section>
+
+
+
+
+    {#<section class="content blog-page">#}
+        {#<div class="block-header">#}
+            {#<div class="row">#}
+                {#<div class="col-lg-7 col-md-6 col-sm-12">#}
+                    {#<h2>Mes Groupes#}
+                        {#<small>La team</small>#}
+                    {#</h2>#}
+                {#</div>#}
+                {#<div class="col-lg-5 col-md-6 col-sm-12">#}
+                    {#<ul class="breadcrumb float-md-right">#}
+                        {#<li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>#}
+                        {#<li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>#}
+                    {#</ul>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="container-fluid">#}
+                 {#<button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#defaultModal">Ajouter un groupe</button>#}
+            {#<div class="row mt-5">#}
+                {##}
+                {##}
+
+                {#<div class="col-lg-8 col-md-12">#}
+
+                        {#<div class="body table-responsive">#}
+                        {#<table class="table table-striped">#}
+                            {#<thead>#}
+                                {#<tr>#}
+                                    {#<th>Nom</th>#}
+                                {#</tr>#}
+                            {#</thead>#}
+                            {#<tbody>#}
+                            {#{% for groupes in groupe %}#}
+                                 {#<tr>#}
+                                    {#<td>{{ groupes.nom }}</td>#}
+                                 {#</tr>#}
+                            {#{% endfor %}#}
+
+                            {#</tbody>#}
+                        {#</table>#}
+                    {#</div>#}
+
+                 {##}
+
+           {##}
+
+                {#</div>#}
+            {#</div>#}
+
+
+        {#</div>#}
+    {#</section>#}
+
+    {#<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">#}
+    {#<div class="modal-dialog" role="document">#}
+        {#<div class="modal-content">#}
+            {#<div class="modal-header">#}
+                {#<h4 class="title" id="defaultModalLabel">Ajouter un groupe</h4>#}
+            {#</div>#}
+            {#<div class="modal-body">#}
+                    {#{{ form(formAddGroupe) }}#}
+            {#</div>#}
+            {#<div class="modal-footer">#}
+                {#<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
+    <!-- {{ form(formAddGroupe) }} -->
 {% endblock %}
+
