@@ -11,6 +11,14 @@ index:
     path: /
     defaults: { _controller: 'App\Controller\LandingController::indexAction' }
 
+contribuer:
+    path: /comment-contribuer
+    defaults: { _controller: 'App\Controller\LandingController::contribuerAction' }
+
+comment_contribuer:
+    path: /comment-contribuer
+    defaults: { _controller: 'App\Controller\LandingController::commentContribuerAction' }
+
 user_connexion:
     path: /connexion
     defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
