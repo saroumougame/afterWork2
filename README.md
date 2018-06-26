@@ -50,3 +50,5 @@ bin/console fos:user:promote <votrenomutilisateur> ROLE_ADMIN
 http://after-tech.fr/
 
 DATABASE_URL=mysql://root:root@symfonyDb:3306/afterwork
+
+travisCi
