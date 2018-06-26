@@ -100,7 +100,7 @@ class ActuEntreprise
     /**
      * @return string
      */
-    public function getTitre(): string
+    public function getTitre()
     {
         return $this->titre;
     }

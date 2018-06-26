@@ -80,9 +80,10 @@ entreprise_show:
     path: entreprise/show/{id}
     defaults: { _controller: 'App\Controller\EntrepriseController::showAction' }
 
-entreprise_actu_show:
-    path: entreprise/actu/show/{id}
-    defaults: { _controller: 'App\Controller\EntrepriseController::showActuAction' }
+entreprise_actu_insert:
+    path: entreprise/actu/insert
+    defaults: { _controller: 'App\Controller\EntrepriseController::actuInsertAction' }
+
 
 
 

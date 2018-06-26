@@ -8,15 +8,15 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2> {{ entreprise.nom }}
-                        <small>Fil d'actualité</small>
+                    <h2>Actualités de
+                        <small>Cree une entreprise</small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Entreprise</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Presentation</a></li>
-                        <li class="breadcrumb-item active"> {{ entreprise.nom }}</li>
+                        <li class="breadcrumb-item active"></li>
                     </ul>
                 </div>
             </div>
@@ -43,25 +43,15 @@
                         </div>
                         <div class="body">
                             <ul class="list-group">
-                                formulaire :
-                                {{ form(formActu) }}
 
-                            dans modal (
-                        {{ entreprise.nom }}
+                                {% for actus in actu  %}
+                                    {{ actus.message }}
+                                {%   endfor %}
 
-                                {{ entreprise.description }}  )
+
+
+
                             </ul>
-
-
-
-                            liste tout actu by entreprise -----
-                            {% for actus in actu  %}
-                                {{ actus.message }}
-                            {%   endfor %}
-
-
-
-
                         </div>
                     </div>
                 </div>

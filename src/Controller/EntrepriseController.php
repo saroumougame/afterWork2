@@ -14,6 +14,8 @@ use App\Entity\Entreprise;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Form\EntrepriseType;
 use Symfony\Component\HttpFoundation\Request;
+use App\Form\ActuEntrepriseType;
+
 
 class EntrepriseController extends Controller
 {
@@ -70,20 +72,26 @@ class EntrepriseController extends Controller
     }
 
 
-    public function showAction(Entreprise $entreprise)
+    public function showAction(Request $request, Entreprise $entreprise)
     {
+
+        $actu = $this->showActuByEntreprise($entreprise);
+
+        $form = $this->addActuByEntreprise($request, $entreprise);
+
 
         return $this->render('Entreprise/show.html.twig', array(
             'entreprise' => $entreprise,
+            'actu' => $actu,
+            'formActu'  => $form,
         ));
 
 
     }
 
 
-    public function showActuAction(Entreprise $entreprise)
+    public function showActuByEntreprise(Entreprise $entreprise)
     {
-
 
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -91,30 +99,83 @@ class EntrepriseController extends Controller
         $actu = $entityManager->getRepository(ActuEntreprise::class)
             ->findBy(array('entreprise' => $entreprise));
 
-        return $this->render('Entreprise/Actu/show.html.twig', array(
-            'actu' => $actu,
-        ));
-
+        return  $actu;
 
     }
 
 
-    public function addActuAction(Entreprise $entreprise)
+    public function addActuByEntreprise(Request $request,Entreprise $entreprise)
     {
 
 
-        $entityManager = $this->getDoctrine()->getManager();
+        $newactu = new ActuEntreprise();
+
+        $form = $this->getFormActu($newactu);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+
+            $actu = $form->getData();
+            $actu->setEntreprise($entreprise);
+            $actu->setDate(new \DateTime('now'));
+            $em = $this->getDoctrine()->getManager();
+            dump($actu);
+            $em->persist($actu);
+            $em->flush();
 
 
-        $actu = $entityManager->getRepository(ActuEntreprise::class)
-            ->findBy(array('entreprise' => $entreprise));
+
+            return $this->redirect($this->generateUrl('entreprise_add',array( 'id' => $entreprise->getId())));
+
+        }
 
 
-        return $this->render('Entreprise/Actu/show.html.twig', array(
-            'actu' => $actu,
-        ));
+            return $form->createView();
+
 
     }
+
+
+    private function getFormActu(ActuEntreprise $actuEntreprise)
+    {
+        return $this->createForm(ActuEntrepriseType::class, $actuEntreprise);
+    }
+
+
+
+    public function actuInsertAction(Request $request, Entreprise $entreprise)
+    {
+
+        $newactu = new ActuEntreprise();
+
+        $form = $this->getFormActu($newactu);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+
+            $actu = $form->getData();
+            $actu->setEntreprise($entreprise);
+            $actu->setDate(new \DateTime('now'));
+            $em = $this->getDoctrine()->getManager();
+            dump($actu);
+            $em->persist($actu);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('entreprise_show', array('id' => $entreprise->getId())));
+
+        }
+
+
+        return $form->createView();
+
+
+    }
+
+
+
+
 
 
 }
