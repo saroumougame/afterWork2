@@ -1,349 +1,111 @@
 <!doctype html>
 <html class="no-js " lang="en">
 <head>
-    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-        <title>ADMIN AFTERWORL</title>
-        <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <title>Connexion</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
-        {% endblock %}
+    <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/Oreo/css/authentication.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
+</head>
+
+<body class="theme-purple authentication sidebar-collapse">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+    <div class="container">
+        <div class="navbar-translate n_logo">
+            <a class="navbar-brand" href="javascript:void(0);" title="" target="_blank">Oreo</a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);">Search Result</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" title="Follow us on Twitter" href="javascript:void(0);" target="_blank">
+                        <i class="zmdi zmdi-twitter"></i>
+                        <p class="d-lg-none d-xl-none">Twitter</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" title="Like us on Facebook" href="javascript:void(0);" target="_blank">
+                        <i class="zmdi zmdi-facebook"></i>
+                        <p class="d-lg-none d-xl-none">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" title="Follow us on Instagram" href="javascript:void(0);" target="_blank">
+                        <i class="zmdi zmdi-instagram"></i>
+                        <p class="d-lg-none d-xl-none">Instagram</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-white btn-round" href="sign-up.html">SIGN UP</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+<div class="page-header">
+    <div class="page-header-image" style="background-image:url({{ asset('assets/Oreo/images/login.jpg') }})"></div>
+
+    {% block content %}
+
 
     {% endblock %}
-</head>
-<body class="theme-purple">
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="{{ asset('assets/Oreo/images/logo.svg') }}" width="48" height="48" alt="Oreo"></div>
-        <p>chargement...</p>
-    </div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="http://thememakker.com/contact/" target="_blank">Contact Us</a></li>
+                    <li><a href="http://thememakker.com/about/" target="_blank">About Us</a></li>
+                    <li><a href="javascript:void(0);">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>,
+                <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
+            </div>
+        </div>
+    </footer>
 </div>
-<!-- Overlay For Sidebars -->
-<div class="overlay"></div>
 
-<!-- Top Bar -->
-<nav class="navbar p-l-5 p-r-5">
-    <ul class="nav navbar-nav navbar-left">
-        <li>
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/Oreo/images/logo.svg') }}" width="30" alt="Oreo"><span class="m-l-10">Oreo</span></a>
-            </div>
-        </li>
-        <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>
-        <li class="hidden-md-down"><a href="events.html" title="Events"><i class="zmdi zmdi-calendar"></i></a></li>
-        <li class="hidden-md-down"><a href="mail-inbox.html" title="Inbox"><i class="zmdi zmdi-email"></i></a></li>
-        <li><a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a></li>
-        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i>
-                <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-            </a>
-            <ul class="dropdown-menu pullDown">
-                <li class="body">
-                    <ul class="menu list-unstyled">
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object" src="{{ asset('assets/Oreo/images/xs/avatar2.jpg') }}" alt="">
-                                    <div class="media-body">
-                                        <span class="name">Sophia <span class="time">30min ago</span></span>
-                                        <span class="message">There are many variations of passages</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object" src="{{ asset('assets/Oreo/images/xs/avatar3.jpg') }}" alt="">
-                                    <div class="media-body">
-                                        <span class="name">Sophia <span class="time">31min ago</span></span>
-                                        <span class="message">There are many variations of passages of Lorem Ipsum</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object" src="{{ asset('assets/Oreo/images/xs/avatar4.jpg') }}" alt="">
-                                    <div class="media-body">
-                                        <span class="name">Isabella <span class="time">35min ago</span></span>
-                                        <span class="message">There are many variations of passages</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object" src="{{ asset('assets/Oreo/images/xs/avatar5.jpg') }}" alt="">
-                                    <div class="media-body">
-                                        <span class="name">Alexander <span class="time">35min ago</span></span>
-                                        <span class="message">Contrary to popular belief, Lorem Ipsum random</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object" src="{{ asset('assets/Oreo/images/xs/avatar6.jpg') }}" alt="">
-                                    <div class="media-body">
-                                        <span class="name">Grayson <span class="time">1hr ago</span></span>
-                                        <span class="message">There are many variations of passages</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer"> <a href="javascript:void(0);">View All</a> </li>
-            </ul>
-        </li>
-        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-flag"></i>
-                <div class="notify">
-                    <span class="heartbit"></span>
-                    <span class="point"></span>
-                </div>
-            </a>
-            <ul class="dropdown-menu pullDown">
-                <li class="header">Project</li>
-                <li class="body">
-                    <ul class="menu tasks list-unstyled">
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="progress-container progress-primary">
-                                    <span class="progress-badge">eCommerce Website</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                            <span class="progress-value">86%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar2.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar3.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar4.jpg') }}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="progress-container progress-info">
-                                    <span class="progress-badge">iOS Game Dev</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                            <span class="progress-value">45%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar10.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar9.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar8.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar7.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar6.jpg') }}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <div class="progress-container progress-warning">
-                                    <span class="progress-badge">Home Development</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                            <span class="progress-value">29%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar5.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar2.jpg') }}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{{ asset('assets/Oreo/images/xs/avatar7.jpg') }}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="footer"><a href="javascript:void(0);">View All</a></li>
-            </ul>
-        </li>
-        <li class="hidden-sm-down">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <span class="input-group-addon">
-                    <i class="zmdi zmdi-search"></i>
-                </span>
-            </div>
-        </li>
-        <li class="float-right">
-            <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
-            <a href="sign-in.html" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
-            <a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
-        </li>
-    </ul>
-</nav>
-
-<!-- Left Sidebar -->
-<aside id="leftsidebar" class="sidebar">
-    <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Menu</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"><i class="zmdi zmdi-account m-r-5"></i>User</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane stretchRight active" id="dashboard">
-            <div class="menu">
-                <ul class="list">
-                    <li>
-                        <div class="user-info">
-                            <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
-                            <div class="detail">
-                                <h4>lol</h4>
-                                <small>UI UX Designer</small>
-                            </div>
-                            <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a>
-                        </div>
-                    </li>
-                    {% block nav %}
-                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Groupe</span></a>
-                            <ul class="ml-menu">
-                                <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
-                                <li><a href="{{ path('groupe_show') }}">Mon Profil</a></li>
-                                <li><a href="{{ path('entreprise_add') }}">Les Entreprises</a></li>
-                                <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
-                            </ul>
-                        </li>
-                    {% endblock %}
-                </ul>
-            </div>
-        </div>
-        <div class="tab-pane stretchLeft" id="user">
-            <div class="menu">
-                <ul class="list">
-                    <li>
-                        <div class="user-info m-b-20 p-b-15">
-                            <div class="image"><a href=""><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
-                            <div class="detail">
-                                <h4>Michael</h4>
-                                <small>UI UX Designer</small>
-                            </div>
-                            <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a>
-                            <p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
-                            <div class="row">
-                                <div class="col-4">
-                                    <h5 class="m-b-5">852</h5>
-                                    <small>Following</small>
-                                </div>
-                                <div class="col-4">
-                                    <h5 class="m-b-5">13k</h5>
-                                    <small>Followers</small>
-                                </div>
-                                <div class="col-4">
-                                    <h5 class="m-b-5">234</h5>
-                                    <small>Post</small>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <small class="text-muted">Email address: </small>
-                        <p>michael@gmail.com</p>
-                        <hr>
-                        <small class="text-muted">Phone: </small>
-                        <p>+ 202-555-0191</p>
-                        <hr>
-                        <ul class="list-unstyled">
-                            <li>
-                                <div>Photoshop</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-blue " role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%"> <span class="sr-only">62% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Wordpress</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-green " role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%"> <span class="sr-only">87% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>HTML 5</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%"> <span class="sr-only">32% Complete</span> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div>Angular</div>
-                                <div class="progress m-b-20">
-                                    <div class="progress-bar l-blush" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" style="width: 43%"> <span class="sr-only">56% Complete</span> </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</aside>
-
-
-
-
-{% block content %}
-    loltoto
-{% endblock %}
 <!-- Jquery Core Js -->
+<script src="assets/bundles/libscripts.bundle.js"></script>
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
 
-{% block js %}
-    <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/morrisscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/jvectormap.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
-
-{% endblock %}
-
-
-
+<script>
+    $(".navbar-toggler").on('click',function() {
+        $("html").toggleClass("nav-open");
+    });
+    //=============================================================================
+    $('.form-control').on("focus", function() {
+        $(this).parent('.input-group').addClass("input-group-focus");
+    }).on("blur", function() {
+        $(this).parent(".input-group").removeClass("input-group-focus");
+    });
+</script>
 </body>
 </html>
