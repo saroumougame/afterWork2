@@ -17,3 +17,4 @@ before_install:
 script:
   - docker-compose -f docker-compose.travis.yml up -d
   - docker-compose -f docker-compose.travis.yml ps
+  - docker exec -it symfonyApp bash 
