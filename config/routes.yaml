@@ -85,7 +85,9 @@ entreprise_actu_insert:
     defaults: { _controller: 'App\Controller\EntrepriseController::actuInsertAction' }
 
 
-
+dashboard_show:
+    path: dashboard/
+    defaults: { _controller: 'App\Controller\DashboardController::showAction' }
 
 
 
