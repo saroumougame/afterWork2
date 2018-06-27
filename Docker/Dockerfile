@@ -10,4 +10,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN a2enmod rewrite
 RUN chmod -R 777 /etc/hosts
 RUN sh -c "echo '127.0.0.1   afterwork.ovh sous.afterwork.photogram.ovh' >> /etc/hosts"
+RUN composer update
 COPY ./Docker/000-default.conf /etc/apache2/sites-available/
