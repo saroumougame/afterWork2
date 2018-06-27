@@ -26,7 +26,6 @@ class EntrepriseController extends Controller
 
         $entreprise = new Entreprise();
 
-
         $form = $this->getForm($entreprise);
 
 
@@ -68,7 +67,7 @@ class EntrepriseController extends Controller
      */
     private function getForm(Entreprise $entreprise)
     {
-        return $this->createForm(EntrepriseType::class, $entreprise);
+        return $this->createForm(EntrepriseType::class, $entreprise, array('idEntreprise' => $entreprise->getId()));
     }
 
 
@@ -77,13 +76,15 @@ class EntrepriseController extends Controller
 
         $actu = $this->showActuByEntreprise($entreprise);
 
-        $form = $this->addActuByEntreprise($request, $entreprise);
+        $actuEntreprise = new ActuEntreprise();
+
+        $form = $this->getFormActu($actuEntreprise, $entreprise);
 
 
         return $this->render('Entreprise/show.html.twig', array(
             'entreprise' => $entreprise,
             'actu' => $actu,
-            'formActu'  => $form,
+            'formActu'  => $form->createView(),
         ));
 
 
@@ -110,7 +111,7 @@ class EntrepriseController extends Controller
 
         $newactu = new ActuEntreprise();
 
-        $form = $this->getFormActu($newactu);
+        $form = $this->getFormActu($newactu, $entreprise);
 
         $form->handleRequest($request);
 
@@ -120,7 +121,7 @@ class EntrepriseController extends Controller
             $actu->setEntreprise($entreprise);
             $actu->setDate(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
-            dump($actu);
+
             $em->persist($actu);
             $em->flush();
 
@@ -137,9 +138,12 @@ class EntrepriseController extends Controller
     }
 
 
-    private function getFormActu(ActuEntreprise $actuEntreprise)
+    private function getFormActu(ActuEntreprise $actuEntreprise, $entreprise)
     {
-        return $this->createForm(ActuEntrepriseType::class, $actuEntreprise);
+        return $this->createForm(ActuEntrepriseType::class, $actuEntreprise, array(
+            'action' => $this->generateUrl('entreprise_actu_insert',array('id' => $entreprise->getId())),
+            'method' => 'POST',
+        ));
     }
 
 
@@ -147,9 +151,11 @@ class EntrepriseController extends Controller
     public function actuInsertAction(Request $request, Entreprise $entreprise)
     {
 
+
+
         $newactu = new ActuEntreprise();
 
-        $form = $this->getFormActu($newactu);
+        $form = $this->getFormActu($newactu, $entreprise);
 
         $form->handleRequest($request);
 
@@ -159,7 +165,7 @@ class EntrepriseController extends Controller
             $actu->setEntreprise($entreprise);
             $actu->setDate(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
-            dump($actu);
+
             $em->persist($actu);
             $em->flush();
 

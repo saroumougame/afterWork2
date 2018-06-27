@@ -21,7 +21,6 @@ class ActuEntrepriseType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-           // ->setAction($this->generateUrl('entreprise_actu_insert'))
             ->add('titre', TextType::class, array('label' => false
             ))
             ->add('message', TextareaType::class,array('label' => false))
