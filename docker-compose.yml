@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./Docker/Dockerfile
     ports :
-     - "8080:80"
+     - "80:80"
     volumes:
      - ./:/var/www/html/
     links:
