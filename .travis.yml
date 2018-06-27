@@ -24,6 +24,7 @@ script:
   - docker exec -d symfonyApp composer update
 
 deploy:
+  - skip_cleanup: true
   - provider: script
     script: bash ./deploy.sh
     on:
