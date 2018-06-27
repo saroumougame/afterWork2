@@ -92,9 +92,9 @@ class ActuEntreprise
     /**
      * @param mixed $Entreprise
      */
-    public function setEntreprise($Entreprise)
+    public function setEntreprise($entreprise)
     {
-        $this->Entreprise = $Entreprise;
+        $this->entreprise = $entreprise;
     }
 
     /**

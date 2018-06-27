@@ -38,7 +38,7 @@ class EntrepriseController extends Controller
 
             $user = $this->getUser();
 
-            // dump($dataEntreprise);
+
             $entreprise->setNom($dataEntreprise->getNom());
             $entreprise->setDescription($dataEntreprise->getDescription());
             $user->setEntreprise($entreprise);
@@ -67,7 +67,7 @@ class EntrepriseController extends Controller
      */
     private function getForm(Entreprise $entreprise)
     {
-        return $this->createForm(EntrepriseType::class, $entreprise, array('idEntreprise' => $entreprise->getId()));
+        return $this->createForm(EntrepriseType::class, $entreprise);
     }
 
 
@@ -118,10 +118,11 @@ class EntrepriseController extends Controller
         if ($form->isSubmitted()) {
 
             $actu = $form->getData();
+
             $actu->setEntreprise($entreprise);
+
             $actu->setDate(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($actu);
             $em->flush();
 
@@ -162,7 +163,9 @@ class EntrepriseController extends Controller
         if ($form->isSubmitted()) {
 
             $actu = $form->getData();
+
             $actu->setEntreprise($entreprise);
+
             $actu->setDate(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
 
