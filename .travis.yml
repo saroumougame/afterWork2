@@ -25,8 +25,7 @@ script:
   #- docker exec -d symfonyApp bin/console phpUnit
 
 deploy:
-  - skip_cleanup: true
-  - provider: script
+    provider: script
     script: bash ./deploy.sh
     on:
       branch: master
