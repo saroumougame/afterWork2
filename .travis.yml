@@ -18,3 +18,9 @@ script:
   - docker-compose -f docker-compose.travis.yml up -d --build
   - docker-compose -f docker-compose.travis.yml ps
   - docker exec -d symfonyApp composer update
+
+deploy:
+  - provider: script
+    script: bash ./deploy.sh
+    on:
+      all_branches: true
