@@ -11,6 +11,10 @@ index:
     path: /
     defaults: { _controller: 'App\Controller\LandingController::indexAction' }
 
+contributing:
+    path: /contributing
+    defaults: { _controller: 'App\Controller\LandingController::contributingAction' }
+
 user_connexion:
     path: /connexion
     defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
