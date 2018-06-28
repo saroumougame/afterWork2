@@ -21,7 +21,6 @@ class LandingController extends Controller
     {
 
 
-
         return $this->render('Landing/index.html.twig', array(
             'toto' => 'lol',
         ));

@@ -101,7 +101,7 @@ class EntrepriseController extends Controller
 
 
         $actu = $entityManager->getRepository(ActuEntreprise::class)
-            ->findBy(array('entreprise' => $entreprise));
+            ->findBy(array('entreprise' => $entreprise), array('id' => 'DESC'));
 
         return  $actu;
 
