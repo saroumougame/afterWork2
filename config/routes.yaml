@@ -18,7 +18,7 @@ user_connexion:
 
 profil_add_groupe:
     path: profil/
-    defaults: { _controller: 'App\Controller\ProfilController::addGroupeAction' }
+    defaults: { _controller: 'App\Controller\ProfilController::showAction' }
 
 groupe_show:
     path: groupe/show
@@ -85,7 +85,9 @@ entreprise_actu_insert:
     defaults: { _controller: 'App\Controller\EntrepriseController::actuInsertAction' }
 
 
-
+dashboard_show:
+    path: dashboard/
+    defaults: { _controller: 'App\Controller\DashboardController::showAction' }
 
 
 

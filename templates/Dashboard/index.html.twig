@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section class="content home">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h2>Dashboard
+                </h2>
+            </div>            
+            <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+                                <div class="body">
+                                    <h2 class="number count-to m-t-0 m-b-5" data-from="0" data-to="{{ count }}" data-speed="1000" data-fresh-interval="700">501</h2>
+                                    <p class="text-muted">Nombre d'utilisateurs</p>
+                                    <span id="linecustom1">1,4,2,6,5,2,3,8,5,2</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+                                <div class="body">
+                                    <h2 class="number count-to m-t-0 m-b-5" data-from="0" data-to="{{ groupes }}" data-speed="2000" data-fresh-interval="700">2501</h2>
+                                    <p class="text-muted ">Nombres de groupes</p>
+                                    <span id="linecustom2">2,9,5,5,8,5,4,2,6</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+                                <div class="body">
+                                    <h2 class="number count-to m-t-0 m-b-5" data-from="0" data-to="{{ events }}" data-speed="2000" data-fresh-interval="700">6051</h2>
+                                    <p class="text-muted">Nombres d'évènements</p>
+                                    <span id="linecustom3">1,5,3,6,6,3,6,8,4,2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12">
+                <div class="row clearfix">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <ul class="row profile_state list-unstyled">
+                                <li class="col-lg-3 col-md-3 col-6">
+                                    <div class="body">
+                                        <i class="zmdi zmdi-eye col-amber"></i>
+                                        <h4>{{ Entreprise  }}</h4>
+                                        <span>Entreprises</span>
+                                    </div>
+                                </li>
+                                <li class="col-lg-3 col-md-3 col-6">
+                                    <div class="body">
+                                        <i class="zmdi zmdi-thumb-up col-blue"></i>
+                                        <h4>{{ groupes }}</h4>
+                                        <span>groupes</span>
+                                    </div>
+                                </li>
+                                <li class="col-lg-3 col-md-3 col-6">
+                                    <div class="body">
+                                        <i class="zmdi zmdi-comment-text col-red"></i>
+                                        <h4> {{ Messages }} </h4>
+                                        <span>messages</span>
+                                    </div>
+                                </li>
+                                <li class="col-lg-3 col-md-3 col-6">
+                                    <div class="body">
+                                        <i class="zmdi zmdi-account text-success"></i>
+                                        <h4>0</h4>
+                                        <span>actualitées</span>
+                                    </div>
+                                </li>                      
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="row clearfix">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Members</strong> Profiles <small>Members Preformance / Monthly Status</small> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body table-responsive members_profiles">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>email</th>
+                                    <th>entreprise</th>                                    
+                                    <th>Groupes</th>
+                                    <th>Evenements</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in tabUsers %}
+                                <tr>
+                                    <td>{{ user['username'] }}</td>
+                                    <td>{{ user['email'] }}</td>
+                                    <td>{{ user['entreprise'] }}</td>                                   
+                                    <td>
+                                        Nb
+                                    </td>
+                                        <td>
+                                            nb
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="row clearfix">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Groupes</strong> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body table-responsive members_profiles">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Evenements</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for groupe in tabGroupe %}
+                                <tr>
+                                    <td>{{ groupe['nom'] }}</td>
+                                    <td>nb</td>                                 
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}	
