@@ -45,6 +45,10 @@ event_show:
     path: event/show
     defaults: { _controller: 'App\Controller\EventController::indexAction' }
 
+event_detail:
+    path: event/detail/{id}
+    defaults: { _controller: 'App\Controller\EventController::detailAction' }
+
 event_calendar_loader:
     path: event/loadcalendar
     defaults: { _controller: 'App\Controller\CalendarEventController::loadCalendarAction' }

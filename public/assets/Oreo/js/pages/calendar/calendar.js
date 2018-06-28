@@ -52,7 +52,7 @@
                    // alert('good');
                 },
                 error: function() {
-                    alert('ereurrrrr !');
+                   // alert('ereurrrrr !');
                 }
             }
         ]

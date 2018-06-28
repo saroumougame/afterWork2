@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Event/detail.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" afterPath="$PROJECT_DIR$/config/packages/security.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EntrepriseController.php" afterPath="$PROJECT_DIR$/src/Controller/EntrepriseController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LandingController.php" afterPath="$PROJECT_DIR$/src/Controller/LandingController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/Landing/index.html.twig" afterPath="$PROJECT_DIR$/templates/Landing/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js" afterPath="$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EventController.php" afterPath="$PROJECT_DIR$/src/Controller/EventController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Listener/CalendarEventListener.php" afterPath="$PROJECT_DIR$/src/Listener/CalendarEventListener.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,31 +24,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <file leaf-file-name="CalendarEventListener.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Listener/CalendarEventListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="14" />
+            <state relative-caret-position="44">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="easy_admin.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes/easy_admin.yaml">
+      <file leaf-file-name="EventController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
+            <state relative-caret-position="320">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <element signature="e#119#176#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Event/detail.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="599">
+              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Event/add.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="263" column="0" lean-forward="true" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Event/calendar.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1134">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -58,9 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add event</find>
-      <find>profile_av.jp</find>
-      <find>assets/Oreo/images/profile_av.jp</find>
       <find>ajouter</find>
       <find>Groupe</find>
       <find>datedebut</find>
@@ -88,6 +117,9 @@
       <find>setEntreprise</find>
       <find>userInviteModal</find>
       <find>conn</find>
+      <find>url</find>
+      <find>alert</find>
+      <find>load</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -114,14 +146,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Event.php" />
         <option value="$PROJECT_DIR$/src/Controller/Event.php" />
         <option value="$PROJECT_DIR$/src/Repository/EventRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/CalendarEventController.php" />
-        <option value="$PROJECT_DIR$/src/Listener/CalendarEventListener.php" />
-        <option value="$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js" />
         <option value="$PROJECT_DIR$/templates/Event/calendar.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/EventController.php" />
         <option value="$PROJECT_DIR$/src/Repository/UserGroupeRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Groupe.php" />
         <option value="$PROJECT_DIR$/templates/Groupe/addgroupe.html.twig" />
@@ -151,7 +179,6 @@
         <option value="$PROJECT_DIR$/templates/bundles/FOSUserBundle/Security/login_content.html.twig" />
         <option value="$PROJECT_DIR$/templates/bundles/FOSUserBundle/Registration/register_content.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/MessageController.php" />
-        <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Form/EntrepriseType.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/config/packages/easy_admin.yaml" />
@@ -165,6 +192,11 @@
         <option value="$PROJECT_DIR$/templates/Landing/index.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/EventController.php" />
+        <option value="$PROJECT_DIR$/src/Listener/CalendarEventListener.php" />
+        <option value="$PROJECT_DIR$/templates/Event/detail.html.twig" />
       </list>
     </option>
   </component>
@@ -321,18 +353,18 @@
             <path>
               <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
               <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
               <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Event" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -400,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180595000" />
+    <option name="totallyTimeSpent" value="182872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -446,65 +478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/Entreprise/Actu/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="50" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="47" column="275" lean-forward="false" selection-start-line="47" selection-start-column="275" selection-end-line="47" selection-end-column="275" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Event/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="96" column="42" lean-forward="false" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/ControllerTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="392" column="23" lean-forward="false" selection-start-line="392" selection-start-column="23" selection-end-line="392" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/MessageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/GroupeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -804,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EntrepriseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="911">
-          <caret line="102" column="68" lean-forward="false" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -820,10 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="87" column="14" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="14" />
+        <state relative-caret-position="624">
+          <caret line="263" column="0" lean-forward="false" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -836,10 +801,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/assets/Routing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="263" column="0" lean-forward="true" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Event/calendar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EntrepriseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="102" column="68" lean-forward="false" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/Oreo/js/pages/calendar/calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Event/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Event/detail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EventController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#119#176#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/CalendarEventListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
