@@ -24,7 +24,7 @@ class ActuEntrepriseType extends AbstractType {
             ->add('titre', TextType::class, array('label' => false
             ))
             ->add('message', TextareaType::class,array('label' => false))
-            ->add('submit', SubmitType::class, array('label' => 'Cree')
+            ->add('submit', SubmitType::class, array('label' => 'Publier')
 
             );
     }
