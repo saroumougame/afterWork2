@@ -41,13 +41,16 @@ class EntrepriseController extends Controller
 
             $entreprise->setNom($dataEntreprise->getNom());
             $entreprise->setDescription($dataEntreprise->getDescription());
-            $user->setEntreprise($entreprise);
+
+                $user->setEntreprise($entreprise);
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->persist($entreprise);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('message_add', array('groupe' => '1')));
+            return $this->redirect($this->generateUrl('entreprise_show', array('id' => $entreprise->getId())));
 
         }
 
@@ -98,7 +101,7 @@ class EntrepriseController extends Controller
 
 
         $actu = $entityManager->getRepository(ActuEntreprise::class)
-            ->findBy(array('entreprise' => $entreprise));
+            ->findBy(array('entreprise' => $entreprise), array('id' => 'DESC'));
 
         return  $actu;
 

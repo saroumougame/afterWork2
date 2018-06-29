@@ -239,7 +239,7 @@
                         <div class="user-info">
                             <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>{# app.user.username #}</h4>
+                                <h4>{{   app.user.username }}</h4>
                                 <small>UI UX Designer</small>
                             </div>
                         </div>
@@ -253,6 +253,21 @@
                                 <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
                             </ul>
                         </li>
+{% if app.user.hasRole('ROLE_ADMIN') %}
+
+
+                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Admin</span></a>
+                            <ul class="ml-menu">
+
+                                <li class="active"><a href="{{ path('dashboard_show') }}">Dashboard</a> </li>
+                                {#<li class="active"><a href="{{ path('easy_admin_bundle') }}">Admin Backend</a> </li>#}
+
+
+                            </ul>
+                        </li>
+
+                    {% endif %}
+
                     {% endblock %}
                 </ul>
             </div>
@@ -264,7 +279,7 @@
                         <div class="user-info m-b-20 p-b-15">
                             <div class="image"><a href=""><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>Michael</h4>
+                                <h4>{{   app.user.username }}</h4>
                                 <small>UI UX Designer</small>
                             </div>
                             <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>

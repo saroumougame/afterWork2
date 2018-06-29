@@ -73,7 +73,9 @@ class GroupeController extends Controller
 
         }
 
-        return $formGroupe;
+        return $this->render('Groupe/addgroupe.html.twig', array(
+            'formGroupe' => $formGroupe->createView(),
+        ));
 
     }
 
