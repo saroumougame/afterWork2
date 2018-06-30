@@ -16,14 +16,17 @@
     <div class="block-header">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
-                <h2>Detail event
+                <h2>Nom du groupe
+
 
                 </h2>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <ul class="breadcrumb float-md-right">
                     <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>
-                    <li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>
+                    <li class="breadcrumb-item active"><a href="">Groupe</a></li>
+                    <li class="breadcrumb-item active"><a href="">{{ event.titre }}</a></li>
+
                 </ul>
             </div>
         </div>
@@ -34,11 +37,16 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>{{ event.titre }}</strong> Event</h2>
+                        <h2><strong>
+                                {{ event.titre }} </strong></h2>
                     </div>
                     <div class="body">
 
-GOOGLE MAPS ET DETAIL DE LEVENT
+                        {{ event.message }}
+                        {{ event.adress }}
+                        {{ event.datedebut |date('Y-m-d') }}
+                        {{ event.datefin |date('Y-m-d') }}
+                    GOOGLE MAPS ET DETAIL DE LEVENT
 
 
                 </div>

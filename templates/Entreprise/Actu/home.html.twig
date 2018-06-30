@@ -8,56 +8,54 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Actualités de
-                        <small>Cree une entreprise</small>
+                    <h2>Actualités du moment
+                        <small></small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Entreprise</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Presentation</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('actu_show') }}"><i class="zmdi zmdi-home"></i>Home</a></li>
                         <li class="breadcrumb-item active"></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row clearfix">
-                <!-- Basic Examples -->
-                <div class="col-lg-12 col-md-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2><strong>Vous </strong> </h2>
-                            <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
-                                </li>
-                                <li class="remove">
-                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <ul class="list-group">
-
-                                {% for actus in actu  %}
-                                    {{ actus.message }}
-                                {%   endfor %}
 
 
+        {% for actu in actus  %}
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong> {{ actu.titre }} </strong> <a href="{{ path('entreprise_show', {'id' : actu.entreprise.id }) }}"> {{ actu.entreprise.nom }} </a> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+
+                                    {{ actu.message | raw}}
 
 
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
+
+
             <!-- #END# Custom Content -->
-        </div>
+            </div>
+            </div>
+        {%   endfor %}
+
+
         </div>
     </section>
 {% endblock %}
