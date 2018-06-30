@@ -24,7 +24,7 @@ class ActuEntreprise
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="string", length=200, nullable=false)
+     * @ORM\Column(name="message", type="string", length=500, nullable=false)
      */
     private $message;
 
@@ -44,7 +44,7 @@ class ActuEntreprise
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="ActuEntreprise", inversedBy="id")
+     * @ORM\ManyToOne(targetEntity="Entreprise", inversedBy="id")
      * @ORM\JoinColumn(name="entreprise", referencedColumnName="id")
      */
     private $entreprise;
@@ -86,21 +86,21 @@ class ActuEntreprise
      */
     public function getEntreprise()
     {
-        return $this->Entreprise;
+        return $this->entreprise;
     }
 
     /**
      * @param mixed $Entreprise
      */
-    public function setEntreprise($Entreprise)
+    public function setEntreprise($entreprise)
     {
-        $this->Entreprise = $Entreprise;
+        $this->entreprise = $entreprise;
     }
 
     /**
      * @return string
      */
-    public function getTitre(): string
+    public function getTitre()
     {
         return $this->titre;
     }

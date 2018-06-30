@@ -1,0 +1,24 @@
+{% extends 'baseAuth.html.twig' %}
+
+
+
+
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+
+                {% block fos_user_content %}
+
+
+                    {{ include('@FOSUser/Security/login_content.html.twig') }}
+                {% endblock fos_user_content %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

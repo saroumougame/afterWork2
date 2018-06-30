@@ -12,6 +12,8 @@
 
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap-select/css/bootstrap-select.css') }}"/>
+        
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
@@ -37,10 +39,11 @@
         <li>
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/Oreo/images/logo.svg') }}" width="30" alt="Oreo"><span class="m-l-10">Oreo</span></a>
+                <a class="navbar-brand" href="{{ path('actu_show') }}"><img src="{{ asset('assets/Oreo/images/logo.svg') }}" width="30" alt="Oreo"><span class="m-l-10">After-Tech</span></a>
             </div>
         </li>
         <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>
+        <!--
         <li class="hidden-md-down"><a href="events.html" title="Events"><i class="zmdi zmdi-calendar"></i></a></li>
         <li class="hidden-md-down"><a href="mail-inbox.html" title="Inbox"><i class="zmdi zmdi-email"></i></a></li>
         <li><a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a></li>
@@ -211,6 +214,7 @@
                 </span>
             </div>
         </li>
+    -->
         <li class="float-right">
             <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
             <a href="sign-in.html" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
@@ -222,8 +226,10 @@
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs">
+        <!--
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Menu</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"><i class="zmdi zmdi-account m-r-5"></i>User</a></li>
+    -->
     </ul>
     <div class="tab-content">
         <div class="tab-pane stretchRight active" id="dashboard">
@@ -233,16 +239,17 @@
                         <div class="user-info">
                             <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>{{ app.user.username }}</h4>
+                                <h4>{{   app.user.username }}</h4>
                                 <small>UI UX Designer</small>
                             </div>
-                            <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
-                            <a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a>
-                            <a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
                     </li>
                     {% block nav %}
-                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-home"></i><span>Groupe</span></a>
+
+                            <li><a href="{{ path('actu_show') }}"><i class="zmdi zmdi-home"></i> Home</a></li>
+
+
+                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-group-work"></i><span>Groupe</span></a>
                             <ul class="ml-menu">
                                 <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
                                 <li><a href="{{ path('groupe_show') }}">Mon Profil</a></li>
@@ -250,6 +257,21 @@
                                 <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
                             </ul>
                         </li>
+{% if app.user.hasRole('ROLE_ADMIN') %}
+
+
+                        <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-reader"></i><span>Admin</span></a>
+                            <ul class="ml-menu">
+
+                                <li class="active"><a href="{{ path('dashboard_show') }}">Dashboard</a> </li>
+                                {#<li class="active"><a href="{{ path('easy_admin_bundle') }}">Admin Backend</a> </li>#}
+
+
+                            </ul>
+                        </li>
+
+                    {% endif %}
+
                     {% endblock %}
                 </ul>
             </div>
@@ -261,7 +283,7 @@
                         <div class="user-info m-b-20 p-b-15">
                             <div class="image"><a href=""><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>Michael</h4>
+                                <h4>{{   app.user.username }}</h4>
                                 <small>UI UX Designer</small>
                             </div>
                             <a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a>
@@ -328,7 +350,7 @@
 
 
 {% block content %}
-loltoto
+
 {% endblock %}
 <!-- Jquery Core Js -->
 
@@ -340,6 +362,10 @@ loltoto
 <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
 <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
 <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
+<script src="{{ asset('assets/Oreo/plugins/momentjs/moment.js') }}"></script>
+<script src="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script> 
+<script src="{{ asset('assets/Oreo/js/pages/forms/basic-form-elements.js') }}"></script>
+
 
 {% endblock %}
 

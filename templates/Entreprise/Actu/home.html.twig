@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block content %}
+
+    <section class="content">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Actualités du moment
+                        <small></small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="{{ path('actu_show') }}"><i class="zmdi zmdi-home"></i>Home</a></li>
+                        <li class="breadcrumb-item active"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% for actu in actus  %}
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong> {{ actu.titre }} </strong> <a href="{{ path('entreprise_show', {'id' : actu.entreprise.id }) }}"> {{ actu.entreprise.nom }} </a> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+
+                                    {{ actu.message | raw}}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+            <!-- #END# Custom Content -->
+            </div>
+            </div>
+        {%   endfor %}
+
+
+        </div>
+    </section>
+{% endblock %}

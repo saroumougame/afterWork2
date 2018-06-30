@@ -22,7 +22,10 @@ security:
             form_login:
                 provider: fos_user
                 csrf_token_generator: security.csrf.token_manager
-
+              #  always_use_default_target_path: false
+                default_target_path:            /groupe/show
+              #  target_path_parameter:          _target_path
+               # use_referer:                    false
             logout: true
             anonymous: true
 
@@ -43,5 +46,11 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/user/, role: ROLE_USER }
+        - { path: ^/groupe/, role: ROLE_USER }
+        - { path: ^/event/, role: ROLE_USER }
+        - { path: ^/entreprise/, role: ROLE_USER }
+        - { path: ^/dashboard/, role: ROLE_ADMIN }
+
+
 
 

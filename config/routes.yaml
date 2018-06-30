@@ -18,7 +18,7 @@ user_connexion:
 
 profil_add_groupe:
     path: profil/
-    defaults: { _controller: 'App\Controller\ProfilController::addGroupeAction' }
+    defaults: { _controller: 'App\Controller\ProfilController::showAction' }
 
 groupe_show:
     path: groupe/show
@@ -44,6 +44,10 @@ message_insert:
 event_show:
     path: event/show
     defaults: { _controller: 'App\Controller\EventController::indexAction' }
+
+event_detail:
+    path: event/detail/{id}
+    defaults: { _controller: 'App\Controller\EventController::detailAction' }
 
 event_calendar_loader:
     path: event/loadcalendar
@@ -80,12 +84,18 @@ entreprise_show:
     path: entreprise/show/{id}
     defaults: { _controller: 'App\Controller\EntrepriseController::showAction' }
 
-entreprise_actu_show:
-    path: entreprise/actu/show/{id}
-    defaults: { _controller: 'App\Controller\EntrepriseController::showActuAction' }
+entreprise_actu_insert:
+    path: entreprise/actu/insert/{id}
+    defaults: { _controller: 'App\Controller\EntrepriseController::actuInsertAction' }
 
 
+dashboard_show:
+    path: dashboard/
+    defaults: { _controller: 'App\Controller\DashboardController::showAction' }
 
+actu_show:
+    path: actu/
+    defaults: { _controller: 'App\Controller\ActuEntrepriseController::indexAction' }
 
 
 #app_bundle:

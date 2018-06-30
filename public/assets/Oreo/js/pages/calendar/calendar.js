@@ -1,3 +1,6 @@
+
+//var Routing = require('asset/ Routing.js');
+
 "use strict";
     $('#calendar').fullCalendar({
         header: {
@@ -44,6 +47,7 @@
         eventSources: [
             {
                 url: 'loadcalendar',
+              //  url : Routing.generate('event_calendar_loader'),
                 type: 'POST',
                 // A way to add custom filters to your event listeners
                 data: {
@@ -52,7 +56,7 @@
                    // alert('good');
                 },
                 error: function() {
-                    alert('ereurrrrr !');
+                   // alert('ereurrrrr !');
                 }
             }
         ]

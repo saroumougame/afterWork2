@@ -53,7 +53,7 @@ class MessageController extends Controller
         $allMessage = $this->showMessage($groupe->getIdGroupe());
         $formMessage = $this->getForm($message, $groupe);
 
-
+        $formInvitationUser = $this->getFormInvitation($groupe, $formMessage, $allMessage);
         $formMessage->handleRequest($request);
 
 
@@ -79,6 +79,7 @@ class MessageController extends Controller
 
 
         return $this->render('Message/add.html.twig', array(
+            'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage
         ));

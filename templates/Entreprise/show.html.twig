@@ -8,8 +8,8 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Crée une Entreprise
-                        <small>Cree une entreprise</small>
+                    <h2> {{ entreprise.nom }}
+                        <small>Fil d'actualité</small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
@@ -24,37 +24,130 @@
         <div class="container-fluid">
             <div class="row clearfix">
                 <!-- Basic Examples -->
+
+                <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#entrepriseDescription"> En savoir plus</button>
+
+
+
+                {% if statue == false %}
                 <div class="col-lg-12 col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Vous </strong> </h2>
+                            <h2><strong>Ajouter une actualité</strong>   Tenez a jour les membres d'AfterTech</h2>
                             <ul class="header-dropdown">
-                                <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else</a></li>
-                                    </ul>
+                                <li class="remove">
+                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
                                 </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+
+
+                                        {{ form_start(formActu) }}
+                                        {{ form_errors(formActu) }}
+
+                                        {{ form_row(formActu.titre, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Titre'} })}}
+                                        <br>
+                                        {{ form_row(formActu.message, { 'attr': {'class': 'ckeditor'} }) }}
+                                        <br>
+                                        {{ form_row(formActu.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+
+                                        {{ form_end(formActu) }}
+
+
+                                        {{ form(formActu) }}
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- #END# Custom Content -->
+        </div>
+        </div>
+
+
+                {% for actus in actu  %}
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong> {{ actus.titre }} </strong> </h2>
+                            <ul class="header-dropdown">
                                 <li class="remove">
                                     <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="body">
-                            <ul class="list-group">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+
+                                        {{ actus.message | raw }}
 
 
-                        {{ entreprise.nom }}
-
-                                {{ entreprise.description }}
-                            </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <!-- #END# Custom Content -->
         </div>
         </div>
+        {%   endfor %}
+
+
+
+
+
     </section>
+
+    <div class="modal fade" id="entrepriseDescription" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+
+                    {{ entreprise.description | raw }}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/morrisscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/jvectormap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
+
+    <script src="{{ asset('assets/Oreo/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/forms/editors.js') }}"></script>
+
+
 {% endblock %}
