@@ -77,14 +77,20 @@ class EntrepriseController extends Controller
     public function showAction(Request $request, Entreprise $entreprise)
     {
 
+
+
         $actu = $this->showActuByEntreprise($entreprise);
 
         $actuEntreprise = new ActuEntreprise();
 
         $form = $this->getFormActu($actuEntreprise, $entreprise);
 
+        $statue = $this->UserBindEntreprise($entreprise);
+
+
 
         return $this->render('Entreprise/show.html.twig', array(
+            'statue' => $statue,
             'entreprise' => $entreprise,
             'actu' => $actu,
             'formActu'  => $form->createView(),
@@ -182,6 +188,24 @@ class EntrepriseController extends Controller
 
         return $form->createView();
 
+
+    }
+
+
+    private function UserBindEntreprise($entreprise){
+
+       $userEntreprise = $this->getUser()->getEntreprise();
+
+
+       if ($entreprise == $userEntreprise){
+           $statue = true;
+       }else{
+
+           $statue = false;
+       }
+
+
+       return $statue;
 
     }
 

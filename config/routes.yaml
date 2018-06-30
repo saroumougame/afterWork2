@@ -93,6 +93,9 @@ dashboard_show:
     path: dashboard/
     defaults: { _controller: 'App\Controller\DashboardController::showAction' }
 
+actu_show:
+    path: actu/
+    defaults: { _controller: 'App\Controller\ActuEntrepriseController::indexAction' }
 
 
 #app_bundle:
