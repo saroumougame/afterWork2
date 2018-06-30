@@ -23,7 +23,7 @@ security:
                 provider: fos_user
                 csrf_token_generator: security.csrf.token_manager
               #  always_use_default_target_path: false
-                default_target_path:            /groupe/show
+                default_target_path:            /actu
               #  target_path_parameter:          _target_path
                # use_referer:                    false
             logout: true

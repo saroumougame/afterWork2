@@ -14,6 +14,11 @@
             <img src="{{ asset('assets/Oreo/images/logo.svg') }}" alt="">
         </div>
         <h5>Log in</h5>
+        {% if app.user %}
+            <strong>{{ app.user.username }}</strong><br>
+                Vous voulez changer de compte?
+        {% endif %}
+
     </div>
     <div class="content">
 
