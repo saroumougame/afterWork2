@@ -24,6 +24,11 @@ profil_add_groupe:
     path: profil/
     defaults: { _controller: 'App\Controller\ProfilController::showAction' }
 
+profil_update_user:
+    path: profil/update
+    defaults: { _controller: 'App\Controller\ProfilController::updateAction' }
+    methods:  [POST]
+
 groupe_show:
     path: groupe/show
     defaults: { _controller: 'App\Controller\GroupeController::showAction' }
