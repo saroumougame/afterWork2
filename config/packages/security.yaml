@@ -48,6 +48,7 @@ security:
         - { path: ^/user/, role: ROLE_USER }
         - { path: ^/groupe/, role: ROLE_USER }
         - { path: ^/event/, role: ROLE_USER }
+        - { path: ^/message/, role: ROLE_USER }
         - { path: ^/entreprise/, role: ROLE_USER }
         - { path: ^/dashboard/, role: ROLE_ADMIN }
 
