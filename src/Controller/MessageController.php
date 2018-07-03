@@ -28,6 +28,8 @@ class MessageController extends Controller
     {
 
 
+        if ($this->VerifMembreGroupe($groupe) == false){
+
 
         $message = new Message();
 
@@ -43,6 +45,11 @@ class MessageController extends Controller
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage
         ));
+
+        }else {
+            return $this->redirectToRoute('groupe_show');
+
+        }
     }
 
 
@@ -192,6 +199,24 @@ class MessageController extends Controller
 
 
 
+    private function VerifMembreGroupe($groupe){
+
+        $user = $this->getUser();
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $membreGroupe = $entityManager->getRepository(UserGroupe::class)->findOneBy(array('groupe' => $groupe, 'user' => $user));
+
+        if (is_null($membreGroupe)){
+
+            return false;
+
+        }else{
+            return true;
+        }
+
+
+
+    }
 
 
 }
