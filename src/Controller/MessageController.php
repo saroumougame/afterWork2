@@ -28,7 +28,7 @@ class MessageController extends Controller
     {
 
 
-        if ($this->VerifMembreGroupe($groupe) == false){
+        if ($this->VerifMembreGroupe($groupe) == true){
 
 
         $message = new Message();

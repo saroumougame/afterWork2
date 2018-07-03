@@ -49,6 +49,7 @@
                                     {% endif %}
                                     {% if usergroupes.RoleGroupe == 0 %}
                                         <h5><a href="ec-product-detail.html">Membre</a></h5>
+                                        <a href="{{ path('admin_groupe_upAdmin', {'groupe': usergroupes.groupe.idGroupe, 'user':  usergroupes.user.id }) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
                                     {% endif %}
                                     <ul class="product_price list-unstyled">
                                         {#<li class="old_price">$16.00</li>#}
