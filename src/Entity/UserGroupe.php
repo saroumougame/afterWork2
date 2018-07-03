@@ -58,25 +58,27 @@ class UserGroupe
 
 
     /**
-     * @ORM\Column(type="integer", name="role")
+     * @ORM\Column(type="integer", name="roleGroupe")
      */
-    private $role;
+    private $roleGroupe;
 
     /**
      * @return mixed
      */
-    public function getRole()
+    public function getRoleGroupe()
     {
-        return $this->role;
+        return $this->roleGroupe;
     }
 
     /**
-     * @param mixed $role
+     * @param mixed $roleGroupe
      */
-    public function setRole($role)
+    public function setRoleGroupe($roleGroupe)
     {
-        $this->role = $role;
+        $this->roleGroupe = $roleGroupe;
     }
+
+
 
 
 

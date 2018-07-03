@@ -43,6 +43,13 @@
                                 </div>
                                 <div class="product_details">
                                     <h5><a href="ec-product-detail.html">{{ usergroupes.user.username }}</a></h5>
+
+                                    {% if usergroupes.RoleGroupe == 1 %}
+                                    <h5><a href="ec-product-detail.html">Admin</a></h5>
+                                    {% endif %}
+                                    {% if usergroupes.RoleGroupe == 0 %}
+                                        <h5><a href="ec-product-detail.html">Membre</a></h5>
+                                    {% endif %}
                                     <ul class="product_price list-unstyled">
                                         {#<li class="old_price">$16.00</li>#}
                                         {#<li class="new_price">$13.00</li>#}

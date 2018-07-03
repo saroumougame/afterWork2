@@ -105,6 +105,10 @@ admin_groupe_delete:
     path: groupe/admin/delete/{groupe}/{user}
     defaults: { _controller: 'App\Controller\AdminGroupeController::deleteAction' }
 
+admin_groupe_upAdmin:
+    path: groupe/admin/upadmin/{groupe}/{user}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::upAdminAction' }
+
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
     #resource: '@AppBundle/Resources/config/routing/'

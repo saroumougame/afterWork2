@@ -29,19 +29,25 @@ class AdminGroupeController extends Controller
     {
 
 
-       // $usergroupe = new UserGroupe();
+         $roleAdmin =  $this->verifRoleAdmin($groupe); // si tu nest pas admin redirection
 
-        // ACCEDER A CHANGER
+         if($roleAdmin == true){
 
-        $user = $this->getUser();
-        $entityManager = $this->getDoctrine()->getManager();
-        $usergroupe =  $entityManager->getRepository(UserGroupe::class)->findBy(array('groupe' => $groupe));
-        
+             $entityManager = $this->getDoctrine()->getManager();
+             $usergroupe =  $entityManager->getRepository(UserGroupe::class)->findBy(array('groupe' => $groupe));
 
-        return $this->render('adminGroupe/admin.html.twig', array(
-            'usergroupe' => $usergroupe,
+             return $this->render('adminGroupe/admin.html.twig', array(
+                 'usergroupe' => $usergroupe,
 
-        ));
+             ));
+
+         }else{
+
+             return $this->redirect($this->generateUrl('message_add', array('groupe' => $groupe->getIdGroupe())));
+
+         }
+
+
 
     }
 
@@ -67,10 +73,73 @@ class AdminGroupeController extends Controller
 
 
 
-    private function getRoleGroupe($groupe , $user){
+    private function getRoleUser($groupe , $user){
+
+
+        $usergroupe = new UserGroupe($groupe , $user);
+
+        $role = $usergroupe->getRole();
+
+        if ($role == 1){
+
+            return 'admin';
+
+        }else{
+            return 'membre';
+        }
 
 
     }
+
+
+    private function verifRoleAdmin($groupe){
+
+        $user = $this->getUser();
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $currentUserGroupe =  $entityManager->getRepository(UserGroupe::class)->findOneBy(array('groupe' => $groupe, 'user' => $user));
+
+
+        $currentRole = $currentUserGroupe->getRoleGroupe();
+
+        if($currentRole == 0){
+
+            return false;
+
+        }else{
+            return true;
+        }
+
+    }
+
+
+
+    private function UpAdminAction(Groupe $groupe, User $user){
+
+        $roleAdmin =  $this->verifRoleAdmin($groupe); // si tu nest pas admin redirection
+
+        if($roleAdmin == true) {
+
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $usergroupe = $entityManager->getRepository(UserGroupe::class)->findOneBy(array('groupe' => $groupe, 'user' => $user));
+
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $usergroupe->setRoleGroupe(1);
+            $entityManager->flush($usergroupe);
+
+            return $this->redirect($this->generateUrl('admin_groupe'));
+
+        }else{
+
+            return $this->redirect($this->generateUrl('message_add', array('groupe' => $groupe->getIdGroupe())));
+
+        }
+
+    }
+
 
 
 
