@@ -101,6 +101,17 @@ actu_show:
     path: actu/
     defaults: { _controller: 'App\Controller\ActuEntrepriseController::indexAction' }
 
+admin_groupe:
+    path: groupe/admin/{groupe}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::indexAction' }
+
+admin_groupe_delete:
+    path: groupe/admin/delete/{groupe}/{user}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::deleteAction' }
+
+admin_groupe_upAdmin:
+    path: groupe/admin/upadmin/{groupe}/{user}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::upAdminAction' }
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
