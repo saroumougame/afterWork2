@@ -39,22 +39,30 @@ class ProfilController extends Controller
         $param = array('user' => $this->getUser());
         // j'ai tout les groupes d'un user
         $groupes = $Groupes->getGroupeByUser($param);
+
+        if(isset($groupes) && !empty($groupes))
+             $premierGroupe = $groupes[0]->getIdGroupe();
+
         // je prend le premier car je sais pas faire de jointure avec un "tableau de groupe"
-        $premierGroupe = $groupes[0]->getIdGroupe();
         // je recupere tout ces events
-        $allEvents = $Event->getByGroupe($premierGroupe);
+        if(isset($premierGroupe))
+            $allEvents = $Event->getByGroupe($premierGroupe);
         
-        // on récuperer un array avec la data de tout les events récupérés. 
         $tabEvents = [];
-        $countEvents = 0;
-        foreach ($allEvents as $UnEvent) {
-            $tabEvents[$countEvents]['id'] = $UnEvent->getId();
-            $tabEvents[$countEvents]['titre'] = $UnEvent->getTitre();
-            $tabEvents[$countEvents]['message'] = $UnEvent->getMessage();
-            $tabEvents[$countEvents]['adress'] = $UnEvent->getAdress();
-            $tabEvents[$countEvents]['datedebut'] = $UnEvent->getDatedebut();
-            $tabEvents[$countEvents]['datefin'] = $UnEvent->getDatefin();
-            $countEvents++;
+        if(isset($allEvents))
+        {
+            
+        // on récuperer un array avec la data de tout les events récupérés. 
+            $countEvents = 0;
+            foreach ($allEvents as $UnEvent) {
+                $tabEvents[$countEvents]['id'] = $UnEvent->getId();
+                $tabEvents[$countEvents]['titre'] = $UnEvent->getTitre();
+                $tabEvents[$countEvents]['message'] = $UnEvent->getMessage();
+                $tabEvents[$countEvents]['adress'] = $UnEvent->getAdress();
+                $tabEvents[$countEvents]['datedebut'] = $UnEvent->getDatedebut();
+                $tabEvents[$countEvents]['datefin'] = $UnEvent->getDatefin();
+                $countEvents++;
+            }
         }
 
 

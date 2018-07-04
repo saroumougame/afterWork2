@@ -39,7 +39,7 @@
                                     <br />
                                     <a><button class="btn btn-primary btn-round btn-simple">Mes entreprises</button></a>
                                     <a><button class="btn btn-primary btn-round btn-simple">Mes groupes</button></a>
-                                    <a><button class="btn btn-primary btn-round btn-simple">Rechercher des enevements</button></a>
+                                    <a href="/profile/change-password"><button class="btn btn-primary btn-round btn-simple">Changer de mot de passe</button></a>
                                 </div>
                             </div>   
 
@@ -57,12 +57,14 @@
                     <div class="card">
                         <div class="header">
                             <h2><strong>Evenements à venir</strong></h2>
+                            {% if tabEvent[0] is defined %}
                             {{ tabEvent[0]['titre'] }} <br />
                             {{ tabEvent[0]['message'] }} <br />
                             {{ tabEvent[0]['adress']}} <br />
                            début:  {{ tabEvent[0]['datedebut']|date('d-m-Y') }} <br />
                            fin:  {{ tabEvent[0]['datefin']|date('d-m-Y') }} <br />
                            <a href="/event/detail/1"><button class="btn btn-primary btn-round">voir</button></a>
+                            {% endif %}
 
                         </div>
                     </div>
