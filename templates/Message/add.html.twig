@@ -38,7 +38,9 @@
 
                                         <a  href="{{ path('event_show') }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
 
-
+                                        {% if isAdmin == true %}
+                                            <a  href="{{ path('admin_groupe', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Administration des membres</button></a>
+                                        {% endif %}
                                         <!--  CKEDITOR -->
                                         {{ form_start(formMessage) }}
                                         {{ form_errors(formMessage) }}

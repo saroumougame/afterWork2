@@ -1,6 +1,36 @@
 {% extends 'baseAuth.html.twig' %}
 
+{% block navbar %}
 
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
+        <div class="container">
+            <div class="navbar-translate n_logo">
+                <a class="navbar-brand" href="javascript:void(0);" title="" target="_blank">Aftertech</a>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+
+
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('index') }}">Home</a>
+                        {% if not app.user %}
+                            <a class="nav-link" href="{{ path('fos_user_security_login') }}">Login</a>
+                        {% endif %}
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    {% endblock %}
 
 {% block content %}
 

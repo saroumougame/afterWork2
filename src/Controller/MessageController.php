@@ -30,6 +30,9 @@ class MessageController extends Controller
 
         if ($this->VerifMembreGroupe($groupe) == true){
 
+       $isAdmin = $this->IsAdmin($groupe);
+
+
 
         $message = new Message();
 
@@ -43,7 +46,9 @@ class MessageController extends Controller
         return $this->render('Message/add.html.twig', array(
             'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
-            'allMessage' => $allMessage
+            'allMessage' => $allMessage,
+            'isAdmin' => $isAdmin,
+            'groupe' => $groupe,
         ));
 
         }else {
@@ -214,6 +219,22 @@ class MessageController extends Controller
             return true;
         }
 
+
+
+    }
+
+
+    private function IsAdmin($groupe){
+        $user = $this->getUser();
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $usergroupe =  $entityManager->getRepository(UserGroupe::class)->findOneBy(array('groupe' => $groupe, 'user' => $user, 'roleGroupe' => 1));
+
+        if (is_null($usergroupe)){
+            return false;
+        }else{
+            return true;
+        }
 
 
     }
