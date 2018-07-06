@@ -39,58 +39,27 @@
                         {#<button class="btn btn-default hidden-lg-up m-t-0 float-right" data-toggle="collapse" data-target="#open-events" aria-expanded="false" aria-controls="collapseExample"><i class="zmdi zmdi-chevron-down"></i></button>#}
                         <div class="collapse-xs collapse-sm collapse" id="open-events">
                             <hr>
+
+                            {% for events in event %}
                             <div class="event-name b-primary row">
+
                                 <div class="col-2 text-center">
-                                    <h4>11<span>Dec</span><span>2017</span></h4>
+
+                                    <a href="">
+
+                                        {{ events.datedebut|date("F jS") }}
+                                    </a>
+
+                                    {#<h4>11<span>Dec</span><span>2017</span></h4>#}
                                 </div>
                                 <div class="col-10">
-                                    <h6>Conference</h6>
-                                    <p>It is a long established fact that a reader will be distracted</p>
-                                    <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
+                                    <h6>{{ events.titre }}</h6>
+                                    <p>{{ events.message }}</p>
+                                    <address><i class="zmdi zmdi-pin"></i>{{ events.adress }}</address>
                                 </div>
                             </div>
-                            <div class="event-name b-primary row">
-                                <div class="col-2 text-center">
-                                    <h4>13<span>Dec</span><span>2017</span></h4>
-                                </div>
-                                <div class="col-10">
-                                    <h6>Birthday</h6>
-                                    <p>It is a long established fact that a reader will be distracted</p>
-                                    <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="event-name b-lightred row">
-                                <div class="col-2 text-center">
-                                    <h4>09<span>Dec</span><span>2017</span></h4>
-                                </div>
-                                <div class="col-10">
-                                    <h6>Repeating Event</h6>
-                                    <p>It is a long established fact that a reader will be distracted</p>
-                                    <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="event-name b-greensea row">
-                                <div class="col-2 text-center">
-                                    <h4>16<span>Dec</span><span>2017</span></h4>
-                                </div>
-                                <div class="col-10">
-                                    <h6>Repeating Event</h6>
-                                    <p>It is a long established fact that a reader will be distracted</p>
-                                    <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
-                                </div>
-                            </div>
-                            <div class="event-name b-greensea row">
-                                <div class="col-2 text-center">
-                                    <h4>28<span>Dec</span><span>2017</span></h4>
-                                </div>
-                                <div class="col-10">
-                                    <h6>Google</h6>
-                                    <p>It is a long established fact that a reader will be distracted</p>
-                                    <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
-                                </div>
-                            </div>
+
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -111,6 +80,12 @@
 {% endblock %}
 
 {% block js %}
+
+    <script type="text/javascript">
+
+        var urlCalendar = '{{ path('event_calendar_loader')}}';
+
+    </script>
 
 
 

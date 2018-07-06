@@ -42,7 +42,7 @@ message_insert:
 
 
 event_show:
-    path: event/show
+    path: event/show/{groupe}
     defaults: { _controller: 'App\Controller\EventController::indexAction' }
 
 event_detail:

@@ -27,10 +27,20 @@ class EventController extends Controller
 {
 
 
-    public function indexAction()
+    public function indexAction(Groupe $groupe)
     {
+
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $event = $entityManager->getRepository(Event::class)->findBy(array('groupe' => $groupe), null,5);
+
+dump($event);
+
         return $this->render('Event/calendar.html.twig', array(
             'idgroupe' => '1',
+            'event' => $event,
         ));
     }
 
