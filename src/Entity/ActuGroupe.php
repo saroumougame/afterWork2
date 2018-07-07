@@ -35,12 +35,11 @@ class ActuGroupe
      */
     private $date;
 
-    public function getId(): ?int
-    {
+    public function getId(){
         return $this->id;
     }
 
-    public function getMessage(): ?string
+    public function getMessage()
     {
         return $this->message;
     }
@@ -52,7 +51,7 @@ class ActuGroupe
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate()
     {
         return $this->date;
     }

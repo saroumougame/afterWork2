@@ -15,4 +15,5 @@ return [
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     FOS\JsRoutingBundle\FOSJsRoutingBundle::class => ['all' => true],
     ADesigns\CalendarBundle\ADesignsCalendarBundle::class => ['all' => true],
+    Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
 ];
