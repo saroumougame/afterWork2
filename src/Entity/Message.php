@@ -19,6 +19,11 @@ class Message
         $this->groupe = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return (string) $this->getMessage();
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer", name="id")

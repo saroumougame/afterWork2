@@ -1,14 +1,7 @@
-#easy_admin:
-#
-#    entities:
-#        # List the entity class name you want to manage
-#        - App\Entity\User
-#        - App\Entity\Groupe
-#        - App\Entity\UserGroupe
-#        - App\Entity\Entreprise
-
-
 easy_admin:
+    site_name: 'AFTERTECH <em style="font-size: 80%;">. Administration</em>'
+    design:
+        brand_color: '#8c99e0'
     entities:
         User:
             class: App\Entity\User
@@ -34,3 +27,12 @@ easy_admin:
                     - nom
                     - description
                     - user
+        Groupe:
+              class: App\Entity\Groupe
+              list:
+                 fields:
+                    - { property: 'nom' }
+              form:
+                fields:
+                    - nom
+                    - message
