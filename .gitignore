@@ -29,3 +29,7 @@ yarn-error.log
 ###< symfony/webpack-encore-pack ###
 Database/afterwork/groupe.ibd
 Database/afterwork/groupe.ibd
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###

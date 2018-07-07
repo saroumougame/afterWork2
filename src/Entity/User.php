@@ -54,7 +54,7 @@ class User extends FOSUser
     }
 
 
-    public function getIdUserGroupe(): ?int
+    public function getIdUserGroupe()
     {
         return $this->id;
     }
@@ -69,7 +69,7 @@ class User extends FOSUser
 
 
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
