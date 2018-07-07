@@ -33,7 +33,7 @@ class User extends FOSUser
     /**
      * @var int
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="User", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="User", orphanRemoval=false)
      */
     protected $relationsUserGroupe;
 

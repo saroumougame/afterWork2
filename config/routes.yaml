@@ -109,6 +109,10 @@ admin_groupe_upAdmin:
     path: groupe/admin/upadmin/{groupe}/{user}
     defaults: { _controller: 'App\Controller\AdminGroupeController::upAdminAction' }
 
+admin_user:
+    path: /admin/user
+    defaults: { _controller: 'App\Controller\AdminUserController::indexAction' }
+
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
     #resource: '@AppBundle/Resources/config/routing/'
