@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-10">
                                     <h6>{{ events.titre }}</h6>
-                                    <p>{{ events.message }}</p>
+                                    <p>{{ events.message|slice(1, 20) }}...</p>
                                     <address><i class="zmdi zmdi-pin"></i>{{ events.adress }}</address>
                                 </div>
                             </div>

@@ -1,9 +1,10 @@
 $(function () {
     //Datetimepicker plugin
     $('.datetimepicker').bootstrapMaterialDatePicker({
-        format: 'dddd DD MMMM YYYY - HH:mm',
+        format: 'DD/MM/YYYY - HH:mm',
         clearButton: true,
-        weekStart: 1
+        weekStart: 1,
+        lang : 'fr'
     });
 
     $('.datepicker').bootstrapMaterialDatePicker({

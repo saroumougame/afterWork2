@@ -26,6 +26,7 @@
         dateFormat: "dd/mm/yy",
         firstDay: 1,
         isRTL: false,
+        displayEventTime : false,
         showMonthAfterYear: false,
         yearSuffix: "",
         buttonText: {

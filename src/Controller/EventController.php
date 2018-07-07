@@ -36,10 +36,9 @@ class EventController extends Controller
 
         $event = $entityManager->getRepository(Event::class)->findBy(array('groupe' => $groupe), null,5);
 
-dump($event);
 
         return $this->render('Event/calendar.html.twig', array(
-            'idgroupe' => '1',
+            'idgroupe' => $groupe->getIdGroupe(),
             'event' => $event,
         ));
     }
@@ -82,18 +81,18 @@ dump($event);
         ));
 
         $form->add("titre", TextType::class, array('label' => false))
-            ->add("message", TextType::class, array('label' => false))
+            ->add("message", TextareaType::class, array('label' => false))
             ->add("adress", TextType::class, array('label' => false))
             ->add('datedebut', DateTimeType::class, array(
                 'widget' => 'single_text',
                 'input' => 'datetime',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy - HH:mm',
                 'label' => false))
 
             ->add("datefin", DateTimeType::class, array(
                 'widget' => 'single_text',
                 'input' => 'datetime',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy - HH:mm',
                 'label' => false))
             ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
 
