@@ -39,7 +39,7 @@ class CalendarEventListener
 
             $eventEntity = new EventEntity($titre, $datedebut, $datefin);
             //optional calendar event settings
-            $eventEntity->setAllDay(true); // default is false, set to true if this is an all day event
+            $eventEntity->setAllDay(false); // default is false, set to true if this is an all day event
             $eventEntity->setBgColor('#4286f4'); //set the background color of the event's label
             $eventEntity->setFgColor('#ffff'); //set the foreground color of the event's label
             $eventEntity->setUrl($url); // url to send user to when event label is clicked

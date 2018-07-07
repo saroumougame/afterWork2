@@ -26,6 +26,7 @@
         dateFormat: "dd/mm/yy",
         firstDay: 1,
         isRTL: false,
+        displayEventTime : false,
         showMonthAfterYear: false,
         yearSuffix: "",
         buttonText: {
@@ -46,7 +47,7 @@
         // events: [{"title":"toto","start":"2018-05-27T13:26:52+00:00","url":"http:\/\/www.google.com","backgroundColor":"#FF0000","borderColor":"#FF0000","textColor":"#FFFFFF","className":"my-custom-class","end":"2018-06-28T00:00:00+00:00","allDay":true}]
         eventSources: [
             {
-                url: 'loadcalendar',
+                url: urlCalendar,
               //  url : Routing.generate('event_calendar_loader'),
                 type: 'POST',
                 // A way to add custom filters to your event listeners

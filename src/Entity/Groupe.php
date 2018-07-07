@@ -18,6 +18,11 @@ class Groupe
         $this->relationsUserGroupe = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return (string) $this->getNom();
+    }
+
 
     /**
      * @ORM\Id

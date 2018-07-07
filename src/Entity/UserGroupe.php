@@ -56,6 +56,37 @@ class UserGroupe
      */
     private $inviteur;
 
+
+    /**
+     * @ORM\Column(type="integer", name="roleGroupe")
+     */
+    private $roleGroupe;
+
+    /**
+     * @return mixed
+     */
+    public function getRoleGroupe()
+    {
+        return $this->roleGroupe;
+    }
+
+    /**
+     * @param mixed $roleGroupe
+     */
+    public function setRoleGroupe($roleGroupe)
+    {
+        $this->roleGroupe = $roleGroupe;
+    }
+
+
+
+
+
+
+
+
+
+
     /**
      * @return mixed
      */

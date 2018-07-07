@@ -1,0 +1,45 @@
+{% extends 'baseAuth.html.twig' %}
+
+{% block content %}
+
+
+
+
+        <div class="container">
+            <div class="col-md-12 content-center">
+                <div class="card-plain">
+
+
+
+                    <div class="header">
+                        <div class="logo-container">
+                            <img src="{{ asset('assets/Oreo/images/logo.svg') }}" alt="">
+                        </div>
+                        <h5>Page not found</h5>
+                    </div>
+                    <div class="content">
+
+
+                        <p>
+                            The requested page couldn't be located. Checkout for any URL
+                            misspelling or <a href="{{ path('index') }}">return to the langing</a>.
+
+                        </p>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
         <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/fullcalendar/fullcalendar.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}"/>
+
+        {#<link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />#}
+
     {% endblock %}
 
 
@@ -80,7 +83,15 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        {{ form_row(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}
+                                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="zmdi zmdi-calendar"></i>
+                                    </span>
+                                            {#{{ form_widget(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}#}
+                                            {{ form_widget(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +101,17 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8">
                                     <div class="form-group">
-                                        {{ form_row(formEvent.datefin, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}
+
+                                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="zmdi zmdi-calendar"></i>
+                                    </span>
+                                            {{ form_widget(formEvent.datefin, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}
+
+                                        </div>
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -114,12 +135,15 @@
 
 {% block js %}
 
-
-
     <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/fullcalendarscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/Oreo/js/pages/calendar/calendar.js') }}"></script>
 
+    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/plugins/momentjs/moment.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+
+    <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/Oreo/js/pages/forms/basic-form-elements.js') }}"></script>
+
+    {#<script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>#}
 {% endblock %}

@@ -103,17 +103,27 @@
                         </ul>
                     </div>
                     <!--end module-->
+
                     <div class="bar__module">
-                        <a class="btn btn--sm type--uppercase" href="{{ path('fos_user_registration_register') }}">
+                        {% if app.user %}
+                        <a class="btn btn--sm btn--primary type--uppercase" href="{{ path('fos_user_security_logout') }}">
+                                    <span class="btn__text">
+                                        Se deconnecter
+                                    </span>
+                        </a>
+                        {% endif %}
+                        {% if not app.user %}
+                            <a class="btn btn--sm type--uppercase" href="{{ path('fos_user_registration_register') }}">
                                     <span class="btn__text">
                                         S'inscrire
                                     </span>
-                        </a>
-                        <a class="btn btn--sm btn--primary type--uppercase" href="{{ path('fos_user_security_login') }}">
+                            </a>
+                            <a class="btn btn--sm btn--primary type--uppercase" href="{{ path('fos_user_security_login') }}">
                                     <span class="btn__text">
                                         Se connecter
                                     </span>
-                        </a>
+                            </a>
+                        {% endif %}
                     </div>
                     <!--end module-->
                 </div>
@@ -141,15 +151,6 @@
                         Crée des évements entres groupes de collegues ou inter-entreprise
                         <br class="hidden-xs hidden-sm" /> Crée des liens, des contact, des amis...
                     </p>
-                    <a class="btn btn--primary type--uppercase" href="#">
-                                <span class="btn__text">
-                                    J'inscrit mon entreprise ou m'on groupe de collegues.
-                                </span>
-                    </a>
-                    <span class="block type--fine-print">Ou
-                                <a href="index.html">Je rejoins mon entreprise ou mon groupe de collegue</a>
-                            </span>
-
                 </div>
             </div>
             <!--end of row-->

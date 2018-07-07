@@ -42,7 +42,7 @@ message_insert:
 
 
 event_show:
-    path: event/show
+    path: event/show/{groupe}
     defaults: { _controller: 'App\Controller\EventController::indexAction' }
 
 event_detail:
@@ -97,6 +97,21 @@ actu_show:
     path: actu/
     defaults: { _controller: 'App\Controller\ActuEntrepriseController::indexAction' }
 
+admin_groupe:
+    path: groupe/admin/{groupe}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::indexAction' }
+
+admin_groupe_delete:
+    path: groupe/admin/delete/{groupe}/{user}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::deleteAction' }
+
+admin_groupe_upAdmin:
+    path: groupe/admin/upadmin/{groupe}/{user}
+    defaults: { _controller: 'App\Controller\AdminGroupeController::upAdminAction' }
+
+admin_user:
+    path: /admin/user
+    defaults: { _controller: 'App\Controller\AdminUserController::indexAction' }
 
 #app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory

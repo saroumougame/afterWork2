@@ -67,6 +67,8 @@ class Event
      */
     private $groupe;
 
+
+
     /**
      * @return mixed
      */

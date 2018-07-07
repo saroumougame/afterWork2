@@ -23,7 +23,7 @@ security:
                 provider: fos_user
                 csrf_token_generator: security.csrf.token_manager
               #  always_use_default_target_path: false
-                default_target_path:            /groupe/show
+                default_target_path:            /actu
               #  target_path_parameter:          _target_path
                # use_referer:                    false
             logout: true
@@ -48,6 +48,7 @@ security:
         - { path: ^/user/, role: ROLE_USER }
         - { path: ^/groupe/, role: ROLE_USER }
         - { path: ^/event/, role: ROLE_USER }
+        - { path: ^/message/, role: ROLE_USER }
         - { path: ^/entreprise/, role: ROLE_USER }
         - { path: ^/dashboard/, role: ROLE_ADMIN }
 

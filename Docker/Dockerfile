@@ -3,6 +3,8 @@ FROM php:7.2-apache
 RUN apt-get update
 RUN apt-get install -y zlib1g-dev
 RUN apt-get install -y vim
+RUN apt-get install -y zip wget
+
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install pdo pdo_mysql
 RUN docker-php-ext-enable pdo pdo_mysql

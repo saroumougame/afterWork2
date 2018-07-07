@@ -36,9 +36,11 @@
                                        
                                  <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#messageModal">Ajouter un message</button>
 
-                                        <a  href="{{ path('event_show') }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
+                                        <a  href="{{ path('event_show', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
 
-
+                                        {% if isAdmin == true %}
+                                            <a  href="{{ path('admin_groupe', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Administration des membres</button></a>
+                                        {% endif %}
                                         <!--  CKEDITOR -->
                                         {{ form_start(formMessage) }}
                                         {{ form_errors(formMessage) }}
@@ -126,5 +128,6 @@
     <script src="{{ asset('assets/Oreo/js/pages/forms/editors.js') }}"></script>
 
 
-{% endblock %}
 
+
+{% endblock %}
