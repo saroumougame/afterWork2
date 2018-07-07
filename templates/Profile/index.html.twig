@@ -29,9 +29,8 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-12">
                                 <div class="pl-2">
-                                <h4 class="m-t-0 m-b-0"><strong>Nom</strong> Prenom</h4>
-                                <span class="job_post">username</span>
-                                <p>email</p>
+                                <h4 class="m-t-0 m-b-0">{{ User.username }}</h4>
+                                <p>email: {{ User.email }} </p>
                                 <p><strong>Entreprise: </strong> Nom de l'entreprise</p>
                                 </div>
 
@@ -40,9 +39,12 @@
                                     <br />
                                     <a><button class="btn btn-primary btn-round btn-simple">Mes entreprises</button></a>
                                     <a><button class="btn btn-primary btn-round btn-simple">Mes groupes</button></a>
-                                    <a><button class="btn btn-primary btn-round btn-simple">Rechercher des enevements</button></a>
+                                    <a href="/profile/change-password"><button class="btn btn-primary btn-round btn-simple">Changer de mot de passe</button></a>
                                 </div>
-                            </div>                
+                            </div>   
+
+
+
                         </div>
                     </div>                    
                 </div>
@@ -55,6 +57,15 @@
                     <div class="card">
                         <div class="header">
                             <h2><strong>Evenements à venir</strong></h2>
+                            {% if tabEvent[0] is defined %}
+                            {{ tabEvent[0]['titre'] }} <br />
+                            {{ tabEvent[0]['message'] }} <br />
+                            {{ tabEvent[0]['adress']}} <br />
+                           début:  {{ tabEvent[0]['datedebut']|date('d-m-Y') }} <br />
+                           fin:  {{ tabEvent[0]['datefin']|date('d-m-Y') }} <br />
+                           <a href="/event/detail/1"><button class="btn btn-primary btn-round">voir</button></a>
+                            {% endif %}
+
                         </div>
                     </div>
                 
@@ -74,57 +85,27 @@
             </div>
             <div class="modal-body">
                     {# form(formAddGroupe) #}
-                    <form class="row">
-                                    <div class="col-sm-6">
+                    {# form(formUser) #}
+                                {{ form_start(formUser) }}
+                                {{ form_errors(formUser) }}
+                                  <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nom">
+                                            {{ form_row(formUser.username)}}
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                   <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="username">
-                                        </div>
-
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="email">
+                                         {{ form_row(formUser.email) }}
                                         </div>
                                     </div>
-                                <div class="col-sm-12">
-                                <div class="form-group">
-                                    <h6>Entreprise :</h6>
-                                <select class="form-control show-tick">
-                                    <option value="">Choisir une entreprise</option>
-                                    <option value="1">Societe G</option>
-                                    <option value="1">After tech..</option>
-                                </select>
-                            </div>
-                             </div>
-                             <div class="col-sm-12">
-                            <div class="form-group">
-                                <h6>Modifier le mot de passe:</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Mot de passe">
-                                        </div>
-                                    </div>
-
-                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="confirmer le mot de passe">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                                </form>
+                                    <div class="col-sm-12">
+                                     {{ form_row(formUser.submit) }}
+                                     </div>
+                                
+                                {{ form_end(formUser) }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-danger btn-round waves-effect ml-3" data-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>

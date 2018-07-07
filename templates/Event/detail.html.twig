@@ -37,16 +37,73 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>
+                        <h2> Evenement: <strong>
                                 {{ event.titre }} </strong></h2>
                     </div>
                     <div class="body">
 
-                        {{ event.message }}
-                        {{ event.adress }}
-                        {{ event.datedebut |date('Y-m-d') }}
-                        {{ event.datefin |date('Y-m-d') }}
-                    GOOGLE MAPS ET DETAIL DE LEVENT
+                        Message : {{ event.message }} <br />
+                        Adresse:  <span id="adresse">{{ event.adress }}</span> <br />
+                        Début: {{ event.datedebut |date('Y-m-d') }} <br />
+                        fin : {{ event.datefin |date('Y-m-d') }} <br /><br />
+
+
+              
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 60vh;
+      }
+</style>
+ <div id="map"></div>
+ <script>
+
+
+
+
+
+    var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.849145, lng: 2.3896591},
+          zoom: 14
+        });
+      }
+
+
+      var request = new XMLHttpRequest();
+ 
+request.onreadystatechange = function() {
+  if(request.readyState === 4) {
+    if(request.status === 200) { 
+      
+        var resultat = request.response.results[0].geometry.location;
+        var lat = resultat.lat;
+        var lng =  resultat.lng;
+        console.log(lat);
+        console.log(map);
+
+            var center = new google.maps.LatLng(lat, lng);
+            map.panTo(center);
+
+    } else {
+    } 
+  }
+}
+ 
+
+var adresse = document.getElementById("adresse").innerHTML;
+var adresseOK = adresse.split(' ').join('+');
+request.open('Get', 'https://maps.googleapis.com/maps/api/geocode/json?address='+adresseOK+'&key=AIzaSyDZxqxF3QPGOZlQDP4fOAfiFnV0cCfT2-0');
+request.responseType = 'json';
+request.send();
+</script>
+
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZxqxF3QPGOZlQDP4fOAfiFnV0cCfT2-0&callback=initMap"
+    async defer></script>
+
+
 
 
                 </div>

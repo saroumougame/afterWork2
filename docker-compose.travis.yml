@@ -6,31 +6,18 @@ services:
       context: .
       dockerfile: ./Docker/Dockerfile
     ports :
-     - "80:80"
+     - "8080:80"
     volumes:
      - ./:/var/www/html/
     links:
      - database
     container_name: symfonyApp
+
   database:
       image: mysql:5.7
-      ports:
-       - "3306:3306"
       volumes:
        - ./Database:/var/lib/mysql
       environment:
          - MYSQL_ROOT_PASSWORD=root
          - MYSQL_DATABASE=root
-      expose:
-        - 3306
       container_name: symfonyDb
-  phpmyadmin:
-     image: phpmyadmin/phpmyadmin
-     ports :
-      - "8090:80"
-     environment:
-      - MYSQL_USERNAME=root
-      - MYSQL_PASSWORD=root
-     links:
-      - database:db
-     container_name: symfonyMysql

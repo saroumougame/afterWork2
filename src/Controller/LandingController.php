@@ -26,6 +26,16 @@ class LandingController extends Controller
         ));
     }
 
+    public function contributingAction()
+    {
+
+
+
+        return $this->render('Landing/contribution.html.twig', array(
+            'toto' => 'lol',
+        ));
+    }
+
 
 
 }

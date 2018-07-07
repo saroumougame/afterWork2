@@ -11,6 +11,10 @@ index:
     path: /
     defaults: { _controller: 'App\Controller\LandingController::indexAction' }
 
+contributing:
+    path: /contributing
+    defaults: { _controller: 'App\Controller\LandingController::contributingAction' }
+
 user_connexion:
     path: /connexion
     defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
@@ -19,6 +23,11 @@ user_connexion:
 profil_add_groupe:
     path: profil/
     defaults: { _controller: 'App\Controller\ProfilController::showAction' }
+
+profil_update_user:
+    path: profil/update
+    defaults: { _controller: 'App\Controller\ProfilController::updateAction' }
+    methods:  [POST]
 
 groupe_show:
     path: groupe/show

@@ -1,0 +1,31 @@
+sudo: required
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.16.1
+
+services:
+  - docker
+addons:
+  apt:
+    packages:
+    - sshpass
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker-compose -v
+  - docker -v
+  - mkdir symfony
+
+script:
+  - docker-compose -f docker-compose.travis.yml up -d --build
+  - docker-compose -f docker-compose.travis.yml ps
+  - docker exec -d symfonyApp composer update
+  #- docker exec -d symfonyApp bin/console phpUnit
+
+deploy:
+    provider: script
+    script: bash ./deploy.sh
+    on:
+      branch: master
