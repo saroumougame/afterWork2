@@ -104,6 +104,7 @@ class EventController extends Controller
     public function detailAction(Event $event)
     {
 
+
         return $this->render('Event/detail.html.twig', array(
             'event' => $event,
         ));

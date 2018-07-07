@@ -35,10 +35,14 @@ class DashboardController extends Controller
         $User = $this->getUser();
         $entityManager = $this->getDoctrine()->getManager();
         $allusers = $entityManager->getRepository(User::class)->findAll();
+
         $allGroupes = $entityManager->getRepository(Groupe::class)->findAll();
         $allEvents = $entityManager->getRepository(Event::class)->findAll();
         $allEntreprises = $entityManager->getRepository(Entreprise::class)->findAll();
         $allMessages = $entityManager->getRepository(Message::class)->findAll();
+
+
+        // PS TA PAS BESION DE FAIRE DE BOUCLE MAIS JUSTE UN COUNT
 
         $countUser = 0;
         $tabUsers = [];
@@ -85,28 +89,4 @@ class DashboardController extends Controller
 
     }
 
-/*
-// modification
-    public function accepterAction(UserGroupe $userGroupe){
-               $userGroupe->setStatue(1);
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($userGroupe);
-                $entityManager->flush($userGroupe);
-
-        return $this->redirect($this->generateUrl('user_invite_notif'));
-
-}
-*/
-/*
-
-    public function refuserAction(UserGroupe $userGroupe){
-
-        // supprimer une entiter
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($userGroupe);
-        $entityManager->flush($userGroupe);
-        return $this->redirect($this->generateUrl('user_invite_notif'));
-
-    }
-    */
 }
