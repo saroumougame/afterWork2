@@ -36,10 +36,13 @@ class ProfilController extends Controller
 
     	$formUser = $this->getForm($User);
 
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $eventUser = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()), null,5);
 
         return $this->render('Profile/index.html.twig', array(
             'User' => $User,
-//            'tabEvent' => $tabEvents,
+            'eventUser' => $eventUser,
             'formUser' => $formUser->createView()
         ));
     }
