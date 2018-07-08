@@ -31,13 +31,21 @@
                                 <div class="pl-2">
                                 <h4 class="m-t-0 m-b-0">{{ User.username }}</h4>
                                 <p>email: {{ User.email }} </p>
-                                <p><strong>Entreprise: </strong> Nom de l'entreprise</p>
+                                    {% if User.entreprise  is null %}
+
+                                        Vous n'aves pas d'entreprise
+
+                                    {% else %}
+                                        <p><strong>Entreprise: </strong> {{ User.entreprise.nom }}</p>
+                                        {% endif %}
+
+
                                 </div>
 
                                 <div>
-                                    <button class="btn btn-primary btn-round " data-toggle="modal" data-target="#UserInfoModal">Modifier mes informations personnelles</button>
+                                    <button class="btn btn-primary btn-round " data-toggle="modal" data-target="#UserInfoModal">Changer mon mail</button>
                                     <br />
-                                    <a><button class="btn btn-primary btn-round btn-simple">Mes entreprises</button></a>
+                                    <a><button class="btn btn-primary btn-round btn-simple">Mon entreprises</button></a>
                                     <a><button class="btn btn-primary btn-round btn-simple">Mes groupes</button></a>
                                     <a href="/profile/change-password"><button class="btn btn-primary btn-round btn-simple">Changer de mot de passe</button></a>
                                 </div>
@@ -56,15 +64,15 @@
                     </div>
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Evenements à venir</strong></h2>
-                            {% if tabEvent[0] is defined %}
-                            {{ tabEvent[0]['titre'] }} <br />
-                            {{ tabEvent[0]['message'] }} <br />
-                            {{ tabEvent[0]['adress']}} <br />
-                           début:  {{ tabEvent[0]['datedebut']|date('d-m-Y') }} <br />
-                           fin:  {{ tabEvent[0]['datefin']|date('d-m-Y') }} <br />
-                           <a href="/event/detail/1"><button class="btn btn-primary btn-round">voir</button></a>
-                            {% endif %}
+                            {#<h2><strong>Evenements à venir</strong></h2>#}
+                            {#{% if tabEvent[0] is defined %}#}
+                            {#{{ tabEvent[0]['titre'] }} <br />#}
+                            {#{{ tabEvent[0]['message'] }} <br />#}
+                            {#{{ tabEvent[0]['adress']}} <br />#}
+                           {#début:  {{ tabEvent[0]['datedebut']|date('d-m-Y') }} <br />#}
+                           {#fin:  {{ tabEvent[0]['datefin']|date('d-m-Y') }} <br />#}
+                           {#<a href="/event/detail/1"><button class="btn btn-primary btn-round">voir</button></a>#}
+                            {#{% endif %}#}
 
                         </div>
                     </div>
@@ -81,7 +89,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="title" id="defaultModalLabel">Modifier mes informations personnelles</h4>
+                <h4 class="title" id="defaultModalLabel">Modifier mon mail</h4>
             </div>
             <div class="modal-body">
                     {# form(formAddGroupe) #}
@@ -89,23 +97,22 @@
                                 {{ form_start(formUser) }}
                                 {{ form_errors(formUser) }}
                                   <div class="col-sm-6">
-                                        <div class="form-group">
-                                            {{ form_row(formUser.username)}}
-                                        </div>
                                     </div>
                                    <div class="col-sm-6">
                                         <div class="form-group">
                                          {{ form_row(formUser.email) }}
                                         </div>
                                     </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {{ form_row(formUser.entreprise) }}
+                    </div>
+                </div>
                                     <div class="col-sm-12">
                                      {{ form_row(formUser.submit) }}
                                      </div>
-                                
+
                                 {{ form_end(formUser) }}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-round waves-effect ml-3" data-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>

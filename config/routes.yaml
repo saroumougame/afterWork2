@@ -20,7 +20,7 @@ user_connexion:
     defaults: { _controller: 'App\Controller\ProfilController::connexionAction' }
 
 
-profil_add_groupe:
+user_profil:
     path: profil/
     defaults: { _controller: 'App\Controller\ProfilController::showAction' }
 

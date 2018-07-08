@@ -8,8 +8,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Entreprise;
 use App\Entity\UserGroupe;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Groupe;
@@ -19,6 +22,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\UserRepository;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Doctrine\ORM\EntityRepository;
+
 
 class ProfilController extends Controller
 {
@@ -29,48 +34,12 @@ class ProfilController extends Controller
     {
         $User = $this->getUser();
 
-    	$entityManager = $this->getDoctrine()->getManager();
-        $Groupes = $entityManager->getRepository(Groupe::class);
-        $Event = $entityManager->getRepository(Event::class);
-        $allUsersGroupes = $entityManager->getRepository(UserGroupe::class)->findAll();
-       
-
-
-        $param = array('user' => $this->getUser());
-        // j'ai tout les groupes d'un user
-        $groupes = $Groupes->getGroupeByUser($param);
-
-        if(isset($groupes) && !empty($groupes))
-             $premierGroupe = $groupes[0]->getIdGroupe();
-
-        // je prend le premier car je sais pas faire de jointure avec un "tableau de groupe"
-        // je recupere tout ces events
-        if(isset($premierGroupe))
-            $allEvents = $Event->getByGroupe($premierGroupe);
-        
-        $tabEvents = [];
-        if(isset($allEvents))
-        {
-            
-        // on récuperer un array avec la data de tout les events récupérés. 
-            $countEvents = 0;
-            foreach ($allEvents as $UnEvent) {
-                $tabEvents[$countEvents]['id'] = $UnEvent->getId();
-                $tabEvents[$countEvents]['titre'] = $UnEvent->getTitre();
-                $tabEvents[$countEvents]['message'] = $UnEvent->getMessage();
-                $tabEvents[$countEvents]['adress'] = $UnEvent->getAdress();
-                $tabEvents[$countEvents]['datedebut'] = $UnEvent->getDatedebut();
-                $tabEvents[$countEvents]['datefin'] = $UnEvent->getDatefin();
-                $countEvents++;
-            }
-        }
-
-
     	$formUser = $this->getForm($User);
+
 
         return $this->render('Profile/index.html.twig', array(
             'User' => $User,
-            'tabEvent' => $tabEvents,
+//            'tabEvent' => $tabEvents,
             'formUser' => $formUser->createView()
         ));
     }
@@ -105,14 +74,35 @@ class ProfilController extends Controller
 
         ));
 
-        $form->add("username", TextType::class, 
-            array(
-                'attr' => array(
-                    'class' => 'form-control'
-                )
-            )
-        )
-        ->add("email", TextType::class, 
+//        $form->add("username", TextType::class,   // Changer le user name peut augmenter les probabilité de ce fsire une mquvqise reputation
+//            array(
+//                'attr' => array(
+//                    'class' => 'form-control'
+//                )
+//            )
+//        )
+//        $form->add("entreprise", ChoiceType::class,
+//            array(
+//                'attr' => array(
+////                    'class' => 'form-control'
+//                )
+//            )
+//        );
+
+//        $entityManager = $this->getDoctrine()->getManager();
+//
+//        $repository = $entityManager->getRepository(Entreprise::class);
+//
+
+        $form->add('entreprise', EntityType::class, array(
+            'class' => Entreprise::class,
+            'query_builder' => function(EntityRepository $repository) {
+                return $repository->createQueryBuilder('e')
+                    ->orderBy('e.nom', 'ASC');
+            },
+        ));
+
+        $form->add("email", TextType::class,
             array(
                 'attr' => array(
                     'class' => 'form-control'
