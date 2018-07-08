@@ -32,7 +32,6 @@ class EventController extends Controller
     {
 
 
-
         $entityManager = $this->getDoctrine()->getManager();
 
         $event = $entityManager->getRepository(Event::class)->findBy(array('groupe' => $groupe), null,5);
@@ -105,10 +104,85 @@ class EventController extends Controller
     public function detailAction(Event $event)
     {
 
+       $statueUser = $this->verifUserProprioEvent($event);
 
         return $this->render('Event/detail.html.twig', array(
             'event' => $event,
+            'proprio' => $statueUser
         ));
     }
+
+
+    private function verifUserProprioEvent($event){
+
+        if( $event->getUseradd() == $this->getUser()->getId()){
+            return true;
+        }else false;
+
+
+
+    }
+
+
+
+    public function editAction(Event $event, Request $request)
+    {
+
+        $formEvent = $this->getEditForm($event);
+        $formEvent->handleRequest($request);
+
+        if ($formEvent->isSubmitted()) {
+
+            $event = $formEvent->getData();
+            $event->setUseradd($this->getUser()->getId());
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($event);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('event_detail', array('id' => $event->getId()));
+        }
+
+
+        return $this->render ( 'Event/edit.html.twig', array (
+            'formEvent' => $formEvent->createView(),
+            'event' => $event
+
+        ));
+    }
+
+
+
+    private function getEditForm($event){
+        $form = $this->createFormBuilder($event, array(
+            'action' =>$this->generateUrl('event_edit', array('event' => $event->getId())),
+            'method' => 'POST',
+
+        ));
+
+        $form->add("titre", TextType::class, array('label' => false))
+            ->add("message", TextareaType::class, array('label' => false))
+            ->add("adress", TextType::class, array('label' => false))
+            ->add('datedebut', DateTimeType::class, array(
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy - HH:mm',
+                'label' => false))
+
+            ->add("datefin", DateTimeType::class, array(
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy - HH:mm',
+                'label' => false))
+            ->add('submit', SubmitType::class, array('label' => 'Envoyer'));
+
+
+        return $form->getForm();
+    }
+
+
+
+
+
+
 
 }

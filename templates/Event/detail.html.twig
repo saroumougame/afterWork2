@@ -40,6 +40,10 @@
                                 {{ event.titre }} </strong></h2>
                     </div>
                     <div class="body">
+                        {% if proprio == true  %}
+                        <a  href="{{ path('event_edit', {'event': event.id}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Editer</button></a>
+                        <br>
+                        {% endif %}
 
                         Message : {{ event.message }} <br />
                         Adresse:  <span id="adresse">{{ event.adress }}</span> <br />

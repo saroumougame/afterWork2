@@ -58,6 +58,10 @@ event_detail:
     path: event/detail/{id}
     defaults: { _controller: 'App\Controller\EventController::detailAction' }
 
+event_edit:
+    path: event/edit/{event}
+    defaults: { _controller: 'App\Controller\EventController::editAction' }
+
 event_calendar_loader:
     path: event/loadcalendar
     defaults: { _controller: 'App\Controller\CalendarEventController::loadCalendarAction' }

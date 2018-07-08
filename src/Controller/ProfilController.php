@@ -40,6 +40,9 @@ class ProfilController extends Controller
 
         $eventUser = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()), null,5);
 
+
+
+
         return $this->render('Profile/index.html.twig', array(
             'User' => $User,
             'eventUser' => $eventUser,
