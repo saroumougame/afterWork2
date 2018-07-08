@@ -61,7 +61,7 @@ class ProfilController extends Controller
                 $entityManager->persist($User);
                 $entityManager->flush();
 
-                return $this->redirect($this->generateUrl('profil_add_groupe'));
+                return $this->redirect($this->generateUrl('user_profil'));
         }
 
     }
@@ -74,32 +74,14 @@ class ProfilController extends Controller
 
         ));
 
-//        $form->add("username", TextType::class,   // Changer le user name peut augmenter les probabilité de ce fsire une mquvqise reputation
-//            array(
-//                'attr' => array(
-//                    'class' => 'form-control'
-//                )
-//            )
-//        )
-//        $form->add("entreprise", ChoiceType::class,
-//            array(
-//                'attr' => array(
-////                    'class' => 'form-control'
-//                )
-//            )
-//        );
-
-//        $entityManager = $this->getDoctrine()->getManager();
-//
-//        $repository = $entityManager->getRepository(Entreprise::class);
-//
-
         $form->add('entreprise', EntityType::class, array(
             'class' => Entreprise::class,
             'query_builder' => function(EntityRepository $repository) {
                 return $repository->createQueryBuilder('e')
+                    ->select('e')
                     ->orderBy('e.nom', 'ASC');
             },
+            'attr' => array('class' => 'form-control show-tick', 'data-live-search' => 'true'),
         ));
 
         $form->add("email", TextType::class,
