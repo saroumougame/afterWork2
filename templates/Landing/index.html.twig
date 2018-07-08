@@ -154,6 +154,13 @@
                         Crée des évements entres groupes de collegues ou inter-entreprise
                         <br class="hidden-xs hidden-sm" /> Crée des liens, des contact, des amis...
                     </p>
+                    {% if app.user %}
+                    <a class="btn btn--sm btn--primary type--uppercase" href="{{ path('fos_user_security_logout') }}">
+                                    <span class="btn__text">
+                                        accéder à mon espace
+                                    </span>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
             <!--end of row-->
