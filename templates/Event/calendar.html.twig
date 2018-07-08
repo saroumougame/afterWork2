@@ -41,23 +41,23 @@
                             <hr>
 
                             {% for events in event %}
-                            <div class="event-name b-primary row">
+                                <div class="event-name b-primary row">
 
-                                <div class="col-2 text-center">
+                                    <div class="col-2 text-center">
 
-                                    <a href="">
+                                        <a href="">
 
-                                        {{ events.datedebut|date("F jS") }}
-                                    </a>
+                                            {{ events.datedebut|date("F jS") }}
+                                        </a>
 
-                                    {#<h4>11<span>Dec</span><span>2017</span></h4>#}
+                                        {#<h4>11<span>Dec</span><span>2017</span></h4>#}
+                                    </div>
+                                    <div class="col-10">
+                                        <h6>{{ events.titre }}</h6>
+                                        <p>{{ events.message|slice(1, 20) }}...</p>
+                                        <address><i class="zmdi zmdi-pin"></i>{{ events.adress }}</address>
+                                    </div>
                                 </div>
-                                <div class="col-10">
-                                    <h6>{{ events.titre }}</h6>
-                                    <p>{{ events.message|slice(1, 20) }}...</p>
-                                    <address><i class="zmdi zmdi-pin"></i>{{ events.adress }}</address>
-                                </div>
-                            </div>
 
                             {% endfor %}
                         </div>

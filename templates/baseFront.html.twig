@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-3 col-md-2">
-                    <a href="{{ path('index') }}">
+                    <a href="index.html">
                         <h2>After-Tech</h2>
                     </a>
                 </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2 hidden-xs">
                     <div class="bar__module">
-                        <a href="index.html">
+                        <a href="{{ path('index') }}">
                             <h3 id="nav_title">After tech</h3>
                         </a>
                     </div>
@@ -135,7 +135,6 @@
     </nav>
     <!--end bar-->
 </div>
-
 {% block container %}
 <div class="main-container">
     <section class="text-center height-80 imagebg" data-overlay="4">
@@ -154,13 +153,6 @@
                         Crée des évements entres groupes de collegues ou inter-entreprise
                         <br class="hidden-xs hidden-sm" /> Crée des liens, des contact, des amis...
                     </p>
-                    {% if app.user %}
-                    <a class="btn btn--sm btn--primary type--uppercase" href="{{ path('actu_show') }}">
-                                    <span class="btn__text">
-                                        accéder à mon espace
-                                    </span>
-                    </a>
-                    {% endif %}
                 </div>
             </div>
             <!--end of row-->
@@ -308,8 +300,6 @@
             </div>
             <!--end of row-->
         </div>
-
-        {% endblock %}
         <!--end of container-->
     </section>
     <section class="text-center">
@@ -364,6 +354,7 @@
             </div>
             <!--end of row-->
         </div>
+        {% endblock %}
         <!--end of container-->
     </footer>
 </div>

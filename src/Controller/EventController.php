@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Groupe;
 use App\Entity\Message;
@@ -55,12 +56,12 @@ class EventController extends Controller
 
             $event = $formEvent->getData();
             $event->setGroupe($groupe);
-
+            $event->setUseradd($this->getUser()->getId());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($event);
             $entityManager->flush();
 
-            return $this->redirectToRoute('event_add', array('groupe' => $groupe->getIdGroupe()));
+            return $this->redirectToRoute(' event_show', array('groupe' => $groupe->getIdGroupe()));
         }
 
 
@@ -103,6 +104,7 @@ class EventController extends Controller
 
     public function detailAction(Event $event)
     {
+
 
         return $this->render('Event/detail.html.twig', array(
             'event' => $event,

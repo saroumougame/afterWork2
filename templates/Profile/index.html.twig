@@ -29,20 +29,26 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-12">
                                 <div class="pl-2">
-                                <h4 class="m-t-0 m-b-0"><strong>Nom</strong> Prenom</h4>
-                                <span class="job_post">username</span>
-                                <p>email</p>
-                                <p><strong>Entreprise: </strong> Nom de l'entreprise</p>
+                                <h4 class="m-t-0 m-b-0">{{ User.username }}</h4>
+                                <p>email: {{ User.email }} </p>
+                                    {% if User.entreprise  is null %}
+
+                                        Vous n'avez pas d'entreprise
+                                        Attribuer vous une entreprise dans changer mes informations<br>
+                                        Si elle n'existe pas cree la votre
+
+                                    {% else %}
+                                        <p><strong>Entreprise: </strong> {{ User.entreprise.nom }}</p>
+                                        {% endif %}
                                 </div>
 
                                 <div>
-                                    <button class="btn btn-primary btn-round " data-toggle="modal" data-target="#UserInfoModal">Modifier mes informations personnelles</button>
+                                    <button class="btn btn-primary btn-round " data-toggle="modal" data-target="#UserInfoModal">Changer mes information</button>
                                     <br />
-                                    <a><button class="btn btn-primary btn-round btn-simple">Mes entreprises</button></a>
-                                    <a><button class="btn btn-primary btn-round btn-simple">Mes groupes</button></a>
-                                    <a><button class="btn btn-primary btn-round btn-simple">Rechercher des enevements</button></a>
+                                    <a href="{{ path('fos_user_change_password') }}"><button class="btn btn-primary btn-round btn-simple">Changer de mot de passe</button></a>
                                 </div>
-                            </div>                
+                            </div>
+
                         </div>
                     </div>                    
                 </div>
@@ -54,7 +60,29 @@
                     </div>
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Evenements à venir</strong></h2>
+                            Vos Evénement
+                            <hr>
+                            {% for events in eventUser %}
+                                <div class="event-name b-primary row">
+
+                                    <div class="col-2 text-center">
+
+                                        <a href="">
+                                            {{ events.datedebut|date("F jS") }}
+                                        </a>
+
+                                        {#<h4>11<span>Dec</span><span>2017</span></h4>#}
+                                    </div>
+                                    <div class="col-10">
+                                        <h5>{{ events.groupe.nom }}</h5>
+                                        <h6>{{ events.titre }}</h6>
+                                        <p>{{ events.message|slice(1, 20) }}...</p>
+                                        <address><i class="zmdi zmdi-pin"></i> {{ events.adress }}</address>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
                         </div>
                     </div>
                 
@@ -70,61 +98,32 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="title" id="defaultModalLabel">Modifier mes informations personnelles</h4>
+                <h4 class="title" id="defaultModalLabel">Modifier mon mail</h4>
             </div>
             <div class="modal-body">
-                    {# form(formAddGroupe) #}
-                    <form class="row">
-                                    <div class="col-sm-6">
+                                {{ form_start(formUser) }}
+                                {{ form_errors(formUser) }}
+                                  <div class="col-sm-6">
+                                    </div>
+                                   <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nom">
+                                         {{ form_row(formUser.email) }}
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="username">
-                                        </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {{ form_row(formUser.entreprise) }}
+                    </div>
+                </div>
+                                    <div class="col-sm-12 right">
+                                     {{ form_row(formUser.submit) }}
+                                     </div>
 
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="email">
-                                        </div>
-                                    </div>
-                                <div class="col-sm-12">
-                                <div class="form-group">
-                                    <h6>Entreprise :</h6>
-                                <select class="form-control show-tick">
-                                    <option value="">Choisir une entreprise</option>
-                                    <option value="1">Societe G</option>
-                                    <option value="1">After tech..</option>
-                                </select>
-                            </div>
-                             </div>
-                             <div class="col-sm-12">
-                            <div class="form-group">
-                                <h6>Modifier le mot de passe:</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Mot de passe">
-                                        </div>
-                                    </div>
+                                {{ form_end(formUser) }}
 
-                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="confirmer le mot de passe">
-                                        </div>
-                                    </div>
 
-                                </div>
 
-                            </div>
-                        </div>
-                                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+
             </div>
         </div>
     </div>
