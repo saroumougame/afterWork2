@@ -62,6 +62,10 @@ event_edit:
     path: event/edit/{event}
     defaults: { _controller: 'App\Controller\EventController::editAction' }
 
+event_delete:
+    path: event/delete/{event}
+    defaults: { _controller: 'App\Controller\EventController::deleteAction' }
+
 event_calendar_loader:
     path: event/loadcalendar
     defaults: { _controller: 'App\Controller\CalendarEventController::loadCalendarAction' }

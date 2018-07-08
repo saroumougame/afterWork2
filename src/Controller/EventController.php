@@ -180,6 +180,28 @@ class EventController extends Controller
     }
 
 
+    public function deleteAction(Event $event){
+
+        $statue = $this->verifUserProprioEvent($event);
+        $idGroupe = $event->getGroupe()->getIdGroupe();
+
+        if ($statue == true){
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($event);
+            $entityManager->flush();
+
+            return   $this->redirectToRoute('event_show',array('groupe' => $idGroupe));
+
+        }else{
+
+            return $this->redirectToRoute('event_detail', array('id' => $event->getId()));
+        }
+
+
+    }
+
+
 
 
 
