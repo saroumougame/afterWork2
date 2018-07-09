@@ -54,7 +54,6 @@ class GroupeController extends Controller
 
         $formGroupe = $this->getForm($groupe);
 
-
         $formGroupe->handleRequest($request);
 
         if ($formGroupe->isSubmitted()) {

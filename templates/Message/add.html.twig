@@ -39,6 +39,8 @@
 
                                         <a  href="{{ path('event_show', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
 
+                                        <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#membreModal">Membre</button>
+
                                         {% if isAdmin == true %}
                                             <a  href="{{ path('admin_groupe', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Administration des membres</button></a>
                                         {% endif %}
@@ -69,7 +71,7 @@
                         <ul class="inbox-widget list-unstyled clearfix">
                             {% for message in allMessage %}
 
-                            <li class="inbox-inner"> <a href="javascript:void(0)">
+                            <li class="inbox-inner">
                                     <div class="inbox-item">
                                         <div class="inbox-item-info">
                                             <p class="author">{{ message.username }}</p>
@@ -105,9 +107,6 @@
             <div class="modal-body"> 
                     {{ form(formInviteUser) }}
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
-            </div>
         </div>
     </div>
 </div>
@@ -131,6 +130,33 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="membreModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Membres</h4>
+                </div>
+                <div class="modal-body">
+                    {% for membres in membre %}
+                        <li class="inbox-inner">
+                            <div class="inbox-item">
+                                <div class="inbox">
+                                    <p class="inbox-message">{{ membres.user.username }}</p>
+                                    <p class="inbox-message">   {{ membres.user.email }}</p>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <hr>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 {% endblock %}
