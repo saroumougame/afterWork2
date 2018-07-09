@@ -32,7 +32,7 @@ class Message
     private $id;
 
     /**
-     * @ORM\Column(type="string", name="message")
+     * @ORM\Column(type="string", length=5000, name="message")
      */
     private $message;
     /**

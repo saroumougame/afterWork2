@@ -64,6 +64,7 @@ class GroupeController extends Controller
                 $usergroupe = new UserGroupe($this->getUser(), $groupe);
                 $usergroupe->setInviteur($this->getUser()->getUsername());
                 $usergroupe->setStatue(1);
+                $usergroupe->setRoleGroupe(1);
                 $entityManager = $this->getDoctrine()->getManager();
                  $entityManager->persist($usergroupe);
                 $entityManager->persist($groupe);
