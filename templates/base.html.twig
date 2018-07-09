@@ -253,7 +253,18 @@
                             <ul class="ml-menu">
                                 <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
                                 <li><a href="{{ path('user_profil') }}">Mon Profil</a></li>
-                                <li><a href="{{ path('entreprise_add') }}">Les Entreprises</a></li>
+
+                                {% if app.user.entreprise.id is null %}
+                                <li><a href="{{ path('entreprise_add') }}">Crée mon Entreprise</a></li>
+
+                                 {% else %}
+
+                                     <li><a href="{{ path('entreprise_show', {'id': app.user.entreprise.id}) }}">Mon Entreprises</a></li>
+
+                                {% endif %}
+
+
+
                                 <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
                             </ul>
                         </li>

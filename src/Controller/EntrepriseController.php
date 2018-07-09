@@ -88,7 +88,6 @@ class EntrepriseController extends Controller
         $statue = $this->UserBindEntreprise($entreprise);
 
 
-
         return $this->render('Entreprise/show.html.twig', array(
             'statue' => $statue,
             'entreprise' => $entreprise,

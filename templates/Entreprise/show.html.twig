@@ -25,54 +25,12 @@
             <div class="row clearfix">
                 <!-- Basic Examples -->
 
-                <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#entrepriseDescription"> En savoir plus</button>
+                <button type="button" class="btn btn-info waves-effect m-r-20" data-toggle="modal" data-target="#entrepriseDescription"> En savoir plus</button>
 
 
+                {% if statue == true %}
+                <button type="button" class="btn btn-info waves-effect m-r-20" data-toggle="modal" data-target="#actuEntreprise">Publier une Actu</button>
 
-                {% if statue == false %}
-                <div class="col-lg-12 col-md-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2><strong>Ajouter une actualité</strong>   Tenez a jour les membres d'AfterTech</h2>
-                            <ul class="header-dropdown">
-                                <li class="remove">
-                                    <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-
-
-                                        {{ form_start(formActu) }}
-                                        {{ form_errors(formActu) }}
-
-                                        {{ form_row(formActu.titre, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Titre'} })}}
-                                        <br>
-                                        {{ form_row(formActu.message, { 'attr': {'class': 'ckeditor'} }) }}
-                                        <br>
-                                        {{ form_row(formActu.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
-
-                                        {{ form_end(formActu) }}
-
-
-                                        {{ form(formActu) }}
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
             {% endif %}
 
             <!-- #END# Custom Content -->
@@ -130,6 +88,36 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="actuEntreprise" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    {% if statue == true %}
+
+                    {{ form_start(formActu) }}
+                    {{ form_errors(formActu) }}
+
+                    {{ form_row(formActu.titre, { 'attr': {'class': 'form-control no-resize', 'placeholder': 'Titre'} })}}
+                    <br>
+                    {{ form_row(formActu.message, { 'attr': {'class': 'ckeditor'} }) }}
+                    <br>
+                    {{ form_row(formActu.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+
+                    {{ form_end(formActu) }}
+
+
+                    {{ form(formActu) }}
+
+                    {% endif %}
+
                 </div>
             </div>
         </div>
