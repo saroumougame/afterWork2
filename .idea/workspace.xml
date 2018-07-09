@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GroupeController.php" afterPath="$PROJECT_DIR$/src/Controller/GroupeController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" afterPath="$PROJECT_DIR$/src/Entity/Message.php" />
-      <change beforePath="$PROJECT_DIR$/templates/Groupe/mygroupe.html.twig" afterPath="$PROJECT_DIR$/templates/Groupe/mygroupe.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/Message/add.html.twig" afterPath="$PROJECT_DIR$/templates/Message/add.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GroupeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/GroupeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="614">
@@ -59,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Message/add.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+            <state relative-caret-position="595">
+              <caret line="129" column="22" lean-forward="false" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -156,7 +153,6 @@
         <option value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.twig.html" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" />
-        <option value="$PROJECT_DIR$/templates/Message/add.html.twig" />
         <option value="$PROJECT_DIR$/templates/Administration/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/AdminUserController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
@@ -188,6 +184,7 @@
         <option value="$PROJECT_DIR$/templates/Groupe/mygroupe.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/GroupeController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Message.php" />
+        <option value="$PROJECT_DIR$/templates/Message/add.html.twig" />
       </list>
     </option>
   </component>
@@ -429,12 +426,12 @@
       <workItem from="1530630217338" duration="53000" />
       <workItem from="1530799594173" duration="2970000" />
       <workItem from="1530867163784" duration="19505000" />
-      <workItem from="1531124502677" duration="766000" />
+      <workItem from="1531124502677" duration="2268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243679000" />
+    <option name="totallyTimeSpent" value="245181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -819,10 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/GroupeController.php">
+    <entry file="file://$PROJECT_DIR$/templates/Message/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+        <state relative-caret-position="595">
+          <caret line="129" column="22" lean-forward="false" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -835,10 +832,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Message/add.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/GroupeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+        <state relative-caret-position="614">
+          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
           <folding />
         </state>
       </provider>
