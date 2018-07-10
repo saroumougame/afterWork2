@@ -108,4 +108,13 @@ class ProfilController extends Controller
     }
 
 
+
+    private function statUser(){
+
+
+
+
+    }
+
+
 }
