@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Repository/EntrepriseRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Entreprise/search.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/Entreprise/searchShow.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EntrepriseController.php" afterPath="$PROJECT_DIR$/src/Controller/EntrepriseController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entreprise.php" afterPath="$PROJECT_DIR$/src/Entity/Entreprise.php" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,11 +41,43 @@
       <file leaf-file-name="EntrepriseController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/EntrepriseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="269" column="55" lean-forward="false" selection-start-line="269" selection-start-column="55" selection-end-line="269" selection-end-column="55" />
+            <state relative-caret-position="4125">
+              <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
               <folding>
                 <element signature="e#118#148#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchShow.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Entreprise/searchShow.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="119" lean-forward="false" selection-start-line="14" selection-start-column="119" selection-end-line="14" selection-end-column="119" />
+              <folding>
+                <marker date="1531249383000" expanded="true" signature="417:717" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="476:694" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="857:1832" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="896:1809" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="941:1340" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1077:1309" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1129:1275" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1383:1782" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1438:1751" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1494:1716" ph="..." />
+                <marker date="1531249383000" expanded="true" signature="1555:1677" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Entreprise/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Des</find>
       <find>path</find>
       <find>actu</find>
       <find>J'in</find>
@@ -96,6 +122,7 @@
       <find>eaC</find>
       <find>anno</find>
       <find>Search...</find>
+      <find>sta</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -124,8 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/bundles/FOSUserBundle/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/templates/baseAuth.html.twig" />
         <option value="$PROJECT_DIR$/public/assets/Oreo/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js" />
         <option value="$PROJECT_DIR$/templates/Event/add.html.twig" />
         <option value="$PROJECT_DIR$/public/assets/Oreo/js/pages/forms/basic-form-elements.js" />
@@ -174,6 +199,8 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/EntrepriseRepository.php" />
         <option value="$PROJECT_DIR$/templates/Entreprise/search.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Entreprise/searchShow.html.twig.php" />
+        <option value="$PROJECT_DIR$/templates/Entreprise/searchShow.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/EntrepriseController.php" />
       </list>
     </option>
@@ -447,12 +474,12 @@
       <workItem from="1531216232286" duration="339000" />
       <workItem from="1531223758116" duration="4454000" />
       <workItem from="1531230050898" duration="862000" />
-      <workItem from="1531239189250" duration="5831000" />
+      <workItem from="1531239189250" duration="6404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263626000" />
+    <option name="totallyTimeSpent" value="264199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -491,13 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/bundles/FOSUserBundle/Profile/show_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -645,13 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Entreprise/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -835,10 +848,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Entreprise/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Entreprise/searchShow.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="119" lean-forward="false" selection-start-line="14" selection-start-column="119" selection-end-line="14" selection-end-column="119" />
+          <folding>
+            <marker date="1531249383000" expanded="true" signature="417:717" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="476:694" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="857:1832" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="896:1809" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="941:1340" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1077:1309" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1129:1275" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1383:1782" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1438:1751" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1494:1716" ph="..." />
+            <marker date="1531249383000" expanded="true" signature="1555:1677" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/EntrepriseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="269" column="55" lean-forward="false" selection-start-line="269" selection-start-column="55" selection-end-line="269" selection-end-column="55" />
+        <state relative-caret-position="4125">
+          <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding>
             <element signature="e#118#148#0#PHP" expanded="true" />
           </folding>

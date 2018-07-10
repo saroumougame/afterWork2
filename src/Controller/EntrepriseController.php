@@ -265,10 +265,13 @@ class EntrepriseController extends Controller
 
             $newentreprise = $this->entrepriseBySearch($info->getNom());
 
-            dump($newentreprise);
+
+           $nbSearch = count($newentreprise);
 
             return $this->render('Entreprise/searchShow.html.twig', array(
                 'entreprise' => $newentreprise,
+                'nbresult' => $nbSearch,
+
             ));
 
         }
@@ -285,11 +288,10 @@ class EntrepriseController extends Controller
 
         $param = array('nom' => $nom);
 
-        dump($param);
 
         $showentreprise = $entityManager->getRepository(Entreprise::class)->getEntrepriseBySearch($param);
 
-        dump($showentreprise);
+
 
         return $showentreprise;
 
