@@ -205,16 +205,14 @@
                 </li>
                 <li class="footer"><a href="javascript:void(0);">View All</a></li>
             </ul>
-        </li>
+        </li>-->
         <li class="hidden-sm-down">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <span class="input-group-addon">
-                    <i class="zmdi zmdi-search"></i>
-                </span>
-            </div>
+
+                {{ render(controller(
+                    'App\\Controller\\EntrepriseController::searchEntreprise'
+                )) }}
+
         </li>
-    -->
         <li class="float-right">
             <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
             <a href="{{ path('fos_user_security_logout') }}" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
@@ -254,7 +252,7 @@
                                 <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
                                 <li><a href="{{ path('user_profil') }}">Mon Profil</a></li>
 
-                                {% if app.user.entreprise.id is null %}
+                                {% if app.user.entreprise is null %}
                                 <li><a href="{{ path('entreprise_add') }}">Crée mon Entreprise</a></li>
 
                                  {% else %}

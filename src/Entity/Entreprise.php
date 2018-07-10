@@ -18,7 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User
  *
  * @ORM\Table(name="entreprise")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\EntrepriseRepository")
  */
 class Entreprise{
 

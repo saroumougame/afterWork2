@@ -15,7 +15,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Form\EntrepriseType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ActuEntrepriseType;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class EntrepriseController extends Controller
 {
@@ -205,6 +206,93 @@ class EntrepriseController extends Controller
 
 
        return $statue;
+
+    }
+
+
+    public function searchEntreprise(){
+
+        $entreprise = new Entreprise();
+
+
+        $form = $this->getFormSearch($entreprise);
+
+
+        return $this->render(
+            'Entreprise/search.html.twig',
+            array('searchEntreprise' => $form->createView())
+        );
+    }
+
+
+
+    public function getFormSearch($User)
+    {
+        $form = $this->createFormBuilder($User, array(
+            'action' =>$this->generateUrl('entreprise_search'),
+            'method' => 'POST',
+
+        ));
+
+        $form->add("nom", TextType::class,
+            array(
+                'attr' => array(
+                    'class' => ''
+                )
+            )
+        )
+            ->add('submit', SubmitType::class,
+                array(
+                    'label' => 'Valider',
+                    'attr' => array(
+                        'class' => ''))
+
+            );
+        return $form->getForm();
+    }
+
+    public function searchAction(Request $request){
+
+        $entreprise = new Entreprise();
+
+        $form = $this->getFormSearch($entreprise);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+
+            $info = $form->getData();
+
+            $newentreprise = $this->entrepriseBySearch($info->getNom());
+
+            dump($newentreprise);
+
+            return $this->render('Entreprise/searchShow.html.twig', array(
+                'entreprise' => $newentreprise,
+            ));
+
+        }
+
+
+    }
+
+
+
+    private function entrepriseBySearch($nom){
+
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $param = array('nom' => $nom);
+
+        dump($param);
+
+        $showentreprise = $entityManager->getRepository(Entreprise::class)->getEntrepriseBySearch($param);
+
+        dump($showentreprise);
+
+        return $showentreprise;
+
 
     }
 
