@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Mes Groupes
-                        <small>Ajouter un groupe</small>
+                        <small>     <button class="btn btn-info btn-round" data-toggle="modal" data-target="#defaultModal">Cree un groupe</button></small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
@@ -29,7 +29,9 @@
         </div>
         <div class="container-fluid">
             <div class="row clearfix">
-                {{ form(formAddGroupe) }}
+                {#{{ form(formAddGroupe) }}#}
+
+
                 {% for groupes in groupe %}
                 <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="card product_item">
@@ -113,21 +115,18 @@
         {#</div>#}
     {#</section>#}
 
-    {#<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">#}
-    {#<div class="modal-dialog" role="document">#}
-        {#<div class="modal-content">#}
-            {#<div class="modal-header">#}
-                {#<h4 class="title" id="defaultModalLabel">Ajouter un groupe</h4>#}
-            {#</div>#}
-            {#<div class="modal-body">#}
-                    {#{{ form(formAddGroupe) }}#}
-            {#</div>#}
-            {#<div class="modal-footer">#}
-                {#<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
-{#</div>#}
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="title" id="defaultModalLabel">Crée un groupe</h4>
+            </div>
+            <div class="modal-body">
+                    {{ form(formAddGroupe) }}
+            </div>
+        </div>
+    </div>
+</div>
     <!-- {{ form(formAddGroupe) }} -->
 {% endblock %}
 

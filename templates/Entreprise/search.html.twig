@@ -1,0 +1,19 @@
+{{ form_start(searchEntreprise)}}
+
+
+
+ <div class="input-group ">
+
+ {{ form_widget(searchEntreprise.nom, {'label': false,'attr': {'class': 'form-control', 'type': 'text', 'placeholder': 'entreprise ...'}}) }}
+<span class="input-group-addon">
+ {{ form_widget(searchEntreprise.submit, {'label': false,'attr': {'style': 'display:none','class': 'zmdi zmdi-search', 'type': 'text'}}) }}
+ <i class="zmdi zmdi-search">
+ {{ form_widget(searchEntreprise.submit, {'label': false,'attr': {'class': '', 'type': 'text'}}) }}
+  </i>
+</span>
+
+ </div>
+
+{{ form_end(searchEntreprise)}}
+
+

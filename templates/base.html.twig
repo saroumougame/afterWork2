@@ -205,20 +205,18 @@
                 </li>
                 <li class="footer"><a href="javascript:void(0);">View All</a></li>
             </ul>
-        </li>
+        </li>-->
         <li class="hidden-sm-down">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <span class="input-group-addon">
-                    <i class="zmdi zmdi-search"></i>
-                </span>
-            </div>
+
+                {{ render(controller(
+                    'App\\Controller\\EntrepriseController::searchEntreprise'
+                )) }}
+
         </li>
-    -->
         <li class="float-right">
             <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
-            <a href="sign-in.html" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
-            <a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
+            <a href="{{ path('fos_user_security_logout') }}" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
+            {#<a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>#}
         </li>
     </ul>
 </nav>
@@ -240,20 +238,31 @@
                             <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
                             <div class="detail">
                                 <h4>{{   app.user.username }}</h4>
-                                <small>UI UX Designer</small>
+                                <small>{{   app.user.email }}</small>
                             </div>
                         </div>
                     </li>
                     {% block nav %}
 
-                            <li><a href="{{ path('actu_show') }}"><i class="zmdi zmdi-home"></i> Home</a></li>
+                            <li><a href="{{ path('actu_show') }}"><i class="zmdi zmdi-home"></i> Accueil</a></li>
 
 
                         <li class="active open"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-group-work"></i><span>Groupe</span></a>
                             <ul class="ml-menu">
                                 <li class="active"><a href="{{ path('groupe_show') }}">Mes Groupes</a> </li>
                                 <li><a href="{{ path('user_profil') }}">Mon Profil</a></li>
-                                <li><a href="{{ path('entreprise_add') }}">Les Entreprises</a></li>
+
+                                {% if app.user.entreprise is null %}
+                                <li><a href="{{ path('entreprise_add') }}">Crée mon Entreprise</a></li>
+
+                                 {% else %}
+
+                                     <li><a href="{{ path('entreprise_show', {'id': app.user.entreprise.id}) }}">Mon Entreprises</a></li>
+
+                                {% endif %}
+
+
+
                                 <li><a href="{{ path('user_invite_notif') }}">Mes invitations</a></li>
                             </ul>
                         </li>

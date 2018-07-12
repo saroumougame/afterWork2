@@ -30,9 +30,7 @@ class MessageController extends Controller
 
         if ($this->VerifMembreGroupe($groupe) == true){
 
-       $isAdmin = $this->IsAdmin($groupe);
-
-
+        $isAdmin = $this->IsAdmin($groupe);
 
         $message = new Message();
 
@@ -43,12 +41,16 @@ class MessageController extends Controller
         $formInvitationUser = $this->getFormInvitation($groupe, $formMessage, $allMessage);
 
 
+        $UserBindGroupe = $this->UserBindGroupe($groupe);
+
+
         return $this->render('Message/add.html.twig', array(
             'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
             'allMessage' => $allMessage,
             'isAdmin' => $isAdmin,
             'groupe' => $groupe,
+            'membre' => $UserBindGroupe,
         ));
 
         }else {
@@ -143,9 +145,21 @@ class MessageController extends Controller
         ));
 
 
-        $form
-            ->add('username', TextType::class)
-            ->add('submit', SubmitType::class);
+           $form->add("username", TextType::class,
+                        array(
+                            'attr' => array(
+                                'class' => 'form-control'
+                            )
+                        )
+                    )
+            ->add('submit', SubmitType::class,
+                array(
+                    'label' => 'Valider',
+                    'attr' => array(
+                        'class' => 'btn btn-default btn-round waves-effect p-3 mt-3'))
+
+            );
+
         return $form->getForm();
     }
 
@@ -236,6 +250,17 @@ class MessageController extends Controller
             return true;
         }
 
+
+    }
+
+
+
+    private function UserBindGroupe($groupe){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $usergroupe =  $entityManager->getRepository(UserGroupe::class)->findBy(array('groupe' => $groupe));
+
+        return $usergroupe;
 
     }
 

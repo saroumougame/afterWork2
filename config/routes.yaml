@@ -58,6 +58,14 @@ event_detail:
     path: event/detail/{id}
     defaults: { _controller: 'App\Controller\EventController::detailAction' }
 
+event_edit:
+    path: event/edit/{event}
+    defaults: { _controller: 'App\Controller\EventController::editAction' }
+
+event_delete:
+    path: event/delete/{event}
+    defaults: { _controller: 'App\Controller\EventController::deleteAction' }
+
 event_calendar_loader:
     path: event/loadcalendar
     defaults: { _controller: 'App\Controller\CalendarEventController::loadCalendarAction' }
@@ -88,6 +96,10 @@ user_invite_refuser:
 entreprise_add:
     path: entreprise/add
     defaults: { _controller: 'App\Controller\EntrepriseController::addAction' }
+
+entreprise_search:
+    path: entreprise/search
+    defaults: { _controller: 'App\Controller\EntrepriseController::searchAction' }
 
 entreprise_show:
     path: entreprise/show/{id}

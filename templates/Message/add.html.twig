@@ -8,13 +8,14 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Fils d'Actualité
-                        <small>nom groupe</small>
+                        <small></small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>
-                        <li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('index') }}"><i class="zmdi zmdi-home"></i>Profil</a></li>
+                        <li class="breadcrumb-item"><a href="{{ path('groupe_show') }}">Groupe</a></li>
+                        <li class="breadcrumb-item active"><a href="blog-dashboard.html">{{ groupe.nom }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -25,30 +26,32 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Message</strong></h2>
+                            <h2><strong>{{ groupe.nom }}</strong></h2>
                         </div>
                         <div class="body">
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <!--  is this... -->
-                                 <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#userInviteModal">Ajouter un utilisateur</button>
+                                 <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#userInviteModal">Inviter un worker</button>
                                        
                                  <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#messageModal">Ajouter un message</button>
 
                                         <a  href="{{ path('event_show', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Les events</button></a>
 
+                                        <button type="button" class="btn btn-primary waves-effect m-r-20" data-toggle="modal" data-target="#membreModal">Membre</button>
+
                                         {% if isAdmin == true %}
                                             <a  href="{{ path('admin_groupe', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Administration des membres</button></a>
                                         {% endif %}
                                         <!--  CKEDITOR -->
-                                        {{ form_start(formMessage) }}
-                                        {{ form_errors(formMessage) }}
+                                        {#{{ form_start(formMessage) }}#}
+                                        {#{{ form_errors(formMessage) }}#}
 
-                                        {{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}
+                                        {#{{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}#}
 
-                                        {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
-                                        {{ form_end(formMessage) }}
+                                        {#{{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}#}
+                                        {#{{ form_end(formMessage) }}#}
 
                                     </div>
                                 </div>
@@ -59,20 +62,20 @@
             </div>
             <!-- #END# Textarea -->
 <!-- INBOX MESSAGE -->
-            <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Commentaire</strong></h2>
+                        <h2><strong>Actualités</strong></h2>
                     </div>
                     <div class="body">
                         <ul class="inbox-widget list-unstyled clearfix">
                             {% for message in allMessage %}
 
-                            <li class="inbox-inner"> <a href="javascript:void(0)">
+                            <li class="inbox-inner">
                                     <div class="inbox-item">
                                         <div class="inbox-item-info">
                                             <p class="author">{{ message.username }}</p>
-                                            <p class="inbox-message">{{ message.message }}</p>
+                                            <p class="inbox-message">{{ message.message | raw }}</p>
                                             <p class="inbox-date">{{ message.date|date("m/d/Y") }}
                                             </p>
                                         </div>
@@ -104,12 +107,56 @@
             <div class="modal-body"> 
                     {{ form(formInviteUser) }}
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Fermer</button>
-            </div>
         </div>
     </div>
 </div>
+
+
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Publier une actu</h4>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(formMessage) }}
+                    {{ form_errors(formMessage) }}
+
+                    {{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}
+
+                    {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                    {{ form_end(formMessage) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="membreModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Membres</h4>
+                </div>
+                <div class="modal-body">
+                    {% for membres in membre %}
+                        <li class="inbox-inner">
+                            <div class="inbox-item">
+                                <div class="inbox">
+                                    <p class="inbox-message">{{ membres.user.username }}</p>
+                                    <p class="inbox-message">   {{ membres.user.email }}</p>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <hr>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 {% endblock %}

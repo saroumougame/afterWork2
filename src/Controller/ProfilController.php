@@ -40,10 +40,14 @@ class ProfilController extends Controller
 
         $eventUser = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()), null,5);
 
+        $nbUser = $this->statUser($User,$entityManager);
+
+
         return $this->render('Profile/index.html.twig', array(
             'User' => $User,
             'eventUser' => $eventUser,
-            'formUser' => $formUser->createView()
+            'formUser' => $formUser->createView(),
+            'nbEvent' => $nbUser,
         ));
     }
 
@@ -102,6 +106,20 @@ class ProfilController extends Controller
                     
         );
         return $form->getForm();
+    }
+
+
+
+    private function statUser($User, $entityManager){
+
+
+        $eventUsercount = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()));
+
+        $nbUser = count($eventUsercount);
+
+        return $nbUser;
+
+
     }
 
 
