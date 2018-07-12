@@ -93,6 +93,13 @@ request.onreadystatechange = function() {
         console.log(map);
 
             var center = new google.maps.LatLng(lat, lng);
+            var myLatLng = {lat: lat, lng: lng};
+
+              var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: ''
+                  });
             map.panTo(center);
 
     } else {
