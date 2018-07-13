@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ActuEntrepriseType.php" afterPath="$PROJECT_DIR$/src/Form/ActuEntrepriseType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EntrepriseType.php" afterPath="$PROJECT_DIR$/src/Form/EntrepriseType.php" />
       <change beforePath="$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig" afterPath="$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/adminGroupe/admin.html.twig" afterPath="$PROJECT_DIR$/templates/adminGroupe/admin.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +40,18 @@
       <file leaf-file-name="inviteGroupe.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="208">
+              <caret line="17" column="88" lean-forward="false" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/adminGroupe/admin.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="83" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -169,8 +175,8 @@
         <option value="$PROJECT_DIR$/templates/Event/detail.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/EntrepriseType.php" />
         <option value="$PROJECT_DIR$/src/Form/ActuEntrepriseType.php" />
-        <option value="$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig" />
         <option value="$PROJECT_DIR$/templates/adminGroupe/admin.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig" />
       </list>
     </option>
   </component>
@@ -345,6 +351,18 @@
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="adminGroupe" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Groupe" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Invitation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -428,12 +446,12 @@
       <workItem from="1531324584599" duration="312000" />
       <workItem from="1531382474405" duration="6321000" />
       <workItem from="1531404427849" duration="402000" />
-      <workItem from="1531470996522" duration="3473000" />
+      <workItem from="1531470996522" duration="4287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280767000" />
+    <option name="totallyTimeSpent" value="281581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />
@@ -514,13 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="95" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Groupe/mygroupe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -818,18 +829,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Groupe/mygroupe.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="54" column="22" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="54" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/adminGroupe/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="219" lean-forward="false" selection-start-line="76" selection-start-column="219" selection-end-line="76" selection-end-column="219" />
+        <state relative-caret-position="161">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="83" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Invitation/inviteGroupe.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="208">
+          <caret line="17" column="88" lean-forward="false" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
           <folding />
         </state>
       </provider>
