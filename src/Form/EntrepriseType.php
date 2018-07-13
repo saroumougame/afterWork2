@@ -22,10 +22,10 @@ class EntrepriseType extends AbstractType {
 
         $builder
             ->add('nom', TextType::class, array('label' => false
-            ))
-            ->add('description', TextareaType::class,array('label' => false))
+            , 'max_length' => 30))
+            ->add('description', TextareaType::class,array('label' => false, 'max_length' => 255))
             ->add('submit', SubmitType::class, array('label' => 'Cree')
-
+            
             );
     }
 

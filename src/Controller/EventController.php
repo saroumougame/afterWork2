@@ -60,7 +60,7 @@ class EventController extends Controller
             $entityManager->persist($event);
             $entityManager->flush();
 
-            return $this->redirectToRoute(' event_show', array('groupe' => $groupe->getIdGroupe()));
+            return $this->redirectToRoute('event_show', array('groupe' => $groupe->getIdGroupe()));
         }
 
 

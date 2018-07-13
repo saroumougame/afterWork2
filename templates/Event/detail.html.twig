@@ -49,11 +49,11 @@
 
                         <br>
                         {% endif %}
-
-                        Message : {{ event.message }} <br />
-                        Adresse:  <span id="adresse">{{ event.adress }}</span> <br />
-                        Début: {{ event.datedebut |date('d/m/Y - h:m') }} <br />
-                        fin : {{ event.datefin |date('d/m/Y - h:m') }} <br /><br />
+                        <br>
+                       <h6> Message :</h6>  {{ event.message }} <br />
+                        <h6>Adresse:     </h6>  <span id="adresse">{{ event.adress }}</span> <br />
+                        <h6>Début:</h6> {{ event.datedebut |date('d/m/Y - h:m') }} <br />
+                      <h6> fin :</h6>  {{ event.datefin |date('d/m/Y - h:m') }} <br /><br />
 
 
               
@@ -93,6 +93,13 @@ request.onreadystatechange = function() {
         console.log(map);
 
             var center = new google.maps.LatLng(lat, lng);
+            var myLatLng = {lat: lat, lng: lng};
+
+              var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: ''
+                  });
             map.panTo(center);
 
     } else {

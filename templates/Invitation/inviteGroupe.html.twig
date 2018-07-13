@@ -9,14 +9,14 @@
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Mes invitation
-                        <small>Rejoint ta teamWork</small>
+                        <small></small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">UI</a></li>
-                        <li class="breadcrumb-item active">List groups</li>
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Groupe</a></li>
+                        <li class="breadcrumb-item active">invitation</li>
                     </ul>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Vous </strong> </h2>
+                            <h2><strong>Rejoint ta teamWork </strong> </h2>
                             <ul class="header-dropdown">
                                 <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                     <ul class="dropdown-menu dropdown-menu-right">
@@ -44,10 +44,42 @@
                         <div class="body">
                             <ul class="list-group">
 
-                                {% for inviteGroupes in inviteGroupe %}
-                                    <li class="list-group-item" >{{ inviteGroupes.Groupe.nom}} <a  href="{{ path('user_invite_accepte', {'id': inviteGroupes.id}) }}" > <button class="btn btn-primary right-align">Accepter </button> </a>  <a  href="{{ path('user_invite_refuser', {'id': inviteGroupes.id}) }}" > <button class="btn btn-primary right-align">Refuser </button> </a> </li>
 
-                                {% endfor %}
+
+                                    <div class="body table-responsive">
+                                        <table class="table ">
+                                            <thead>
+                                            <tr>
+                                                <th>Groupe</th>
+                                                <th>Action</th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for inviteGroupes in inviteGroupe %}
+
+                                                <td>{{ inviteGroupes.Groupe.nom}}</td>
+
+
+
+                                                <td>
+                                                    <a  href="{{ path('user_invite_accepte', {'id': inviteGroupes.id}) }}" >
+                                                        <button class="btn bg-teal waves-effect right-align">Accepter </button>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a  href="{{ path('user_invite_refuser', {'id': inviteGroupes.id}) }}" >
+                                                        <button class="btn bg-red waves-effect right-align">Refuser </button>
+                                                    </a>
+
+                                                </td>
+
+
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+
 
                             </ul>
                         </div>

@@ -14,8 +14,8 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Admin
-                        <small>Ajouter un groupe</small>
+                    <h2>Administration
+                        <small>Retirer un membre du Groupe</small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
@@ -27,42 +27,68 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row clearfix">
 
-                {% for usergroupes in usergroupe %}
-                    <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="card product_item">
-                            <div class="body">
-                                <div class="cp_img">
-                                    <img src="{{ asset('assets/Oreo/images/ecommerce/1.png') }}" alt="Product" class="img-fluid" />
-                                    <div class="hover">
-                                        <a href="{{ path('admin_groupe_delete', {'groupe': usergroupes.groupe.idGroupe, 'user':  usergroupes.user.id }) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                        {#<a href="{{ path('quitter_groupe', {'groupe': groupes.idGroupe}) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-delete"></i></a>#}
-                                    </div>
-                                </div>
-                                <div class="product_details">
-                                    <h5><a href="ec-product-detail.html">{{ usergroupes.user.username }}</a></h5>
+        <!-- Striped Rows -->
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                <h2></h2>
+                                <ul class="header-dropdown">
+                                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="javascript:void(0);">Action</a></li>
+                                            <li><a href="javascript:void(0);">Another action</a></li>
+                                            <li><a href="javascript:void(0);">Something else</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="remove">
+                                        <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="body table-responsive">
+                                <table class="table ">
+                                    <thead>
+                                    <tr>
+                                        <th>USERNAME</th>
+                                        <th>ROLE</th>
+                                        <th>SUPPRIMER</th>
+                                        <th>ATTRIBUER ROLE ADMIN</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for usergroupes in usergroupe %}
 
-                                    {% if usergroupes.RoleGroupe == 1 %}
-                                    <h5><a href="ec-product-detail.html">Admin</a></h5>
-                                    {% endif %}
-                                    {% if usergroupes.RoleGroupe == 0 %}
-                                        <h5><a href="ec-product-detail.html">Membre</a></h5>
-                                        <a href="{{ path('admin_groupe_upAdmin', {'groupe': usergroupes.groupe.idGroupe, 'user':  usergroupes.user.id }) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
-                                    {% endif %}
-                                    <ul class="product_price list-unstyled">
-                                        {#<li class="old_price">$16.00</li>#}
-                                        {#<li class="new_price">$13.00</li>#}
-                                    </ul>
-                                </div>
+                                        <td>{{ usergroupes.user.username }}</td>
+
+                                        {% if usergroupes.RoleGroupe == 1 %}
+                                            <td> <span class="badge badge-success ">Admin</span></td>
+                                        {% endif %}
+                                        {% if usergroupes.RoleGroupe == 0 %}
+                                            <td> <span class="badge badge-primary"> Membre </span> </td>
+                                        <td>    <a href="{{ path('admin_groupe_upAdmin', {'groupe': usergroupes.groupe.idGroupe, 'user':  usergroupes.user.id }) }}" class="btn btn-primary waves-effect"><i class="zmdi zmdi-plus"></i></a>
+
+                                        </td>
+
+                                        {% endif %}
+
+
+                                        <td> <a href="{{ path('admin_groupe_delete', {'groupe': usergroupes.groupe.idGroupe, 'user':  usergroupes.user.id }) }}" class="btn bg-red waves-effect"><i class="zmdi zmdi-delete"></i></a>
+                                        </td>
+
+
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
+                </div>
+                <!-- #END# Striped Rows -->
+
             </div>
-        </div>
-        </div>
+
     </section>
 
 

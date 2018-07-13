@@ -13,6 +13,8 @@ use App\Entity\UserGroupe;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Groupe;
@@ -23,24 +25,24 @@ use Doctrine\ORM\UserRepository;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 class ProfilController extends Controller
 {
 
 
-
     public function showAction()
     {
         $User = $this->getUser();
 
-    	$formUser = $this->getForm($User);
+        $formUser = $this->getForm($User);
 
         $entityManager = $this->getDoctrine()->getManager();
 
-        $eventUser = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()), null,5);
+        $eventUser = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()), null, 5);
 
-        $nbUser = $this->statUser($User,$entityManager);
+        $nbUser = $this->statUser($User, $entityManager);
 
 
         return $this->render('Profile/index.html.twig', array(
@@ -61,29 +63,36 @@ class ProfilController extends Controller
 
         if ($formUser->isSubmitted()) {
 
-                $UpdateUser = $formUser->getData();
-                $User->setUsername($UpdateUser->getUsername());
-                $User->setEmail($UpdateUser->getEmail());
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($User);
-                $entityManager->flush();
+            $UpdateUser = $formUser->getData();
+            $User->setUsername($UpdateUser->getUsername());
+            $User->setEmail($UpdateUser->getEmail());
 
-                return $this->redirect($this->generateUrl('user_profil'));
+            $file = $UpdateUser->getPhoto();
+
+            $someNewFilename = 'p_' . $User->getId() . '.' . $file->getExtension();
+            $directory = $this->getParameter('path_photo_profil');
+            $file->move($directory, $someNewFilename);
+            $User->setNamePhoto($someNewFilename);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($User);
+            $entityManager->flush();
+
+            return $this->redirect($this->generateUrl('user_profil'));
         }
 
     }
 
     public function getForm($User)
     {
-          $form = $this->createFormBuilder($User, array(
-            'action' =>$this->generateUrl('profil_update_user'),
+        $form = $this->createFormBuilder($User, array(
+            'action' => $this->generateUrl('profil_update_user'),
             'method' => 'POST',
 
         ));
 
         $form->add('entreprise', EntityType::class, array(
             'class' => Entreprise::class,
-            'query_builder' => function(EntityRepository $repository) {
+            'query_builder' => function (EntityRepository $repository) {
                 return $repository->createQueryBuilder('e')
                     ->select('e')
                     ->orderBy('e.nom', 'ASC');
@@ -98,19 +107,20 @@ class ProfilController extends Controller
                 )
             )
         )
-         ->add('submit', SubmitType::class,
-               array(
-                'label' => 'Valider', 
-                'attr' => array(
-                    'class' => 'btn btn-primary btn-round waves-effect p-3 mt-3'))
-                    
-        );
+            ->add('photo', FileType::class)
+            ->add('submit', SubmitType::class,
+                array(
+                    'label' => 'Valider',
+                    'attr' => array(
+                        'class' => 'btn btn-primary btn-round waves-effect p-3 mt-3'))
+
+            );
         return $form->getForm();
     }
 
 
-
-    private function statUser($User, $entityManager){
+    private function statUser($User, $entityManager)
+    {
 
 
         $eventUsercount = $entityManager->getRepository(Event::class)->findBy(array('useradd' => $this->getUser()->getId()));
