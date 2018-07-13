@@ -21,9 +21,10 @@ class ActuEntrepriseType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('titre', TextType::class, array('label' => false
+            ->add('titre', TextType::class, array('label' => false,
+                'max_length' => 15
             ))
-            ->add('message', TextareaType::class,array('label' => false))
+            ->add('message', TextareaType::class,array('label' => false,'max_length' => 200))
             ->add('submit', SubmitType::class, array('label' => 'Publier')
 
             );
