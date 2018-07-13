@@ -8,3 +8,7 @@ fos_user:
     from_email:
         address:        sridar.aroumougame@gmail.com
         sender_name:    Admin
+
+
+parameters:
+    path_photo_profil: '%kernel.project_dir%/public/assets/files'

@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\FOSUserBundle;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as FOSUser;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -36,6 +38,45 @@ class User extends FOSUser
      * @ORM\OneToMany(targetEntity="App\Entity\UserGroupe", mappedBy="User", orphanRemoval=false)
      */
     protected $relationsUserGroupe;
+
+
+    /**
+     * @Assert\Image(
+     *     allowLandscape = false,
+     *     allowPortrait = false
+     * )
+     */
+    protected $photo;
+
+
+    public function setPhoto(File $file = null)
+    {
+        $this->photo = $file;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="namephoto", type="string", length=20, nullable=true)
+     */
+    protected $namePhoto;
+
+
+    public function setNamePhoto($namePhoto)
+    {
+        $this->namePhoto = $namePhoto;
+    }
+
+    public function getNamePhoto()
+    {
+        return $this->namePhoto;
+    }
+
 
     /**
      * @return int
@@ -98,6 +139,10 @@ class User extends FOSUser
     {
         $this->entreprise = $entreprise;
     }
+
+
+
+
 
 
 }

@@ -235,7 +235,12 @@
                 <ul class="list">
                     <li>
                         <div class="user-info">
-                            <div class="image"><a href="profile.html"><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
+                            {% if User.namePhoto is not null %}
+                                <img src="{{ asset('assets/files/')~ User.namePhoto  }}" alt="">
+                            {% else %}
+                                <div class="profile-image"> <img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt=""> </div>
+                            {% endif %}
+
                             <div class="detail">
                                 <h4>{{   app.user.username }}</h4>
                                 <small>{{   app.user.email }}</small>
@@ -290,7 +295,11 @@
                 <ul class="list">
                     <li>
                         <div class="user-info m-b-20 p-b-15">
-                            <div class="image"><a href=""><img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt="User"></a></div>
+                            {% if User.namePhoto is not null %}
+                                <img src="{{ asset('assets/files/')~ User.namePhoto  }}" alt="">
+                            {% else %}
+                                <div class="profile-image"> <img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt=""> </div>
+                            {% endif %}
                             <div class="detail">
                                 <h4>{{   app.user.username }}</h4>
                                 <small>UI UX Designer</small>
