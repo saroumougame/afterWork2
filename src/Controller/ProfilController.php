@@ -46,7 +46,7 @@ class ProfilController extends Controller
 
 
         return $this->render('Profile/index.html.twig', array(
-            'User' => $User,
+         //   'User' => $User,
             'eventUser' => $eventUser,
             'formUser' => $formUser->createView(),
             'nbEvent' => $nbUser,
@@ -107,7 +107,14 @@ class ProfilController extends Controller
                 )
             )
         )
-            ->add('photo', FileType::class)
+            ->add('photo', FileType::class,
+                array(
+                    'label' => 'Photo Profil ',
+                    'attr' => array(
+                        'class' => 'form-control input-b2'
+                    )
+                )
+                )
             ->add('submit', SubmitType::class,
                 array(
                     'label' => 'Valider',

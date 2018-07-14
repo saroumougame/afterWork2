@@ -44,15 +44,6 @@
                                         {% if isAdmin == true %}
                                             <a  href="{{ path('admin_groupe', {'groupe': groupe.idGroupe}) }}"  >  <button type="button" class="btn btn-primary waves-effect m-r-20">Administration des membres</button></a>
                                         {% endif %}
-                                        <!--  CKEDITOR -->
-                                        {#{{ form_start(formMessage) }}#}
-                                        {#{{ form_errors(formMessage) }}#}
-
-                                        {#{{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}#}
-
-                                        {#{{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}#}
-                                        {#{{ form_end(formMessage) }}#}
-
                                     </div>
                                 </div>
                             </div>
@@ -87,13 +78,7 @@
                     </div>
                 </div>
             </div>
-            <!-- END INBOX MESSAGE -->
-                {#{% for message in allMessage %}#}
-                {#<li>{{ message.message }}</li>#}
-                    {#<li>{{ message.date }}</li>#}
-                    {#<li>{{ message.username }}</li>#}
-                {#{% endfor %}#}
-            {#</div>#}
+
         </div>
     </section>
 
@@ -139,19 +124,56 @@
                     <h4 class="title" id="defaultModalLabel">Membres</h4>
                 </div>
                 <div class="modal-body">
-                    {% for membres in membre %}
-                        <li class="inbox-inner">
-                            <div class="inbox-item">
-                                <div class="inbox">
-                                    <p class="inbox-message">{{ membres.user.username }}</p>
-                                    <p class="inbox-message">   {{ membres.user.email }}</p>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <hr>
 
-                    {% endfor %}
+                    <div class="body table-responsive">
+                        <table class="table table-hover m-b-0">
+                            <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Username</th>
+                                <th>email</th>
+                                <th data-breakpoints="sm xs">Role</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for membres in membre %}
+                            <tr>
+                                {% if app.user.namePhoto is not null %}
+
+                                    <td><img src="{{ asset('assets/files/')~ membres.user.namePhoto  }}" width="48" alt="Product img"></td>
+                                {% else %}
+
+                                    <td><img src="{{ asset('assets/files/')~ membres.user.namePhoto  }}" width="48" alt="Product img"></td>
+                                {% endif %}
+                                <td><h5>{{ membres.user.username }}</h5></td>
+                                <td><span class="text-muted">{{ membres.user.email }}</span></td>
+                                {% if membres.roleGroupe == 1 %}
+                                <td><span class="text-muted text-aqua">Admin</span></td>
+                                {% else %}
+                                <td><span class="text-muted text-aqua">Membre</span></td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    {##}
+                    {#{% for membres in membre %}#}
+                        {#<li class="inbox-inner">#}
+                            {#<div class="inbox-item">#}
+                                {#<div class="inbox">#}
+                                    {#<p class="inbox-message">{{ membres.user.username }}</p>#}
+                                    {#<p class="inbox-message">   {{ membres.user.email }}</p>#}
+                                    {#</p>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</li>#}
+                        {#<hr>#}
+
+                    {#{% endfor %}#}
                 </div>
             </div>
         </div>

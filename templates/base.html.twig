@@ -235,8 +235,8 @@
                 <ul class="list">
                     <li>
                         <div class="user-info">
-                            {% if User.namePhoto is not null %}
-                                <img src="{{ asset('assets/files/')~ User.namePhoto  }}" alt="">
+                            {% if app.user.namePhoto is not null %}
+                                <img src="{{ asset('assets/files/')~ app.user.namePhoto  }}" alt="">
                             {% else %}
                                 <div class="profile-image"> <img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt=""> </div>
                             {% endif %}
@@ -295,8 +295,8 @@
                 <ul class="list">
                     <li>
                         <div class="user-info m-b-20 p-b-15">
-                            {% if User.namePhoto is not null %}
-                                <img src="{{ asset('assets/files/')~ User.namePhoto  }}" alt="">
+                            {% if app.user.namePhoto is not null %}
+                                <img src="{{ asset('assets/files/')~ app.user.namePhoto  }}" alt="">
                             {% else %}
                                 <div class="profile-image"> <img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt=""> </div>
                             {% endif %}

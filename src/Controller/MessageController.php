@@ -44,6 +44,7 @@ class MessageController extends Controller
         $UserBindGroupe = $this->UserBindGroupe($groupe);
 
 
+
         return $this->render('Message/add.html.twig', array(
             'formInviteUser' => $formInvitationUser->createView(),
             'formMessage' => $formMessage->createView(),
