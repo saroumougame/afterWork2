@@ -107,7 +107,14 @@ class ProfilController extends Controller
                 )
             )
         )
-            ->add('photo', FileType::class)
+            ->add('photo', FileType::class,
+                array(
+                    'label' => 'Photo Profil ',
+                    'attr' => array(
+                        'class' => 'form-control input-b2'
+                    )
+                )
+                )
             ->add('submit', SubmitType::class,
                 array(
                     'label' => 'Valider',
