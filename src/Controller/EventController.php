@@ -117,9 +117,9 @@ class EventController extends Controller
 
         if( $event->getUseradd() == $this->getUser()->getId()){
             return true;
-        }else false;
-
-
+        }else {
+            return false;
+        }
 
     }
 

@@ -266,4 +266,79 @@ class MessageController extends Controller
     }
 
 
+
+    public function editAction(Message $message,Request $request){
+
+        $formMessage = $this->getEditForm($message);
+        $formMessage->handleRequest($request);
+
+        if ($formMessage->isSubmitted()) {
+
+            $message = $formMessage->getData();
+            $message->setMessage($message->getMessage());
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($message);
+            $entityManager->flush();
+
+
+            return $this->redirectToRoute('message_add', array('groupe' => $message->getGroupe()->getIdGroupe()));
+        }
+
+
+        return $this->render ( 'Message/edit.html.twig', array (
+            'formMessage' => $formMessage->createView(),
+
+        ));
+
+        }
+
+
+
+    private function getEditForm(Message $message)
+    {
+        $form = $this->createFormBuilder($message, array(
+            'action' => $this->generateUrl('message_edit', array('message' => $message->getId())),
+            'method' => 'POST',
+
+        ));
+
+        $form->add("message", TextareaType::class);
+        $form->add('submit', SubmitType::class, array('label' => 'Edit'));
+        return $form->getForm();
+    }
+
+
+
+    public function deleteAction(Message $message){
+
+        $statue = $this->verifCreateur($message);
+
+
+        if ($statue == true){
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($message);
+            $entityManager->flush();
+
+        }
+        return $this->redirectToRoute('message_add', array('groupe' => $message->getGroupe()->getIdGroupe()));
+
+
+    }
+
+
+    private function verifCreateur($message){
+
+        if( $message->getUsername() == $this->getUser()->getUsername()){
+            return true;
+        }else {
+
+            return false;
+        }
+
+
+
+    }
+
+
 }

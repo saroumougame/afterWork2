@@ -53,33 +53,37 @@
             </div>
             <!-- #END# Textarea -->
 <!-- INBOX MESSAGE -->
+            {% for message in allMessage %}
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
+                    {% if app.user.username == message.username  %}
                     <div class="header">
-                        <h2><strong>Actualités</strong></h2>
-                    </div>
-                    <div class="body">
-                        <ul class="inbox-widget list-unstyled clearfix">
-                            {% for message in allMessage %}
+                    <ul class="header-dropdown">
+                        <a role="button" href="{{ path('message_edit', {'message': message.id}) }}"><i class="zmdi zmdi-edit"></i></a>
+                        <li class="remove">
 
-                            <li class="inbox-inner">
-                                    <div class="inbox-item">
-                                        <div class="inbox-item-info">
+                            <a role="button" href="{{ path('message_delete', {'message': message.id}) }}"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                    </div>
+                    {% endif %}
+
+
+                            <div class="body">
+                                <div class="row clearfix">
+                                    <div class="col-sm-12">
                                             <p class="author">{{ message.username }}</p>
                                             <p class="inbox-message">{{ message.message | raw }}</p>
                                             <p class="inbox-date">{{ message.date|date("m/d/Y") }}
                                             </p>
                                         </div>
                                     </div>
-                              </li>
-
-                            {% endfor %}
-                        </ul>
-                    </div>
+                            </div>
                 </div>
             </div>
-
         </div>
+
+            {% endfor %}
     </section>
 
 

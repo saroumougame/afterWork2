@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/morrisjs/morris.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/css/main.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/css/color_skins.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/Oreo/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}"/>
+
+        {#<link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />#}
+
+    {% endblock %}
+
+
+{% block content %}
+
+<section class="content blog-page">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Actualité
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i>Profil</a></li>
+                    <li class="breadcrumb-item active"><a href="blog-dashboard.html">Groupe</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Horizontal Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Edit</strong></h2>
+                    </div>
+                    <div class="body">
+                        {#<form class="form-horizontal">#}
+                        {#{{ form_start(formEvent) }}#}
+                        {#{{ form_errors(formEvent) }}#}
+
+                        {{ form_start(formMessage) }}
+                        {{ form_errors(formMessage) }}
+
+                        {{ form_row(formMessage.message, { 'attr': {'class': 'ckeditor'} }) }}
+
+                        {{ form_row(formMessage.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}
+                        {{ form_end(formMessage) }}
+
+
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-lg-2 col-md-2 col-sm-4 form-control-label">#}
+                                {#<label >Titre</label>#}
+                            {#</div>#}
+                            {#<div class="col-lg-10 col-md-10 col-sm-8">#}
+                                {#<div class="form-group">#}
+                                    {#{{ form_row(formEvent.titre, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-lg-2 col-md-2 col-sm-4 form-control-label">#}
+                                {#<label >Description</label>#}
+                            {#</div>#}
+                            {#<div class="col-lg-10 col-md-10 col-sm-8">#}
+                                {#<div class="form-group">#}
+                                    {#{{ form_row(formEvent.message, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-lg-2 col-md-2 col-sm-4 form-control-label">#}
+                                {#<label >Adresse</label>#}
+                            {#</div>#}
+                            {#<div class="col-lg-10 col-md-10 col-sm-8">#}
+                                {#<div class="form-group">#}
+                                    {#{{ form_row(formEvent.adress, { 'attr': {'class': 'form-control no-resize', 'placeholder': ''} }) }}#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-lg-2 col-md-2 col-sm-4 form-control-label">#}
+                                {#<label >Date Debut</label>#}
+                            {#</div>#}
+                            {#<div class="col-lg-10 col-md-10 col-sm-8">#}
+                                {#<div class="form-group">#}
+                                    {#<div class="input-group">#}
+                                    {#<span class="input-group-addon">#}
+                                        {#<i class="zmdi zmdi-calendar"></i>#}
+                                    {#</span>#}
+                                        {#{{ form_widget(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}#}
+                                        {#{{ form_widget(formEvent.datedebut, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}#}
+
+                                    {#</div>#}
+
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-lg-2 col-md-2 col-sm-4 form-control-label">#}
+                                {#<label >Date Fin</label>#}
+                            {#</div>#}
+                            {#<div class="col-lg-10 col-md-10 col-sm-8">#}
+                                {#<div class="form-group">#}
+
+                                    {#<div class="input-group">#}
+                                    {#<span class="input-group-addon">#}
+                                        {#<i class="zmdi zmdi-calendar"></i>#}
+                                    {#</span>#}
+                                        {#{{ form_widget(formEvent.datefin, { 'attr': {'class': 'form-control no-resize datetimepicker', 'placeholder': ''} }) }}#}
+
+                                    {#</div>#}
+
+
+
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="row clearfix">#}
+                            {#<div class="col-sm-8 offset-sm-2">#}
+
+                                {#{{ form_row(formEvent.submit, { 'attr': {'class': 'btn btn-raised btn-primary btn-round waves-effect'} }) }}#}
+
+                            {#</div>#}
+                        {#</div>#}
+                        {#{{ form_end(formEvent) }}#}
+                        {#</form>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Horizontal Layout -->
+
+
+        {% endblock %}
+
+        {% block js %}
+            <script src="{{ asset('assets/Oreo/bundles/libscripts.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/bundles/vendorscripts.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/bundles/morrisscripts.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/bundles/jvectormap.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/bundles/knob.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/bundles/mainscripts.bundle.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/js/pages/index.js') }}"></script>
+
+            <script src="{{ asset('assets/Oreo/plugins/ckeditor/ckeditor.js') }}"></script>
+            <script src="{{ asset('assets/Oreo/js/pages/forms/editors.js') }}"></script>
+
+
+
+        {% endblock %}

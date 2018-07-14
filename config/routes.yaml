@@ -49,6 +49,13 @@ message_insert:
     path: message/insert/{groupe}
     defaults: { _controller: 'App\Controller\MessageController::insertAction' }
 
+message_edit:
+    path: message/edit/{message}
+    defaults: { _controller: 'App\Controller\MessageController::editAction' }
+
+message_delete:
+    path: message/delete/{message}
+    defaults: { _controller: 'App\Controller\MessageController::deleteAction' }
 
 event_show:
     path: event/show/{groupe}
