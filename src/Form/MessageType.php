@@ -26,8 +26,7 @@ class MessageType extends AbstractType {
         $builder
             ->add('message', TextType::class, array(
                 'label' => 'Message',
-                'attr' => array('style' => 'width: 50px'),
-                'max_length' => 15))
+                'attr' => array('style' => 'width: 50px', 'maxlength' => 255)))
             ->add('submit', SubmitType::class, array('label' => 'Envoyer')
 
             );
