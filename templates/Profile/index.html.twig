@@ -27,8 +27,8 @@
                             <div class="col-lg-3 col-md-3 col-12">
                                 <div class="profile-image">
 
-                                    {% if User.namePhoto is not null %}
-                                    <img src="{{ asset('assets/files/')~ User.namePhoto  }}" alt="">
+                                    {% if app.user.namePhoto is not null %}
+                                    <img src="{{ asset('assets/files/')~ app.user.namePhoto  }}" alt="">
                                     {% else %}
                                         <div class="profile-image"> <img src="{{ asset('assets/Oreo/images/profile_av.jpg') }}" alt=""> </div>
                                         {% endif %}
@@ -36,17 +36,17 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-12">
                                 <div class="pl-2">
-                                <h4 class="m-t-0 m-b-0">{{ User.username }}</h4>
-                                <p>email: {{ User.email }} </p>
+                                <h4 class="m-t-0 m-b-0">{{ app.user.username }}</h4>
+                                <p>email: {{ app.user.email }} </p>
                                 <p>Nombre d'évenement ajouter par vous: {{ nbEvent }} </p>
-                                    {% if User.entreprise  is null %}
+                                    {% if app.user.entreprise  is null %}
 
                                         Vous n'avez pas d'entreprise
                                         Attribuer vous une entreprise dans changer mes informations<br>
                                         Si elle n'existe pas cree la votre
 
                                     {% else %}
-                                        <p><strong>Entreprise: </strong> {{ User.entreprise.nom }}</p>
+                                        <p><strong>Entreprise: </strong> {{ app.user.entreprise.nom }}</p>
                                         {% endif %}
                                 </div>
 

@@ -46,7 +46,7 @@ class ProfilController extends Controller
 
 
         return $this->render('Profile/index.html.twig', array(
-            'User' => $User,
+         //   'User' => $User,
             'eventUser' => $eventUser,
             'formUser' => $formUser->createView(),
             'nbEvent' => $nbUser,

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6b68070-41f1-4537-a1fb-e48118afbf72" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config/packages/config.yaml" afterPath="$PROJECT_DIR$/config/packages/config.yaml" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProfilController.php" afterPath="$PROJECT_DIR$/src/Controller/ProfilController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
       <change beforePath="$PROJECT_DIR$/templates/Profile/index.html.twig" afterPath="$PROJECT_DIR$/templates/Profile/index.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
     </list>
@@ -42,11 +39,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="241" column="39" lean-forward="false" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
+            <state relative-caret-position="130">
+              <caret line="297" column="34" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Profile/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="48" column="84" lean-forward="false" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/ProfilController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -63,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>J'in</find>
       <find>remove</find>
       <find>load</find>
       <find>format</find>
@@ -93,6 +109,7 @@
       <find>home</find>
       <find>event_show</find>
       <find>kernel</find>
+      <find>profile</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -169,9 +186,9 @@
         <option value="$PROJECT_DIR$/config/packages/translation.yaml" />
         <option value="$PROJECT_DIR$/config/packages/config.yaml" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ProfilController.php" />
-        <option value="$PROJECT_DIR$/templates/Profile/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/templates/Profile/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/ProfilController.php" />
       </list>
     </option>
   </component>
@@ -338,7 +355,24 @@
             <path>
               <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
               <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afterWork2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afterWork2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Profile" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -423,12 +457,12 @@
       <workItem from="1531324584599" duration="312000" />
       <workItem from="1531382474405" duration="6321000" />
       <workItem from="1531404427849" duration="402000" />
-      <workItem from="1531470996522" duration="10153000" />
+      <workItem from="1531470996522" duration="10682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287447000" />
+    <option name="totallyTimeSpent" value="287976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />
@@ -818,28 +852,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="297" column="34" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Profile/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="33" selection-end-column="51" />
+        <state relative-caret-position="429">
+          <caret line="48" column="84" lean-forward="false" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ProfilController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#117#143#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="241" column="39" lean-forward="false" selection-start-line="241" selection-start-column="39" selection-end-line="241" selection-end-column="39" />
+        <state relative-caret-position="270">
+          <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding />
         </state>
       </provider>
