@@ -18,8 +18,8 @@ class GroupeType extends AbstractType {
         $builder
             ->add('nom', TextType::class, array(
                     'label' => 'Nom',
-                    'attr' => array('style' => 'width: 50px'),
-                    'max_length' => 15))
+                    'attr' => array('style' => 'width: 50px','maxlength' => 30)))
+
             ->add('submit', SubmitType::class, array('label' => 'Cree')
 
             );
