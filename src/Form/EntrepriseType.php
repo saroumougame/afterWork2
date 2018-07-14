@@ -21,9 +21,8 @@ class EntrepriseType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
         $builder
-            ->add('nom', TextType::class, array('label' => false
-            , 'max_length' => 30))
-            ->add('description', TextareaType::class,array('label' => false, 'max_length' => 255))
+            ->add('nom', TextType::class, array('label' => false))
+            ->add('description', TextareaType::class,array('label' => false))
             ->add('submit', SubmitType::class, array('label' => 'Cree')
             
             );
