@@ -5,7 +5,7 @@ $( document ).ready(function() {
 	var nombreActu = actus.length;
 	var tabIndex = {};
 	var indexShow = 1;
-	var max = actus.length / 5;
+	var max = actus.length / 3;
 	if(max < 1){
 		max = 1;
 	}
@@ -28,7 +28,7 @@ $( document ).ready(function() {
 	function afficheActu()
 	{
 		// on affiche les 5premier 
-		for(var x = (indexShow * 5) - 5; x < indexShow * 5; x++)
+		for(var x = (indexShow * 3) - 3; x < indexShow * 3; x++)
 		{
 			$('#'+tabIndex[x]).show();
 		}
