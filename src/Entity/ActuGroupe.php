@@ -24,7 +24,7 @@ class ActuGroupe
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="string", length=200, nullable=false)
+     * @ORM\Column(name="message", type="string", length=1500, nullable=false)
      */
     private $message;
 

@@ -33,8 +33,8 @@ class ActuEntrepriseController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
 
 
-        $actus = $entityManager->getRepository(ActuEntreprise::class)->findAll(array(), array('id' => 'desc'));
-        
+        $actus = $entityManager->getRepository(ActuEntreprise::class)->findBy(array(), array('id' => 'DESC'));
+
 
         return $this->render ( 'Entreprise/Actu/home.html.twig', array (
             'actus' => $actus

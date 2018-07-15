@@ -36,7 +36,7 @@ class Entreprise{
     private $nom;
 
     /**
-     * @ORM\Column(type="string", name="description")
+     * @ORM\Column(type="string", length=1500, name="description")
      */
     private $description;
 

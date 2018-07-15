@@ -24,7 +24,7 @@ class ActuEntreprise
     /**
      * @var string
      *
-     * @ORM\Column(name="message", type="string", length=500, nullable=false)
+     * @ORM\Column(name="message", type="string", length=1500, nullable=false)
      */
     private $message;
 
@@ -38,7 +38,7 @@ class ActuEntreprise
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=20, nullable=false)
+     * @ORM\Column(name="titre", type="string", length=30, nullable=false)
      */
     private $titre;
 

@@ -124,7 +124,7 @@ class MessageController extends Controller
 
 
         $Message = $entityManager->getRepository(Message::class)->findBy(
-            ['groupe' => $idGroupe]
+            array('groupe' => $idGroupe),array('id' => 'DESC')
         );
 
         // $serializer = $this->get('serializer');
